@@ -1,3 +1,7 @@
+document.onload = function test() {
+	console.log('it works');
+}
+
 function myFunction() {
     var books = document.getElementById('book_list');
     if (books.style.display === 'none') {
