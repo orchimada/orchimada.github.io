@@ -2,7 +2,7 @@ $( document ).ready(function() {
     console.log( "ready!" );
 });
 
-$( '#books_switch' ).click(function() {
+$(document).on("click", '#books_switch', function() {
     console.log( "found" );
 });
 
