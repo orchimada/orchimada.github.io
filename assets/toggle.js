@@ -1,4 +1,6 @@
-console.log('it works');
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
 
 function myFunction() {
     var books = document.getElementById('book_list');
