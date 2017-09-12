@@ -1,4 +1,4 @@
-document.onload = function test() {
+document.onload = function() {
 	console.log('it works');
 }
 
