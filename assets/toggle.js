@@ -1,6 +1,4 @@
-document.onload = function() {
-	console.log('it works');
-}
+console.log('it works');
 
 function myFunction() {
     var books = document.getElementById('book_list');
