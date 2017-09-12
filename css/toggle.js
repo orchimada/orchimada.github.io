@@ -1,10 +1,6 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
-
-$( '#books_switch' ).onclick(function() {
-    console.log( "found" );
-});
+document.onload = function test() {
+	console.log('it works');
+}
 
 function myFunction() {
     var books = document.getElementById('book_list');
