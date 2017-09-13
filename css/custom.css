@@ -1,24 +1,23 @@
-#book_list {
+.navigation {
+	background-color: #f6f5f6;
+	padding: 5%;
+	border-radius: 1px;
 }
 
-#books_switch {
+#projects_list {
+	background-color: #9bd0eb;
+	padding: 2%;
+	border-radius: 1px;
 }
 
-.menuStyle {
-	visibility: hidden;
+#books_list {
+	background-color: #d9d9d9;
+	padding: 2%;
+	border-radius: 1px;
 }
 
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+#tools_list {
+	background-color: #b2f0dd;
+	padding: 2%;
+	border-radius: 1px;
+}

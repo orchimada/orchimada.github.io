@@ -47,35 +47,51 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+    <div class="container">
+
+  <!-- Title & Contacts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
+      <div class="one-half column" style="margin-top: 10%">
         <h2>Orchimada</h2>
         <p>This is a testbed for future info site.</p>
       </div>
     </div>
-    <div class="row">
-      <h4>Projects</h4>
-      <div class="three columns">
+
+  <!-- Navigtaion menu
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="row navigation">
+       <div class="four columns" id='projects_switch'>
+        <h4>Projects</h4>
         <p>This is a testbed for future info site.</p>
       </div>
-      <div class="three columns">
-        <p>This is a testbed for future info site.</p>
+      <div class="four columns" id='books_switch'>
+        <h4>Books</h4>
+        <p>Все, что я хотел узнать,<br>я вызнал из книг.</p>
       </div>
-      <div class="three columns">
-        <p>This is a testbed for future info site.</p>
+      <div class="three columns" id='tools_switch'>
+        <h4>Tools</h4>
+        <p>Чем пользуюсь</p>
       </div>
     </div>
-    <div id='book_list'>
-    <div class="row">
-      <div class="ten columns">
-        <button class="button-primary" id='books_switch'><h4>Books</h4></button>
-        <p>Все, что я хотел узнать, я вызнал из книг.</p>
-      </div>
-    </div>
-    <div class="row">
+<!-- Content Blocks Books
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div id='projects_list'>
+     <div class="row">
       <div class="six columns">
-        <ul class='books list'>
+        <ul>
+          <li>Strategic thinking for tech companies.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!-- Content Blocks Books
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div id='books_list'>
+     <div class="row">
+      <div class="six columns">
+        <ul>
           <li>Огилви «О рекламе»</li>
           <li>Этан Цукерман «Rewire: цифровые космополиты в эпоху коммуникаций»</li>
           <li>Шон Кови «4 дисциплины исполнения»</li>
@@ -109,6 +125,41 @@
       </div>
     </div>
   </div>
+
+<!-- Content Blocks Tools
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id='tools_list'>
+    <div class="row">
+      <div class="six columns">
+        <ul>
+          <li>Marshall London</li>
+          <li>Microsoft ToDo</li>
+          <li>Google Inbox</li>
+          <li>Sublime Text</li>
+          <li>Jypiter Notebooks (MS Azure version)</li>
+          <li>GitHub</li>
+          <li>Instapaper</li>
+          </li>
+        </ul>
+      </div>
+      <div class="six columns">
+        <ul>
+          <li>
+          <li>Deezer</li>
+          <li>Headspace</li>
+          <li>Medium</li>
+          <li>Telegram</li>
+          <li>Heroku</li>
+          <li>Shazam</li>
+          <li>Kindle for Android</li>
+          <li>Dropbox</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
     <div class="row">
       <footer class="eleven columns">
         <div>Based on <a href='http://getskeleton.com/'>Skeleton</a>.</div>
