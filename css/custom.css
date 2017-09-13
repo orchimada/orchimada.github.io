@@ -4,6 +4,10 @@
 #books_switch {
 }
 
+.menuStyle {
+	visibility: hidden;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {}
 
