@@ -4,16 +4,28 @@
 	border-radius: 1px;
 }
 
+#projects_switch {
+	background-color: #9bd0eb;
+}
+
 #projects_list {
 	background-color: #9bd0eb;
 	padding: 2%;
 	border-radius: 1px;
 }
 
+#books_switch {
+	background-color: #d9d9d9;
+}
+
 #books_list {
 	background-color: #d9d9d9;
 	padding: 2%;
 	border-radius: 1px;
+}
+
+#tools_switch {
+	background-color: #b2f0dd;
 }
 
 #tools_list {
