@@ -1,42 +1,37 @@
 body {
-	background-image: url('/images/bg_flowers.jpg');
+	background-image: url('/images/bg_meduzozoa.jpg');
 	background-repeat: no-repeat;
-	background-position: top;
 }
 
 .navigation {
 }
 
 #projects_switch {
-	margin-top: 15px;
-	margin-right: 20px;
-}
-
-#projects_plate {
-	background-color: #9bd0eb;
+	background-color: rgba(188,214,227,0.5);
 }
 
 #projects_list {
 	padding: 2%;
 	border-radius: 1px;
+	background-color: rgba(188,214,227,0.5);
 }
 
 #books_switch {
-	background-color: #d9d9d9;
+	background-color: rgba(227,228,230,0.5);
 }
 
 #books_list {
-	background-color: #d9d9d9;
+	background-color: rgba(227,228,230,0.5);
 	padding: 2%;
 	border-radius: 1px;
 }
 
 #tools_switch {
-	background-color: #b2f0dd;
+	background-color: rgba(224,203,172,0.5);
 }
 
 #tools_list {
-	background-color: #b2f0dd;
+	background-color: rgba(224,203,172,0.5);
 	padding: 2%;
 	border-radius: 1px;
 }
