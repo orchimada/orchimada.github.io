@@ -1,5 +1,7 @@
 body {
-	background-image: url('/images/bg_image_test.jpg');
+	background-image: url('/images/bg_flowers.jpg');
+	background-repeat: no-repeat;
+	background-position: top;
 }
 
 .navigation {
