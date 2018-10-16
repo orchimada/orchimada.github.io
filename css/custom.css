@@ -1,16 +1,20 @@
 body {
-	background-image: url('/images/bg_meduzozoa.jpg');
+	background-image: url('/images/bg_flowers.jpg');
 	background-repeat: no-repeat;
 }
 
 .navigation {
 }
 
+#main > div:not(:first-child) {
+	display: none;
+}
+
 #projects_switch {
 	background-color: rgba(188,214,227,0.5);
 }
 
-#projects_list {
+#notes_block {
 	padding: 2%;
 	border-radius: 1px;
 	background-color: rgba(188,214,227,0.5);
@@ -20,7 +24,7 @@ body {
 	background-color: rgba(227,228,230,0.5);
 }
 
-#books_list {
+#books_block {
 	background-color: rgba(227,228,230,0.5);
 	padding: 2%;
 	border-radius: 1px;
@@ -30,7 +34,7 @@ body {
 	background-color: rgba(224,203,172,0.5);
 }
 
-#tools_list {
+#reads_block {
 	background-color: rgba(224,203,172,0.5);
 	padding: 2%;
 	border-radius: 1px;

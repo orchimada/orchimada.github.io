@@ -15,8 +15,18 @@
 <!-- End Google Analytics -->
  <!-- Custom scripts and navigation handling
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script type='text/javascript' src='assets/jquery-3.2.1.min.js'></script>
-  <script type='text/javascript' src='assets/toggle.js'></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+  $(function(){
+  $('[data-target]').on('click', function(){
+    var target = $(this).data('target');
+    $(target).siblings().hide().end().show();
+  });
+});
+</script>
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
@@ -34,10 +44,9 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link type="text/css" rel="stylesheet" href="css/normalize.css">
-  <link type="text/css" rel="stylesheet" href="css/skeleton.css">
   <link type="text/css" rel="stylesheet" href="css/custom.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -45,127 +54,82 @@
 </head>
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="container">
-
-  <!-- Title & Contacts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="row">
-      <div class="one-half column" style="margin-top: 10%">
-        <h2>Orchimada</h2>
-        <p>This is a testbed for future info site.</p>
+<div class="container">
+  <!-- Title & Contacts -->
+  <div class="container-fluid">
+    <div class="row" style="margin-top: 10%">
+      <div class="col">
+      <h2>Lrsky</h2>
       </div>
     </div>
+    <div class="row">   
+      <div class="col" >
+        <p><a href='https://fluence.one'>Fluence Labs</a>, Marketing and Comms.</p>
+        <p><a href=''>cowboy in a seven-days-a-week fight</a></p>
+      </div>
+      <div class="col">
+        <p><a href='h'>Orchilux-Teleblog</a></p>
+        <p><a href='https://instagram.com/orchimada'>Instagram</a></p>
+        <p></p>
+      </div>
+    </div>
+  </div>
 
-  <!-- Navigtaion menu
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Navigtaion menu -->
     <div class="row navigation">
-      <div class="four columns" id='projects_switch'>
-       <h4>Projects</h4>
-       <p>Что делаю</p>
+      <div class="col-sm" id='projects_switch' data-target='#notes_block'>
+       <h4>Notes</h4>
       </div>
-      <div class="four columns" id='books_switch'>
+      <div class="col-sm" id='books_switch' data-target='#books_block'>
         <h4>Books</h4>
-        <p>Что читаю</p>
       </div>
-      <div class="four columns" id='tools_switch'>
+      <div class="col-sm" id='tools_switch' data-target='#reads_block'>
         <h4>Tools</h4>
-        <p>Чем пользуюсь</p>
       </div>
+      <div class="col-sm" id='features_switch'>
+        <h4>Features</h4>
+        <p>comming soon</p>
+      </div>>
     </div>
 
-<!-- Content Blocks Books
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div id='projects_list'>
-     <div class="row">
-      <div class="six columns">
-      <iframe class="airtable-embed" src="https://airtable.com/embed/shr1KCQbDrTEcrGUe?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-      </div>
-    </div>
+<!-- Notes -->
+<div class='row' id='main'>
+  <div class='container-fluid' id='notes_block'>
+  
+      <iframe 
+      class="airtable-embed" 
+      src="https://airtable.com/embed/shr1KCQbDrTEcrGUe?backgroundColor=gray&viewControls=on" 
+      frameborder="0" onmousewheel="" width="100%" height="533" 
+      style="background: transparent; border: 1px solid #ccc;">
+      </iframe>
+   
   </div>
 
-<!-- Content Blocks Books
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div id='books_list'>
-     <div class="row">
-      <div class="six columns">
-        <ul>
-          <li>О РЕКЛАМЕ<br>Огилви</li>
-          <li>Этан Цукерман «Rewire: цифровые космополиты в эпоху коммуникаций»</li>
-          <li>Шон Кови «4 дисциплины исполнения»</li>
-          <li>Генрих Альтшуллер «Найти идею»</li>
-          <li>Дэвид Брукс «Бобо в раю, откуда берётся новая элита»</li>
-          <li>Эдвард Глейзер «Триумф Города: как наше величайшее изобретение делает нас богаче, умнее,  экологичнее, здоровее и счастливее»</li>
-          <li>Евгений Кунин «Логика Случая: о природе и происхождении биологической эволюции»</li>
-          <li>Timothy Gallwey "The inner game of tennis"</li>
-          <li>Herman Melville "Moby Dick"</li>
-          <li>Jeff Noon "Vurt"</li>
-          <li>Василий Аксёнов «Остров Крым»</li>
-          <li>Брасай «Разговоры с Пикассо»</li>
-          <li>Steven Levy "hackers — heroes of computer revolution"</li>
-        </ul>
-      </div>
-      <div class="six columns">
-        <ul class='books list'>
-          <li>Дэвид Гребер «Долг: первые 5000 лет истории»</li>
-          <li>Авинаш Диксит «Теория Игр»</li>
-          <li>Авнер Грейф «Институты и путь к современной экономике: уроки средневековой торговли»</li>
-          <li>Рональд Коуз  «Очерки об экономической науке и экономистах»</li>
-          <li>Ильин В. И. «Драматургия качественного полевого исследования»</li>
-          <li>Tom DeMarko "Peopleware"</li>
-          <li>Chris Anderson "Free: The Future of a Radical Price"</li>
-          <li>David A Chapell "Enterprise Service Bus: Theory in Practice"</li>
-          <li>Edgar H. Schein "Organizational Culture and Leadership"</li>
-          <li>Максим Кронгауз «Слово за Слово: о языке и не только»</li>
-          <li>Линч «Облик Города»</li>
-          <li>Марио Варгас Льоса «Война Конца Света»</li>
-        </ul>
-      </div>
+<!--  Books -->
+    <div class='container-fluid' id='books_block'>
+     
+        <iframe 
+        class="airtable-embed" 
+        src="https://airtable.com/embed/shr1qzewaVG8JQx4u?backgroundColor=gray&viewControls=on" 
+        frameborder="0" onmousewheel="" width="100%" height="533" 
+        style="background: transparent; border: 1px solid #ccc;">
+        </iframe>
+    
     </div>
+
+<!--  Longreads -->
+  <div class='container-fluid' id='reads_block'>
+      <iframe 
+      class="airtable-embed" 
+      src="https://airtable.com/embed/shr4QP02IfjqkmL0N?backgroundColor=gray&viewControls=on" 
+      frameborder="0" onmousewheel="" width="100%" height="533" 
+      style="background: transparent; border: 1px solid #ccc;">
+    </iframe>
   </div>
 
-<!-- Content Blocks Tools
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div id='tools_list'>
-    <div class="row">
-      <div class="six columns">
-        <ul>
-          <li>Marshall London</li>
-          <li>Microsoft ToDo</li>
-          <li>Google Inbox</li>
-          <li>Sublime Text</li>
-          <li>Jypiter Notebooks (MS Azure version)</li>
-          <li>GitHub</li>
-          <li>Instapaper</li>
-          </li>
-        </ul>
-      </div>
-      <div class="six columns">
-        <ul>
-          <li>Deezer</li>
-          <li>Headspace</li>
-          <li>Medium</li>
-          <li>Telegram</li>
-          <li>Heroku</li>
-          <li>Shazam</li>
-          <li>Kindle for Android</li>
-          <li>Dropbox</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-
-    <div class="row">
-      <footer class="eleven columns">
-        <div>Based on <a href='http://getskeleton.com/'>Skeleton</a>.</div>
-       </footer>
-    </div>
-  </div>
+</div>
+</div>
  
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- End Document -->
 </body>
 </html>
