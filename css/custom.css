@@ -43,6 +43,13 @@ body {
 #music_switch {
 	background-color: rgba();
 }
+
+#music_block {
+	background-color: transparent;
+	padding: 2%;
+	border-radius: 1px;
+
+
 ul {
     list-style-type: none;
 }
