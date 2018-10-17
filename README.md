@@ -1,8 +1,8 @@
 # a personal website using GitHub Pages and Airtables
 
-Basically, it's a wrapper for several iframes (Airtables, Apple Music), that allows to store evertything on one URL for convenience.
+Basically, these are several iframes embeds from [Airtable](https://airtable.com), that allows to store evertything (notes, links, music) on one URL for convenience.
 
-The best part is CMS, which is Airtables API + Shortcuts. This allows me to save a link/image/quote when I'm on mobile using SHortcut with a simple POST request to Airtable API or edit a "new post" right in the Airtables app, add a comment and other info into my private log and it will appear on the website. Super fast, super simple.
+The idea was to make a super simple pseudo-CMS. How it works? I've got specific [Shortcuts](https://itunes.apple.com/us/app/shortcuts/id915249334?mt=8) on my devices that bookmark interesting links in the form I need (with a note, image, shortened URL, saved to a specific table etc) using Airtable API. Once this is done the table I chose to show on my website is automatically updated. No coding, no wordpress, no writing frontend - just plain html, css, and a bit of js.
 
 Thanks for checking it out! 
 
