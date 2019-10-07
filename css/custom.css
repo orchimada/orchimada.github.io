@@ -4,12 +4,18 @@ body {
 	background-size: cover;
 }
 
+body p {
+	background-image:white
+}
+
 .navigation {
 }
 
 #main > div:not(:first-child) {
 	display: none;
 }
+
+
 
 #projects_switch {
 	background-color: rgba(188,214,227,0.5);
