@@ -10,17 +10,21 @@ body a:hover {
 	color:white;
 }
 body p {
+	color: white;
 	background-color: black;
 	position: relative;
 	padding: 2px;
+	display:inline-block;
 	z-index: 0;
 }
-
-#title {
+div #Title{
 	color: whitesmoke;
 	background-color: black;
+	display:inline-block;
 }
+
 .navigation {
+	text-transform: uppercase;
 }
 
 #main > div:not(:first-child) {
