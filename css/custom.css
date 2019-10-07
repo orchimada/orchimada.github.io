@@ -4,18 +4,22 @@ body {
 	background-image: url('/images/IMG_4042.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	font-size: 15px;
 }
 
+body a:hover {
+	color:white;
+}
 body p {
-	color: white;
-	background-color:black;
-}
-body p:after {
-    content:"\a";
-    white-space: pre;
+	background-color: black;
+	position: relative;
+	padding: 2px;
+	z-index: 0;
 }
 
+#title {
+	color: whitesmoke;
+	background-color: black;
+}
 .navigation {
 }
 
@@ -69,37 +73,37 @@ ul {
 
 
 .glitch {
-    font-size: 8.125em;
+    font-size: 3.125em;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
-    /* position: absolute; */
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    position: relative;
+    /* top: 50%;
+    left: 50%; */
+    /* -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); */
     margin: 0;
     color: #fff;
-    letter-spacing: 5px;
+    /* letter-spacing: 5px; */
   }
   .glitch:before, .glitch:after {
     display: block;
     content: attr(data-glitch);
     text-transform: uppercase;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -4.2px;
+    left: 0px;
     height: 100%;
     width: 100%;
-    opacity: .8;
+	opacity: .8;
   }
   .glitch:after {
-    color: #f0f;
+    color: #d600ff;
     z-index: -2;
   }
   .glitch:before {
-    color: #0ff;
+    color: #001eff;
     z-index: -1;
   }
   .glitch:hover:before {
