@@ -1,3 +1,5 @@
+@import url('css/glitch.css');
+
 body {
 	background-image: url('/images/IMG_4042.jpg');
 	background-repeat: no-repeat;
@@ -12,9 +14,6 @@ body p {
 body p:after {
     content:"\a";
     white-space: pre;
-}
-body a {
-	color: whitesmoke; 
 }
 
 .navigation {
