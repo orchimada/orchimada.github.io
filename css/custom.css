@@ -24,7 +24,11 @@ div #Title{
 }
 
 .navigation {
-	text-transform: uppercase;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: black;
+  text-align: center;
+  color: white;
 }
 
 #main > div:not(:first-child) {
@@ -32,37 +36,43 @@ div #Title{
 }
 
 #projects_switch {
-	background-color: rgba(188,214,227,0.5);
+  /* background-color: rgba(188,214,227,0.5); */
+  background-color: transparent;
 }
 
 #notes_block {
 	padding: 2%;
 	border-radius: 1px;
-	background-color: rgba(188,214,227,0.5);
+  /* background-color: rgba(188,214,227,0.5); */
+  background-color: transparent;
 }
 
 #books_switch {
-	background-color: rgba(227,228,230,0.5);
+  /* background-color: rgba(227,228,230,0.5); */
+  background-color: transparent;
 }
 
 #books_block {
-	background-color: rgba(227,228,230,0.5);
+	/* background-color: rgba(227,228,230,0.5); */
 	padding: 2%;
-	border-radius: 1px;
+  border-radius: 1px;
+  background-color: transparent;
 }
 
 #tools_switch {
-	background-color: rgba(224,203,172,0.5);
+  /* background-color: rgba(224,203,172,0.5); */
+  background-color: transparent;
 }
 
 #reads_block {
-	background-color: rgba(224,203,172,0.5);
+  /* background-color: rgba(224,203,172,0.5); */
+  background-color: transparent;
 	padding: 2%;
 	border-radius: 1px;
 }
 
 #music_switch {
-	background-color: rgba();
+  background-color: transparent;
 }
 
 #music_block {
