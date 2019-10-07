@@ -123,7 +123,7 @@ ul {
       font-size: 3em;
 	}
 
-@media only screen and (max-width: 400px) {
+@media only screen and (min-width: 900px) {
 	.glitch:after, .glitch:before {
 		display:none;
 	}
