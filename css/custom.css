@@ -5,7 +5,12 @@ body {
 }
 
 body p {
-	background-color:white;
+	color: white;
+	background-color:black;
+}
+body p:after {
+    content:"\a";
+    white-space: pre;
 }
 
 .navigation {
