@@ -2,6 +2,7 @@ body {
 	background-image: url('/images/IMG_4042.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	font-size: 15px;
 }
 
 body p {
@@ -12,6 +13,9 @@ body p:after {
     content:"\a";
     white-space: pre;
 }
+body a {
+	color: whitesmoke; 
+}
 
 .navigation {
 }
@@ -19,8 +23,6 @@ body p:after {
 #main > div:not(:first-child) {
 	display: none;
 }
-
-
 
 #projects_switch {
 	background-color: rgba(188,214,227,0.5);
