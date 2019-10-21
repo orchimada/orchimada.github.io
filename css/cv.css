@@ -1,0 +1,48 @@
+body {
+    width:       50%; 
+    margin:      auto;	
+	font-size:   13pt;
+	color:       #222;
+	background:  #fbfbfb;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	line-height: 1.4;
+	margin:      10%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	color:      #212259;
+}
+
+h1 {
+	font-size:     3em;
+	line-height:   1;
+	margin-bottom: 0.5em;
+	margin-top:    2em;
+}
+
+h2 {
+	font-size:     2em;
+	margin-bottom: 0.75em;
+	margin-top:    1.5em;
+}
+
+h3 {
+	font-size:   1.5em;
+	line-height: 1;
+	margin-top:  1.5em;
+}
+
+a:focus, a:hover {
+	color: #09f;
+}
+
+a {
+	color:           #f5b5d2;
+	text-decoration: underline;
+}
+
+blockquote {
+	margin: 1.5em;
+	color:  #666;
+}
