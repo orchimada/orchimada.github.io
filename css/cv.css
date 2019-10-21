@@ -6,12 +6,12 @@ body {
 	background:  #fbfbfb;
 	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 	line-height: 1.4;
-	margin:      10%;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
-	color:      #212259;
+    color:        #212259;
+    text-transform: capitalize;
 }
 
 h1 {
@@ -34,15 +34,15 @@ h3 {
 }
 
 a:focus, a:hover {
-	color: #09f;
+	color: #f5b5d2;
 }
 
 a {
-	color:           #f5b5d2;
+	color:           #09f;
 	text-decoration: underline;
 }
 
 blockquote {
 	margin: 1.5em;
-	color:  #666;
+	color:  rgb(19, 53, 128);
 }
