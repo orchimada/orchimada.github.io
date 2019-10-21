@@ -10,7 +10,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
-    color:        black;
+    color:     #2e2e2e;
 }
 
 h1 {
@@ -43,9 +43,14 @@ a {
 	text-decoration: underline;
 }
 
+a #easter {
+    color:       #2e2e2e;
+}
+
 blockquote {
 	margin: 1.5em;
     color:  #999999;
-    font-weight: bolder;
     font-size: 1.2em;
+    font-style: italic;
+    padding: 0.5%;
 }
