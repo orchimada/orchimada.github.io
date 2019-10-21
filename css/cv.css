@@ -10,21 +10,22 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
-    color:        #212259;
-    text-transform: capitalize;
+    color:        black;
 }
 
 h1 {
 	font-size:     3em;
 	line-height:   1;
 	margin-bottom: 0.5em;
-	margin-top:    2em;
+    margin-top:    2em;
+    text-transform: uppercase;
 }
 
 h2 {
 	font-size:     2em;
 	margin-bottom: 0.75em;
-	margin-top:    1.5em;
+    margin-top:    1.5em;
+    text-transform: uppercase;
 }
 
 h3 {
@@ -34,15 +35,17 @@ h3 {
 }
 
 a:focus, a:hover {
-	color: #f5b5d2;
+	color: #999999;
 }
 
 a {
-	color:           #09f;
+	color:           #86c6be;
 	text-decoration: underline;
 }
 
 blockquote {
 	margin: 1.5em;
-	color:  rgb(19, 53, 128);
+    color:  #999999;
+    font-weight: bolder;
+    font-size: 1.2em;
 }
