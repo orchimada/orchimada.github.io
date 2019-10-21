@@ -1,5 +1,30 @@
+@media only screen and (max-width: 700px) {
+    body {
+        width: 70%;
+    }
+    .wrapper {
+        display:none;
+    }
+    .mobile-disclaimer {
+        display:inline-block;
+      }
+  }
+
+@media only screen and (min-width: 701px) { 
+    body {
+        width:50%;
+    }
+    .mobile-disclaimer {
+        display:none;
+    }
+}
+
+.mobile-disclaimer {
+    width: 60%;
+    margin: auto;
+}
+
 body {
-    width:       50%; 
     margin:      auto;	
 	font-size:   13pt;
 	color:       #2e2e2e;
@@ -43,9 +68,9 @@ a {
 	text-decoration: underline;
 }
 
-a #easter {
+a#easter {
     color:       #2e2e2e;
-    text-decoration: none;
+    text-decoration: no;
 }
 
 blockquote {
