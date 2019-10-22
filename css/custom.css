@@ -28,11 +28,13 @@ div#main {
 }
 
 .navigation {
-  text-transform: uppercase;
-  font-weight: 700;
+  text-transform:   uppercase;
+  font-weight:      700;
   background-color: black;
-  text-align: center;
-  color: #fff;
+  text-align:       center;
+  color:            #fff;
+  margin-left:      0 !important;
+  margin-right:     0 !important; 
 }
 
 #main > div:not(:first-child) {
