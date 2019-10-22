@@ -10,7 +10,7 @@ body a:hover {
 	color:white;
 }
 body p {
-	color: white;
+	color: #fff;
 	background-color: black;
 	position: relative;
 	padding: 2px;
@@ -23,12 +23,16 @@ div #Title{
 	display:inline-block;
 }
 
+div#main {
+  padding:10px;
+}
+
 .navigation {
   text-transform: uppercase;
   font-weight: 700;
   background-color: black;
   text-align: center;
-  color: white;
+  color: #fff;
 }
 
 #main > div:not(:first-child) {
@@ -87,7 +91,7 @@ ul {
 
 
 .glitch {
-    font-size: 1.125em;
+    font-size: 1.525em;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-decoration: none;
