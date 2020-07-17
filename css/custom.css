@@ -7,7 +7,8 @@ body p {
 }
 
 #Header {
-  font-weight:      200;
+  padding:          10px;
+  /* font-weight:      200; */
   /* background-color: #241734; */
 }
 
@@ -18,13 +19,23 @@ body p {
 	/* background-color: #241734; */
 }
 
-#telegramIcon::before {
+#telegramIcon:before {
   content: "";
-  display: block;
-  background-image: url('images/telegram.png') no-repeat;
+  display: inline-block;
+  background-image: url('images/telegram.png');
   width: 20px;
   height: 20px;
-  float: left;
+  /* float: left; */
+  
+}
+
+#emailIcon:before {
+  content: "";
+  display: inline-block;
+  background-image: url('images/email.jpg');
+  width: 20px;
+  height: 20px;
+  /* float: left; */
   
 }
 
