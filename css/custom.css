@@ -18,8 +18,14 @@ body p {
 	/* background-color: #241734; */
 }
 
-#telegramIcon {
-
+#telegramIcon::before {
+  content: "";
+  display: block;
+  background-image: url('images/telegram.png') no-repeat;
+  width: 20px;
+  height: 20px;
+  float: left;
+  
 }
 
 #emailIcon {
