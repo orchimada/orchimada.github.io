@@ -7,16 +7,19 @@ body p {
 }
 
 #Header {
-  padding:          10px;
-  /* font-weight:      200; */
+  margin-top: 2.5%;
+  font-weight:      200; 
   /* background-color: #241734; */
 }
 
 #Header p {
-  color: whitesmoke;
-  font-size: 146%;
-  padding: 10px;
+  color:     #0f1421;
+  font-size: 120%;
 	/* background-color: #241734; */
+}
+
+#Header h3 {
+  font-weight: 250;
 }
 /* 
 #telegramIcon:before {
@@ -43,15 +46,11 @@ body p {
   
 } */
 
-#emailIcon {
-
-}
-
-
 #Services h3{
-  font-weight:      500;
+  font-weight:      200;
   color:            whitesmoke;
   background-color: #0f1421;
+  padding-left: 10px;
 
 }
 
@@ -77,7 +76,7 @@ body p {
   background-color: #0f1421;
 }
 .navigation button {
-  font-weight:      500;
+  font-weight:      300;
   /* background-color: #F6019D; */
   text-align:       center;
   color:            #0f1421;
