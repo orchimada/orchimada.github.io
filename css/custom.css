@@ -18,19 +18,27 @@ body p {
 	/* background-color: #241734; */
 }
 
+#telegramIcon {
+
+}
+
+#emailIcon {
+
+}
+
+
 #Services h3{
-  text-transform: uppercase;
-  font-weight: 500;
-  color: whitesmoke;
-  background-color: black;
+  font-weight:      500;
+  color:            whitesmoke;
+  background-color: #0f1421;
 
 }
 
 #Services .descriptor {
   padding:          5px;
-  color:            black;
+  color:            #0f1421;
   font-weight:      250;
-  background-color: #efefef;
+  background-color: #f1f6f9;
 }
 
 #Misc {
@@ -45,19 +53,22 @@ body p {
 #playlist p {
   color:            white;
   font-weight:      bold;
-  background-color: black;
+  background-color: #0f1421;
 }
 .navigation button {
   font-weight:      500;
-  background-color: #F6019D;
+  /* background-color: #F6019D; */
   text-align:       center;
-  color:            whitesmoke;
- 
+  color:            #0f1421;
+  background-image: linear-gradient(to top,#cfd9df 0,#e2ebf0 100%);
+  /* box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important; */
 }
 
+
+
 #miscInfo {
-  color:            black;
-  background-color: #efefef;
+  color:            #0f1421;
+  background-color: #f1f6f9;
 }
 
 ul {
