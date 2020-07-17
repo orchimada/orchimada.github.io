@@ -23,8 +23,10 @@ body p {
   content: "";
   display: inline-block;
   background-image: url('images/telegram.png');
-  width: 20px;
-  height: 20px;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
   /* float: left; */
   
 }
@@ -32,9 +34,11 @@ body p {
 #emailIcon:before {
   content: "";
   display: inline-block;
-  background-image: url('images/email.jpg');
-  width: 20px;
-  height: 20px;
+  background-image: url('images/email.png');
+  background-size: 15px;
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
   /* float: left; */
   
 }
