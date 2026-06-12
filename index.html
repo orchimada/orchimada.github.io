@@ -801,11 +801,27 @@
     @media (max-width: 680px) {
       .hero-inner {
         flex-direction: column-reverse;
-        align-items: flex-start;
-        gap: 28px;
+        align-items: center;
+        gap: 26px;
+        text-align: center;
       }
-      .hero-photo { width: 116px; }
-      .hero-photo img { border-radius: 50%; }
+      .hero-bio { margin-left: auto; margin-right: auto; }
+      .hero-badges, .contacts { justify-content: center; }
+      /* circular avatar zoomed to the face */
+      .hero-photo {
+        width: 148px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,.18);
+        box-shadow: 0 16px 44px rgba(0,0,0,.45);
+      }
+      .hero-photo img {
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        transform: scale(1.35);
+        transform-origin: 50% 22%;
+      }
     }
 
     @media (max-width: 600px) {
