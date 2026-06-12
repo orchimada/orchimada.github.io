@@ -146,6 +146,67 @@
       border-color: rgba(255,255,255,.22);
     }
 
+    .hero-services {
+      max-width: 560px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero-services-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      margin-bottom: 10px;
+    }
+
+    .hero-services-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hero-services-list li {
+      font-size: .86rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.72);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .hero-services-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: rgba(255,255,255,.28);
+      font-size: .8rem;
+    }
+
+    .hero-strengths {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    .hero-strengths span {
+      font-size: .74rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.5);
+      border: 1px solid rgba(255,255,255,.10);
+      letter-spacing: .01em;
+    }
+
     /* ── Filter bar ──────────────────────────────────────────── */
     .filter-bar {
       position: sticky;
@@ -461,8 +522,24 @@
     </div>
     <h1>Tyoma Domozhakov</h1>
     <p class="hero-role">CPO · Cluster Lead · Personalization & Growth</p>
-    <!-- UPDATE: replace bio below with your LinkedIn "About" section -->
-    <p class="hero-bio">Product leader specializing in personalization and recommendation systems. I help founders and product teams launch technology projects in B2B and B2B2C — from rapid hypothesis testing to scaling ML-driven growth at tens of millions of users.</p>
+    <p class="hero-bio">Led cross-ecosystem personalization initiatives at Sber and Magnit, driving measurable outcomes — GMV growth, ARPPU, Reach, and Retention. Versatile at the intersection of machine learning, growth strategy, and commercial accountability. Building from 0&nbsp;to&nbsp;1, managing legal and stakeholder complexity, scaling winning experiments across large user bases.</p>
+
+    <div class="hero-services">
+      <p class="hero-services-label">Hit DMs if you or your team wants to:</p>
+      <ul class="hero-services-list">
+        <li>Set up a fast-paced discovery and experimentation environment where data turns into knowledge, insights, and actions</li>
+        <li>Create a cross-functional virtual team (Amazon-style) for a project on the intersection of several domains — and succeed with it</li>
+        <li>Estimate AI initiatives and find out which are fads and which should be implemented ASAP</li>
+      </ul>
+    </div>
+
+    <div class="hero-strengths">
+      <span>Evidence-based prioritization</span>
+      <span>Board-ready outcomes</span>
+      <span>Cross-functional velocity</span>
+      <span>Stakeholder alignment</span>
+    </div>
+
     <div class="contacts">
       <a href="https://t.me/orchimada" target="_blank" rel="noopener">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22-1.97 9.28c-.14.66-.54.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L7.24 13.62l-2.98-.94c-.65-.2-.66-.65.14-.96l11.67-4.5c.54-.19 1.01.13.82.99z"/></svg>
