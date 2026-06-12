@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tyoma Domozhakov — CV</title>
+  <meta name="description" content="CPO | Cluster Lead. Helping founders and product teams launch technology projects in B2B and B2B2C segments.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-106223856-1');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #f7f6f4;
+      --surface:  #ffffff;
+      --text:     #1a1a1a;
+      --muted:    #6b7280;
+      --accent:   #1d3557;
+      --accent2:  #457b9d;
+      --border:   #e5e7eb;
+      --tag-bg:   #eef2f7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 28px;
+      margin-bottom: 40px;
+    }
+
+    .cv-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    .cv-header .subtitle {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 6px;
+      letter-spacing: 0.4px;
+    }
+
+    .cv-header .contacts {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.88rem;
+    }
+
+    .cv-header .contacts a {
+      color: var(--accent2);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .cv-header .contacts a:hover { color: var(--accent); }
+
+    .cv-header .contacts a svg {
+      flex-shrink: 0;
+    }
+
+    /* ── Summary ── */
+    .summary {
+      background: var(--surface);
+      border-left: 3px solid var(--accent2);
+      padding: 16px 20px;
+      margin-bottom: 44px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    /* ── Sections ── */
+    section { margin-bottom: 44px; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Experience entries ── */
+    .exp-list { display: flex; flex-direction: column; gap: 36px; }
+
+    .exp-entry { position: relative; padding-left: 20px; }
+
+    .exp-entry::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent2);
+      border: 2px solid var(--accent);
+    }
+
+    .exp-header { margin-bottom: 4px; }
+
+    .exp-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .exp-company {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .exp-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin: 6px 0 10px;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 2px 9px;
+      border-radius: 12px;
+    }
+
+    .date-tag {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .exp-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .exp-achievements h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .exp-achievements ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .exp-achievements li {
+      font-size: 0.9rem;
+      padding-left: 16px;
+      position: relative;
+      color: var(--text);
+    }
+
+    .exp-achievements li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-size: 0.82rem;
+      top: 1px;
+    }
+
+    /* ── Additional info ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .info-card h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .info-card p, .info-card li {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .info-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .info-card li::before {
+      content: '·  ';
+      color: var(--accent2);
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: white; font-size: 13px; }
+      .page { padding: 20px; }
+      .exp-achievements li, .exp-description { font-size: 12px; }
+      .cv-header h1 { font-size: 2rem; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .cv-header h1 { font-size: 2rem; }
+      .page { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header class="cv-header">
+    <h1>Tyoma Domozhakov</h1>
+    <p class="subtitle">CPO &nbsp;|&nbsp; Cluster Lead</p>
+    <div class="contacts">
+      <a href="https://t.me/orchimada" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.242 13.62l-2.98-.937c-.648-.204-.66-.648.135-.961l11.666-4.498c.54-.194 1.01.131.831.997z"/></svg>
+        @orchimada
+      </a>
+      <a href="mailto:art.lyarsky@gmail.com">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        art.lyarsky@gmail.com
+      </a>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <div class="summary">
+    I help founders and product teams launch technology projects in B2B and B2B2C segments.
+  </div>
+
+  <!-- Experience -->
+  <section>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="exp-list">
+
+      <!-- Magnit OMNI -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-role">Head of Personalization</div>
+          <div class="exp-company">Magnit OMNI</div>
+        </div>
+        <div class="exp-meta">
+          <span class="tag">Mobile Application &amp; Ecosystem</span>
+          <span class="date-tag">July 2025 — Present</span>
+        </div>
+        <p class="exp-description">Led personalization projects under the CHANGE approach: transitioning from segment-based to individual offer selection, growth-hacking hypotheses, and process/infrastructure transformation.</p>
+        <div class="exp-achievements">
+          <h4>Key Achievements</h4>
+          <ul>
+            <li>Built a process for launching and testing growth hypotheses in the mobile app (MAU 20M): go-to-market time for a test — one week.</li>
+            <li>Implemented ML-based audience selection (look-alike user acquisition for subscription product, targeting purchase-prone users): 10× business impact (2M RUB retail turnover in control group vs. 30M in test group).</li>
+            <li>Launched 20+ tests in under six months, 7 of which were successful — scaled to the full user base.</li>
+            <li>Launched and maintained personalization of the "cashback categories" product: from 20 shared categories to 200 total. Individual category selection per customer via ML model — 2× growth in active user base (4.7M → 10M MAU for the feature).</li>
+            <li>Q2 2026 upgrade: from 200 to 1,068 categories with ML-based per-customer selection — reduced investment volume without a drop in ARPPU, enabling per-customer economic management.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sber -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-role">Personalization Projects Lead</div>
+          <div class="exp-company">Sber</div>
+        </div>
+        <div class="exp-meta">
+          <span class="tag">Unified B2C Personalization Platform</span>
+          <span class="date-tag">February 2022 — July 2025</span>
+        </div>
+        <p class="exp-description">Responsible for time-to-market of personalization projects and the business impact of personalization scenarios. Launched personalization across Megamarket, SberSpasibo, Zvuk, Netologia, SberZdorovye, Edutoria, SberAvto, SberAds, MRIYA Resort &amp; SPA, SberLead, and OKKO.</p>
+        <div class="exp-achievements">
+          <h4>Key Achievements</h4>
+          <ul>
+            <li>Launched personalization in Megamarket (homepage shelf, cart, product cards): GMV from recommendations grew by 5%+. Partner dropped their third-party SaaS in favor of our product.</li>
+            <li>Launched the "Power of Sound" scenario in Zvuk (streaming): Average Time Spent grew to 4.2 hours in-app.</li>
+            <li>Launched transformer-based organization recommendations in the 2GIS mobile app: 2× coverage increase, 1.5× CTR increase.</li>
+            <li>Launched personalized service selections at MRIYA Resort &amp; SPA on SberTV: 2.4× GMV from recommendations.</li>
+            <li>Fastest launch to date at Netologia — 4 weeks from brief to production-ready A/B test.</li>
+            <li>Developed a "Rules for the Use of Recommendation Technologies" template — now used across several ecosystem companies, enabling projects to proceed without legal blockers.</li>
+            <li>Developed a model for assessing the impact of personalization on KPIs across key industries (e-commerce, entertainment).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Antison -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-role">PMM</div>
+          <div class="exp-company">Antison</div>
+        </div>
+        <div class="exp-meta">
+          <span class="tag">Driver Condition Monitoring System</span>
+          <span class="date-tag">November 2019 — September 2021</span>
+        </div>
+        <p class="exp-description">Responsible for new client acquisition, pilot launches, and conversion to commercial contracts.</p>
+        <div class="exp-achievements">
+          <h4>Key Achievements</h4>
+          <ul>
+            <li>Secured Skolkovo residency for the project (tax benefits, access to cluster infrastructure).</li>
+            <li>Completed the Sber &amp; 500Startups acceleration program (Sber500) — pitched before Herman Gref and Sber ecosystem leadership; secured strong PR and direct ecosystem engagement.</li>
+            <li>Acquired and brought to pilot stage: SladkayaZhizn+ (logistics), Kastor Group (hazmat transport), Unilever, Norilsk Nickel, LENTA.</li>
+            <li>Attracted key partners: Sinara Transport Machines and Renaissance Insurance.</li>
+            <li>Prepared an implementation case for GUP Mosgortrans — recognized as best in "Logistics" category by Rusbase Digital Awards 2021.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Fluence Labs -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-role">PMM &amp; Investor / Developer Relations Lead</div>
+          <div class="exp-company">Fluence Labs</div>
+        </div>
+        <div class="exp-meta">
+          <span class="tag">Decentralized Platform for Serverless Computing</span>
+          <span class="date-tag">November 2017 — October 2019</span>
+        </div>
+        <p class="exp-description">Responsible for relationships with early and new investors, blog reach in target segments (investors and developers), and brand awareness within the community.</p>
+        <div class="exp-achievements">
+          <h4>Key Achievements</h4>
+          <ul>
+            <li>Conducted a DApp Survey on decentralized applications — 3K views in the first 24 hours, featured in VentureBeat and Hackernoon.</li>
+            <li>Ran developer events in Berlin, Minsk, and Moscow that attracted new users to the product.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Additional Info -->
+  <section>
+    <h2 class="section-title">Additional Information</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>Education</h4>
+        <p>Faculty of Physics<br>Novosibirsk State University<br>Department of Semiconductor Physics</p>
+      </div>
+      <div class="info-card">
+        <h4>Languages</h4>
+        <ul>
+          <li>Russian — Native</li>
+          <li>English — C1</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>Technical Skills</h4>
+        <ul>
+          <li>Jira, Confluence, project management systems</li>
+          <li>Python (web scraping, data analytics)</li>
+          <li>draw.io, systems analysis &amp; architecture documentation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
