@@ -1,166 +1,1201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-106223856-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-106223856-1');
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PTKTXMX');</script>
-<!-- End Google Tag Manager -->
- <!-- Custom scripts and navigation handling
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script>
-  $(function(){
-  $('[data-target]').on('click', function(){
-    var target = $(this).data('target');
-    $(target).siblings().hide().end().show();
-  });
-});
-</script>
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>A Cabinet of Curiosities</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-   
-  <!-- Yandex Webmaster-->
-  <meta name="yandex-verification" content="41d74f130091fa53" />
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artem Domozhakov — CPO · Personalization &amp; Growth</title>
+  <meta name="description" content="Product Leadership | Growth-hacking | Unit Economics. Personalization and growth for tens of millions of users at Sber and Magnit OMNI.">
+  <meta name="yandex-verification" content="41d74f130091fa53">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Artem Domozhakov — CPO · Personalization & Growth">
+  <meta property="og:description" content="Led cross-ecosystem personalization at Sber and Magnit OMNI: GMV, ARPPU, reach, and retention at 20M+ MAU scale.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://orchimada.github.io/">
+  <meta property="og:image" content="https://orchimada.github.io/assets/hero_portrait.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Artem Domozhakov — CPO · Personalization & Growth">
+  <meta name="twitter:description" content="Led cross-ecosystem personalization at Sber and Magnit OMNI: GMV, ARPPU, reach, and retention at 20M+ MAU scale.">
+  <meta name="twitter:image" content="https://orchimada.github.io/assets/hero_portrait.jpg">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="css/images/favicon.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-106223856-1');
+  </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --surface: #f6f9fc;          /* Stripe's section gray */
+      --text: #0a2540;             /* Stripe's ink navy */
+      --sub: #425466;              /* Stripe's body slate */
+      --muted: #8898aa;
+      --border: #e6ebf1;
+      --radius: 12px;
+
+      --blurple: #635bff;          /* Stripe brand accent */
+
+      --c-product:  #635bff;
+      --c-project:  #059669;
+      --c-growth:   #d97706;
+      --c-creative: #d6336c;
+
+      --bg-product:  #f0efff;
+      --bg-project:  #ecfdf5;
+      --bg-growth:   #fffbeb;
+      --bg-creative: #fdf0f5;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top nav (Stripe pattern: slim transparent bar over hero) ── */
+    .topnav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 60;
+    }
+
+    .topnav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .topnav .brand {
+      font-weight: 700;
+      font-size: .95rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -.01em;
+    }
+
+    .topnav .nav-links {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .topnav .nav-links a {
+      font-size: .82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.62);
+      text-decoration: none;
+      transition: color .15s;
+      white-space: nowrap;
+    }
+
+    .topnav .nav-links a:hover { color: #fff; }
+
+    /* arrow micro-interaction (Stripe pattern) */
+    .arrow-link .arr {
+      display: inline-block;
+      transition: transform .18s ease;
+    }
+    .arrow-link:hover .arr { transform: translateX(3px); }
+
+    /* ── Hero (Stripe pattern: angled bottom edge + animated gradient) ── */
+    .hero {
+      position: relative;
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 10%, rgba(99,91,255,.25) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 90%, rgba(214,51,108,.14) 0%, transparent 60%),
+        linear-gradient(160deg, #080c18 0%, #0f1629 55%, #1a0f33 100%);
+      background-size: 100% 100%, 100% 100%, 200% 200%;
+      animation: heroShift 14s ease-in-out infinite alternate;
+      color: #fff;
+      padding: 120px 24px 110px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 56px), 0 100%);
+    }
+
+    @keyframes heroShift {
+      0%   { background-position: 0% 0%, 0% 0%, 0% 0%; }
+      100% { background-position: 0% 0%, 0% 0%, 100% 100%; }
+    }
+
+    .hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-text { flex: 1; min-width: 0; }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 232px;
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 24px 60px rgba(0,0,0,.45);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.6);
+    }
+
+    .badge--open {
+      border-color: rgba(52,211,153,.3);
+      background: rgba(52,211,153,.08);
+      color: #6ee7b7;
+    }
+
+    .badge .pulse {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 0 0 rgba(52,211,153,.5);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(52,211,153,.5); }
+      70%  { box-shadow: 0 0 0 6px rgba(52,211,153,0); }
+      100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 8vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      overflow-wrap: break-word;
+      background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+    }
+
+    .hero-role {
+      font-size: .92rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.65);
+      letter-spacing: .02em;
+      margin-bottom: 6px;
+    }
+
+    .hero-role .sep { color: rgba(255,255,255,.28); padding: 0 4px; }
+
+    .hero-value {
+      font-size: .85rem;
+      font-weight: 400;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 22px;
+    }
+
+    .hero-value strong { color: rgba(255,255,255,.7); font-weight: 500; }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.82);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .hero-bio strong { font-weight: 600; color: #fff; }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contacts a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 15px;
+      min-height: 38px;
+      border-radius: 100px;
+      font-size: .82rem;
+      font-weight: 500;
+      text-decoration: none;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.85);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: background .15s, border-color .15s;
+    }
+
+    .contacts a:hover {
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.22);
+    }
+
+    .contacts a.primary {
+      background: #fff;
+      color: #0f1629;
+      border-color: #fff;
+    }
+
+    .contacts a.primary:hover { background: rgba(255,255,255,.88); }
+
+    /* ── Stats strip (Stripe pattern: metric-driven callouts) ── */
+    .stats {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 24px 8px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+    }
+
+    .stat .num {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .stat .cap {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.45;
+      margin-top: 2px;
+    }
+
+    /* ── Logo strip (Stripe pattern: social proof row) ── */
+    .logos {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 24px 24px 0;
+    }
+
+    .logos .cap {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .logos .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 26px;
+      align-items: baseline;
+    }
+
+    .logos .row span {
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: #aab7c4;
+    }
+
+    /* ── Filter bar ──────────────────────────────────────────── */
+    .filter-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      margin-top: 36px;
+    }
+
+    .filter-bar-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 54px;
+    }
+
+    .filter-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .f-scroll-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .f-scroll-wrap::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 28px;
+      background: linear-gradient(to left, rgba(255,255,255,.95), transparent);
+      pointer-events: none;
+    }
+
+    .f-scroll {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-right: 28px;
+    }
+
+    .f-scroll::-webkit-scrollbar { display: none; }
+
+    .f-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 13px;
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      color: var(--sub);
+      transition: all .18s ease;
+    }
+
+    .f-btn .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      transition: background .18s;
+    }
+
+    .f-btn[data-f="product"] .dot  { background: var(--c-product); }
+    .f-btn[data-f="project"] .dot  { background: var(--c-project); }
+    .f-btn[data-f="growth"] .dot   { background: var(--c-growth); }
+    .f-btn[data-f="creative"] .dot { background: var(--c-creative); }
+
+    .f-btn[data-f="product"].active  { background: var(--c-product);  border-color: var(--c-product);  color: #fff; }
+    .f-btn[data-f="project"].active  { background: var(--c-project);  border-color: var(--c-project);  color: #fff; }
+    .f-btn[data-f="growth"].active   { background: var(--c-growth);   border-color: var(--c-growth);   color: #fff; }
+    .f-btn[data-f="creative"].active { background: var(--c-creative); border-color: var(--c-creative); color: #fff; }
+
+    .f-btn.active .dot { background: rgba(255,255,255,.7); }
+
+    .f-btn:hover:not(.active) {
+      border-color: #aab7c4;
+      background: var(--surface);
+    }
+
+    .f-clear {
+      flex-shrink: 0;
+      padding: 6px 12px;
+      border-radius: 100px;
+      font-size: .78rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      background: var(--surface);
+      color: var(--muted);
+      white-space: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .15s;
+    }
+
+    .f-clear.visible { visibility: visible; opacity: 1; }
+    .f-clear:hover { color: var(--text); border-color: var(--border); }
+
+    /* ── Main layout ─────────────────────────────────────────── */
+    .main { max-width: 700px; margin: 0 auto; padding: 44px 24px 80px; }
+
+    .section-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--blurple);
+      margin-bottom: 8px;
+    }
+
+    .section-hint {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .section-hint a, .earlier-hint a {
+      color: var(--blurple);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed currentColor;
+      cursor: pointer;
+    }
+
+    /* ── Job cards ───────────────────────────────────────────── */
+    .jobs { display: flex; flex-direction: column; gap: 14px; margin-bottom: 48px; }
+
+    .job-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .job-card:hover {
+      border-color: #d5dde5;
+      box-shadow: 0 6px 18px rgba(10,37,64,.06);
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 4px;
+    }
+
+    .job-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .job-company {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .job-headline {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--blurple);
+      margin: 6px 0 10px;
+    }
+
+    .job-dates {
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .job-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .chip {
+      font-size: .72rem;
+      font-weight: 500;
+      padding: 2px 9px;
+      border-radius: 100px;
+      background: var(--surface);
+      color: var(--sub);
+      border: 1px solid var(--border);
+    }
+
+    .chip-live {
+      background: #ecfdf5;
+      color: #065f46;
+      border-color: #a7f3d0;
+    }
+
+    .job-desc {
+      font-size: .87rem;
+      color: var(--sub);
+      margin-bottom: 14px;
+      line-height: 1.65;
+    }
+
+    /* ── Bullets ─────────────────────────────────────────────── */
+    .bullets { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+
+    .bullets li {
+      display: flex;
+      gap: 10px;
+      padding: 7px 10px 7px 12px;
+      border-radius: 6px;
+      border-left: 3px solid transparent;
+      transition: opacity .22s ease, border-color .22s ease, background .22s ease;
+    }
+
+    .bullets li .b-icon {
+      margin-top: 9px;
+      flex-shrink: 0;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--muted);
+      transition: background .22s;
+    }
+
+    .bullets li .b-text {
+      font-size: .88rem;
+      color: var(--sub);
+      line-height: 1.6;
+    }
+
+    .bullets li .b-text strong {
+      font-weight: 650;
+      color: var(--text);
+    }
+
+    .bullets li.extra { display: none; }
+    .job-card.expanded .bullets li.extra,
+    body.filtering .bullets li.extra { display: flex; }
+
+    .show-more {
+      margin-top: 8px;
+      padding: 4px 0;
+      border: none;
+      background: none;
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--blurple);
+      cursor: pointer;
+    }
+
+    .show-more:hover { text-decoration: underline; }
+    body.filtering .show-more { display: none; }
+
+    /* ── Filter states ───────────────────────────────────────── */
+    .filter-active .bullets li { opacity: .25; }
+    .filter-active .bullets li.match { opacity: 1; }
+
+    body.f-product  .bullets li.match { border-left-color: var(--c-product);  background: var(--bg-product); }
+    body.f-project  .bullets li.match { border-left-color: var(--c-project);  background: var(--bg-project); }
+    body.f-growth   .bullets li.match { border-left-color: var(--c-growth);   background: var(--bg-growth);  }
+    body.f-creative .bullets li.match { border-left-color: var(--c-creative); background: var(--bg-creative);}
+
+    body.f-product  .bullets li.match .b-icon { background: var(--c-product); }
+    body.f-project  .bullets li.match .b-icon { background: var(--c-project); }
+    body.f-growth   .bullets li.match .b-icon { background: var(--c-growth); }
+    body.f-creative .bullets li.match .b-icon { background: var(--c-creative); }
+
+    .filter-active.no-match .job-role,
+    .filter-active.no-match .job-company,
+    .filter-active.no-match .job-desc,
+    .filter-active.no-match .job-headline { opacity: .35; }
+
+    /* ── Earlier section ─────────────────────────────────────── */
+    .earlier-wrap { margin-bottom: 48px; }
+
+    .earlier-header { margin-bottom: 16px; }
+
+    .earlier-header .section-label { margin-bottom: 4px; }
+
+    .earlier-hint {
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .job-card--earlier {
+      background: var(--surface);
+      border-style: dashed;
+    }
+
+    /* ── Background cards ────────────────────────────────────── */
+    .extra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+
+    .extra-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+
+    .extra-card h4 {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .extra-card p, .extra-card li {
+      font-size: .85rem;
+      color: var(--sub);
+      line-height: 1.6;
+    }
+
+    .extra-card .note {
+      color: var(--muted);
+      font-size: .78rem;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .extra-card ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+
+    .extra-card li::before { content: "· "; color: var(--muted); }
+
+    .extra-card a { color: var(--blurple); text-decoration: none; }
+    .extra-card a:hover { text-decoration: underline; }
+
+    /* ── Footer CTA ──────────────────────────────────────────── */
+    .cta {
+      background:
+        radial-gradient(ellipse 60% 70% at 80% 10%, rgba(99,91,255,.2) 0%, transparent 60%),
+        linear-gradient(160deg, #0f1629 0%, #1a0f33 100%);
+      border-radius: 16px;
+      padding: 36px 32px;
+      color: #fff;
+    }
+
+    .cta .section-label { color: rgba(255,255,255,.4); }
+
+    .cta h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      margin-bottom: 20px;
+    }
+
+    .cta-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .cta-list li {
+      display: flex;
+      gap: 12px;
+      font-size: .9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.78);
+      line-height: 1.6;
+    }
+
+    .cta-list li::before {
+      content: '→';
+      color: rgba(255,255,255,.35);
+      flex-shrink: 0;
+    }
+
+    .cta-list strong { font-weight: 600; color: #fff; }
+
+    .cta-strengths {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 28px;
+    }
+
+    .cta-strengths span {
+      font-size: .73rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.55);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    .footer {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      align-items: baseline;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--sub);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .footer a:hover { color: var(--blurple); }
+
+    /* ── Print ───────────────────────────────────────────────── */
+    @media print {
+      .filter-bar, .show-more, .topnav, .logos { display: none; }
+      .hero { background: none !important; color: var(--text) !important; padding: 20px 0 16px; clip-path: none; animation: none; }
+      .hero h1 { -webkit-text-fill-color: var(--text); }
+      .hero-badges, .contacts { display: none; }
+      .hero-bio { color: var(--sub); }
+      .hero-inner { gap: 24px; }
+      .hero-photo { width: 110px; }
+      .hero-photo img { box-shadow: none; }
+      .main { padding: 16px 0; }
+      .job-card { page-break-inside: avoid; border: 1px solid var(--border); }
+      .bullets li.extra { display: flex; }
+      .cta { background: none; color: var(--text); border: 1px solid var(--border); }
+      .cta h3, .cta-list li, .cta-list strong { color: var(--text); }
+    }
+
+    /* ── Mobile ──────────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .hero-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 28px;
+      }
+      .hero-photo { width: 116px; }
+      .hero-photo img { border-radius: 50%; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 88px 20px 84px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%); }
+      .topnav .brand { display: none; }
+      .topnav-inner { padding: 14px 20px; }
+      .topnav .nav-links { margin-left: 0; }
+      .job-top { flex-direction: column; gap: 4px; }
+      .job-dates { align-self: flex-start; }
+      .main { padding: 28px 16px 64px; }
+      .job-card { padding: 18px 16px; }
+      .contacts a { min-height: 44px; padding: 10px 16px; }
+      .filter-bar-inner { padding: 0 16px; }
+      .cta { padding: 28px 20px; }
+      .stats { padding: 32px 16px 8px; }
+      .logos { padding: 20px 16px 0; }
+    }
+  </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTKTXMX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-<div class="container" style='width:95%; margin:auto'>
-  
-  <div class='row' id='Header'>
-   <div class='col-md-6'>
-      <h3>Артемий Доможаков-Лярский</h3>
-      <p><a href='https://t.me/orchimada' id='telegramIcon'>@orchimada</a> / 
-      <a href='mailto:art.lyarsky@gmail.com' id='emailIcon'>подробности письмом</a></p>
-    </div> 
-    <div class='col-md-6'>
-      <p>Ибо написано: погублю мудрость мудрецов и разум разумных отвергну.</p>
-      <p>(Коринф. 1:19)</p>
-    </div> 
-    
+
+<!-- ── Top nav ────────────────────────────────────────────── -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <a class="brand" href="/">Artem Domozhakov</a>
+    <div class="nav-links">
+      <a class="arrow-link" href="cv.html">the classical version <span class="arr">→</span></a>
+      <a class="arrow-link" href="wh40k.html">Warhammer 40k <span class="arr">→</span></a>
+    </div>
   </div>
+</nav>
 
- 
-
-  <!-- Services -->
-  <div class='row' id='Services'>
-    <div class='col-md-12'>
-    <div class='row' style='margin-top:4%;'>
-      <div class='col-md-6'><h3>Стратегии</h3>
-        <div class='descriptor'>Превратить ограничения в возможности, найти точки роста и рычаги с подходящим плечом.</div>
-        <div class=''></div>
-      </div> 
-
-      <div class='col-md-6'><h3>Исследования</h3>
-        <div class='descriptor'>Нанести на карту Terra Incognita, проследить цепочку ценностей и прочертить путь к цели.</div>
-        <div class=''></div>
-      </div>
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+    <div class="hero-badges">
+      <span class="badge"><span class="pulse"></span>Currently at Magnit OMNI</span>
+      <span class="badge badge--open">DMs open — projects &amp; advisory</span>
     </div>
-    <div class='row' style='margin-top:2%;'>
-      <div class='col-md-6'><h3>Креативный дирекшн</h3>
-        <div class='descriptor'>Одному или с командой создать идею и донести до целевой аудитории не расплескав.</div>
-        <div class=''></div>
-      
-      </div>
-
-      <div class='col-md-6'><h3>Артефакты</h3>
-        <div class='descriptor'>Проработать и оформить ключевые смыслы в инструмент, который поможет другим в их деятельности.</div>
-        <div class=''></div>
-      
-      </div>
+    <h1>Artem Domozhakov</h1>
+    <p class="hero-role">Product Leadership<span class="sep">|</span>Growth-hacking<span class="sep">|</span>Unit Economics</p>
+    <p class="hero-value">All things value: <strong>creation → delivery → capture → scaling</strong></p>
+    <p class="hero-bio">I lead cross-ecosystem <strong>personalization at scale</strong> — Sber, Magnit OMNI — turning ML into measurable outcomes: <strong>GMV, ARPPU, reach, retention</strong>. From 0→1 builds to scaling winning experiments across 20M+ MAU.</p>
+    <div class="contacts">
+      <a class="primary" href="https://t.me/orchimada" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22-1.97 9.28c-.14.66-.54.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L7.24 13.62l-2.98-.94c-.65-.2-.66-.65.14-.96l11.67-4.5c.54-.19 1.01.13.82.99z"/></svg>
+        @orchimada
+      </a>
+      <a href="mailto:art.lyarsky@gmail.com">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <a href="https://linkedin.com/in/orchimada" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
     </div>
+    </div><!-- .hero-text -->
+    <div class="hero-photo">
+      <img src="assets/hero_portrait.jpg" alt="Artem Domozhakov — portrait" width="900" height="900">
     </div>
- </div>
-  <!-- End of Services block -->
- <div class='row' id='Misc'>
-  <div class='col-md-2 navigation'>
-  <button class="btn blue-gradient" type="button" data-toggle="collapse" data-target="#worksList" aria-expanded="false" aria-controls="collapseExample">
-    Посмотреть работы
-  </button></div>
-  <div class='col-md-2 navigation'>
-  <button class="btn purple-gradient" type="button" data-toggle="collapse" data-target="#personal" aria-expanded="false" aria-controls="collapseExample">
-    Узнать меня лучше
-  </button></div>
-  <!--   <div class='col-md-4'><button class="btn btn-default" type="button" data-toggle="collapse" data-target="#openForm" aria-expanded="false" aria-controls="collapseExample">
-    Заполнить бриф
-  </button> -->
-   <!-- <div class='col-md 4'>Делюсь своими наблюдениями о культуре, технологиях и идеях на камерном канале в Telegram.</div> -->
- 
-  
- </div>
-
-<div class='row' id='informationDesk'>
-  <div class='col-md-12 collapse' id='worksList'>
-    <iframe class="airtable-embed" src="https://airtable.com/embed/shrNYwoKBrARnigyF" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 0px solid #ccc;"></iframe>
   </div>
-  <div class='col-md-12 collapse' id='personal'>
-   <div class='row'>
-      <div class='col-md-4' id='playlist'>
-        <p>Stay awhile and listen</p> 
-        <iframe src="https://open.spotify.com/embed/playlist/4uYYhQHP6lZdzczO4YVJck" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      </div>
-      <div class='col-md-5' id='miscInfo'>
-        <p style='font-weight: bold;'>Культура это палимпсест, а общество – карман, который технологии выворачиювают на изнанку.</p>
-        <p>Делюсь своими наблюдениями о культуре, продуктах и технологиях на <a href='https://t.me/orchilux'>камерном канале в Telegram</a></p>
-        <p><a href='https://airtable.com/shr1KCQbDrTEcrGUe'>Архив постов</a></p>
-      </div>
-    </div>
+</section>
+
+<!-- ── Stats strip ────────────────────────────────────────── -->
+<div class="stats">
+  <div class="stat"><div class="num">20M+</div><div class="cap">MAU of the platforms led</div></div>
+  <div class="stat"><div class="num">10×</div><div class="cap">business impact vs. control</div></div>
+  <div class="stat"><div class="num">11+</div><div class="cap">ecosystem products shipped</div></div>
+  <div class="stat"><div class="num">20+</div><div class="cap">experiments in six months</div></div>
+</div>
+
+<!-- ── Logo strip ─────────────────────────────────────────── -->
+<div class="logos">
+  <div class="cap">Built with teams at</div>
+  <div class="row">
+    <span>SBER</span><span>MAGNIT OMNI</span><span>2GIS</span><span>OKKO</span><span>UNILEVER</span><span>NORILSK NICKEL</span><span>LENTA</span>
   </div>
 </div>
 
+<!-- ── Filter bar ─────────────────────────────────────────── -->
+<div class="filter-bar" role="navigation" aria-label="Highlight experience by discipline">
+  <div class="filter-bar-inner">
+    <span class="filter-label">Highlight</span>
+    <div class="f-scroll-wrap">
+      <div class="f-scroll">
+        <button class="f-btn" data-f="product"  onclick="setFilter('product')"><span class="dot"></span>Product</button>
+        <button class="f-btn" data-f="project"  onclick="setFilter('project')"><span class="dot"></span>Project Mgmt</button>
+        <button class="f-btn" data-f="growth"   onclick="setFilter('growth')"><span class="dot"></span>Growth &amp; Economics</button>
+        <button class="f-btn" data-f="creative" onclick="setFilter('creative')"><span class="dot"></span>Creative &amp; Marketing</button>
+      </div>
+    </div>
+    <button class="f-clear" id="clearBtn" onclick="setFilter(null)">✕ Clear</button>
+  </div>
 </div>
-<!-- End Document -->
+
+<!-- ── Main content ───────────────────────────────────────── -->
+<div class="main">
+
+  <div class="section-label">Experience</div>
+  <p class="section-hint">Pick a lens above — e.g. <a onclick="setFilter('growth')">Growth &amp; Economics</a> — to highlight the achievements relevant to you.</p>
+
+  <div class="jobs">
+
+    <!-- ── Magnit OMNI ─────────────────────── -->
+    <article class="job-card" data-job="magnit">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">Head of Personalization</h2>
+          <div class="job-company">Magnit OMNI</div>
+        </div>
+        <div class="job-dates">Jul 2025 — Present</div>
+      </div>
+      <p class="job-headline">↗ 2× feature MAU in six months through ML personalization</p>
+      <div class="job-tags">
+        <span class="chip chip-live">Current role</span>
+        <span class="chip">Mobile App &amp; Ecosystem</span>
+        <span class="chip">MAU 20M</span>
+      </div>
+      <p class="job-desc">Personalization under the CHANGE approach: from segment-based to individual offer selection, growth-hacking hypotheses, and process/infrastructure transformation.</p>
+      <ul class="bullets">
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>10× business impact</strong> from ML look-alike audience selection for the subscription product — 2M RUB retail turnover in control vs. 30M in test.</span>
+        </li>
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>2× feature MAU (4.7M → 10M)</strong> — cashback-categories personalization: from 20 shared categories to 200, selected per customer by an ML model.</span>
+        </li>
+        <li data-tags="project product">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>One-week go-to-market</strong> for growth tests — designed and installed the hypothesis launch &amp; testing process for the 20M-MAU app.</span>
+        </li>
+        <li data-tags="product project">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>20+ experiments in six months</strong>, 7 statistically significant wins — all scaled to the full user base.</span>
+        </li>
+        <li class="extra" data-tags="growth product">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>1,068 categories</strong> in the Q2 2026 upgrade — per-customer ML selection reduced investment volume without an ARPPU drop, enabling per-customer economics.</span>
+        </li>
+      </ul>
+      <button class="show-more" data-label="Show 1 more" onclick="toggleMore(this)">Show 1 more</button>
+    </article>
+
+    <!-- ── Sber ────────────────────────────── -->
+    <article class="job-card" data-job="sber">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">Personalization Projects Lead</h2>
+          <div class="job-company">Sber</div>
+        </div>
+        <div class="job-dates">Feb 2022 — Jul 2025</div>
+      </div>
+      <p class="job-headline">↗ Personalization shipped across 11+ ecosystem products</p>
+      <div class="job-tags">
+        <span class="chip">Unified B2C Personalization Platform</span>
+        <span class="chip">3.5 yrs</span>
+      </div>
+      <p class="job-desc">Owned time-to-market and business impact of personalization scenarios across 11+ ecosystem products — Megamarket, Zvuk, OKKO, 2GIS, SberSpasibo, and others.</p>
+      <ul class="bullets">
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>+5% GMV</strong> from recommendations in Megamarket (homepage shelf, cart, product cards) — the partner dropped their third-party SaaS after our A/B series.</span>
+        </li>
+        <li data-tags="product creative">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>4.2 hours average time in-app</strong> — the disruptive "Power of Sound" scenario in Zvuk streaming.</span>
+        </li>
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>2× coverage, 1.5× CTR</strong> — transformer-based organization recommendations in the 2GIS mobile app dashboard.</span>
+        </li>
+        <li data-tags="product growth creative">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>2.4× GMV</strong> from personalized service selections at MRIYA Resort &amp; SPA on SberTV.</span>
+        </li>
+        <li class="extra" data-tags="project product">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>4 weeks from brief to A/B start</strong> at Netologia — fastest launch on the platform to date.</span>
+        </li>
+        <li class="extra" data-tags="project">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>Legal approval time cut in half</strong> — authored the "Rules for the Use of Recommendation Technologies" template, now adopted across several ecosystem companies.</span>
+        </li>
+        <li class="extra" data-tags="growth product">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>KPI impact model</strong> for assessing personalization effects across e-commerce and entertainment industries.</span>
+        </li>
+      </ul>
+      <button class="show-more" data-label="Show 3 more" onclick="toggleMore(this)">Show 3 more</button>
+    </article>
+
+    <!-- ── Antison ─────────────────────────── -->
+    <article class="job-card" data-job="antison">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">PMM</h2>
+          <div class="job-company">Antison</div>
+        </div>
+        <div class="job-dates">Nov 2019 — Sep 2021</div>
+      </div>
+      <p class="job-headline">↗ Enterprise pilots with Unilever, Norilsk Nickel, and LENTA</p>
+      <div class="job-tags">
+        <span class="chip">Driver Condition Monitoring</span>
+        <span class="chip">B2B SaaS</span>
+      </div>
+      <p class="job-desc">New client acquisition, pilot launches, and conversion to commercial contracts.</p>
+      <ul class="bullets">
+        <li data-tags="growth project">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>5 enterprise pilots</strong> — Unilever, Norilsk Nickel, LENTA, SladkayaZhizn+, Kastor Group; key partners attracted: Sinara Transport Machines, Renaissance Insurance.</span>
+        </li>
+        <li data-tags="creative project">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>Sber500 Demo Day</strong> — full Sber × 500Startups acceleration, pitch before Herman Gref and Sber ecosystem leadership; strong PR and direct ecosystem introductions.</span>
+        </li>
+        <li data-tags="creative growth">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>Best "Logistics" case</strong> at Rusbase Digital Awards 2021 — GUP Mosgortrans implementation.</span>
+        </li>
+        <li class="extra" data-tags="project">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>Skolkovo residency</strong> secured — tax benefits and access to cluster infrastructure.</span>
+        </li>
+        <li class="extra" data-tags="project growth">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>RZhD &amp; Russian Post accelerators</strong> — selected and converted into pilot projects with high implementation potential.</span>
+        </li>
+      </ul>
+      <button class="show-more" data-label="Show 2 more" onclick="toggleMore(this)">Show 2 more</button>
+    </article>
+
+  </div>
+
+  <!-- ── Earlier highlights ─────────────────────────────────── -->
+  <div class="earlier-wrap">
+    <div class="earlier-header">
+      <div class="section-label">Earlier career</div>
+      <span class="earlier-hint">Best viewed through the <a onclick="setFilter('creative')">Creative &amp; Marketing</a> or <a onclick="setFilter('growth')">Growth</a> lens.</span>
+    </div>
+
+    <article class="job-card job-card--earlier" data-job="fluence">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">PMM &amp; Investor / Developer Relations Lead</h2>
+          <div class="job-company">Fluence Labs</div>
+        </div>
+        <div class="job-dates">Nov 2017 — Oct 2019</div>
+      </div>
+      <div class="job-tags">
+        <span class="chip">Decentralized Serverless Computing</span>
+        <span class="chip">Web3</span>
+      </div>
+      <p class="job-desc">Early-investor relations, developer community growth, and brand awareness in target segments.</p>
+      <ul class="bullets">
+        <li data-tags="creative growth">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>3K views in 24 hours</strong> — DApp Survey on decentralized applications, featured in VentureBeat and Hackernoon.</span>
+        </li>
+        <li data-tags="creative project">
+          <span class="b-icon"></span>
+          <span class="b-text"><strong>Developer events</strong> in Berlin, Minsk, and Moscow that brought new users to the platform.</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+
+  <!-- ── Background ─────────────────────────────────────────── -->
+  <div class="section-label" style="margin-bottom:24px">Background</div>
+  <div class="extra-grid">
+    <div class="extra-card">
+      <h4>Education</h4>
+      <p>Faculty of Physics, Novosibirsk State University
+        <span class="note">Semiconductor Physics — statistical &amp; analytical foundation</span>
+      </p>
+    </div>
+    <div class="extra-card">
+      <h4>Methods</h4>
+      <ul>
+        <li>A/B testing &amp; experiment design</li>
+        <li>Unit economics &amp; KPI modeling</li>
+        <li>Evidence-based prioritization</li>
+        <li>Cross-functional virtual teams</li>
+      </ul>
+    </div>
+    <div class="extra-card">
+      <h4>Tools</h4>
+      <ul>
+        <li>Jira, Confluence, Notion</li>
+        <li>Python — scraping &amp; analytics</li>
+        <li>draw.io — systems &amp; architecture docs</li>
+      </ul>
+    </div>
+    <div class="extra-card">
+      <h4>Recognition &amp; Public</h4>
+      <ul>
+        <li>Rusbase Digital Awards 2021 — best Logistics case</li>
+        <li>Featured in VentureBeat, Hackernoon</li>
+        <li><a href="https://t.me/orchilux" target="_blank" rel="noopener">Telegram channel</a> on culture &amp; tech</li>
+      </ul>
+    </div>
+    <div class="extra-card">
+      <h4>Languages</h4>
+      <ul>
+        <li>Russian — Native</li>
+        <li>English — C1</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Footer CTA ─────────────────────────────────────────── -->
+  <section class="cta">
+    <div class="section-label">How I can help</div>
+    <h3>Hit DMs if you or your team wants to:</h3>
+    <ul class="cta-list">
+      <li><strong>Set up a fast-paced discovery &amp; experimentation environment</strong> — where data turns into knowledge, insights, and actions.</li>
+      <li><strong>Create an Amazon-style cross-functional virtual team</strong> — for a project at the intersection of several domains, and succeed with it.</li>
+      <li><strong>Estimate AI initiatives</strong> — find out which are fads and which should be implemented ASAP.</li>
+    </ul>
+    <div class="cta-strengths">
+      <span>Evidence-based prioritization</span>
+      <span>Board-ready outcomes</span>
+      <span>Cross-functional velocity</span>
+      <span>Stakeholder alignment</span>
+    </div>
+    <div class="contacts">
+      <a class="primary" href="https://t.me/orchimada" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22-1.97 9.28c-.14.66-.54.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L7.24 13.62l-2.98-.94c-.65-.2-.66-.65.14-.96l11.67-4.5c.54-.19 1.01.13.82.99z"/></svg>
+        Message @orchimada
+      </a>
+      <a href="mailto:art.lyarsky@gmail.com">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        art.lyarsky@gmail.com
+      </a>
+    </div>
+  </section>
+
+</div><!-- .main -->
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <span>© 2026 Artem Domozhakov</span>
+  <a class="arrow-link" href="cv.html">the classical version <span class="arr">→</span></a>
+  <a class="arrow-link" href="wh40k.html">Warhammer 40k <span class="arr">→</span></a>
+  <a href="https://t.me/orchilux" target="_blank" rel="noopener">Telegram channel</a>
+</footer>
+
+<script>
+  let active = null;
+
+  const FILTER_CLASS = { product: 'f-product', project: 'f-project', growth: 'f-growth', creative: 'f-creative' };
+
+  function setFilter(key) {
+    active = (active === key) ? null : key;
+
+    document.querySelectorAll('.f-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.f === active);
+    });
+
+    document.getElementById('clearBtn').classList.toggle('visible', !!active);
+
+    document.body.classList.toggle('filtering', !!active);
+    Object.values(FILTER_CLASS).forEach(c => document.body.classList.remove(c));
+    if (active) document.body.classList.add(FILTER_CLASS[active]);
+
+    document.querySelectorAll('.job-card').forEach(card => {
+      const bullets = card.querySelectorAll('[data-tags]');
+      let hasMatch = false;
+
+      bullets.forEach(li => {
+        if (!active) {
+          li.classList.remove('match');
+        } else {
+          const m = li.dataset.tags.split(' ').includes(active);
+          li.classList.toggle('match', m);
+          if (m) hasMatch = true;
+        }
+      });
+
+      card.classList.toggle('filter-active', !!active);
+      card.classList.toggle('no-match', !!active && !hasMatch);
+    });
+  }
+
+  function toggleMore(btn) {
+    const card = btn.closest('.job-card');
+    card.classList.toggle('expanded');
+    btn.textContent = card.classList.contains('expanded') ? 'Show less' : btn.dataset.label;
+  }
+
+  const bar = document.querySelector('.filter-bar');
+  window.addEventListener('scroll', () => {
+    bar.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,.08)' : 'none';
+  }, { passive: true });
+</script>
+
 </body>
 </html>
