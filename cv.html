@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tyoma Domozhakov — CV</title>
-  <meta name="description" content="CPO | Cluster Lead. Helping founders and product teams launch technology projects in B2B and B2B2C segments.">
+  <title>Tyoma Domozhakov</title>
+  <meta name="description" content="Product leader specializing in personalization and recommendation systems.">
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,409 +15,731 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #f7f6f4;
-      --surface:  #ffffff;
-      --text:     #1a1a1a;
-      --muted:    #6b7280;
-      --accent:   #1d3557;
-      --accent2:  #457b9d;
-      --border:   #e5e7eb;
-      --tag-bg:   #eef2f7;
+      --bg: #ffffff;
+      --surface: #f9fafb;
+      --text: #111827;
+      --sub: #374151;
+      --muted: #9ca3af;
+      --border: #e5e7eb;
+      --radius: 12px;
+
+      --c-product:  #2563eb;
+      --c-project:  #059669;
+      --c-growth:   #d97706;
+      --c-creative: #7c3aed;
+
+      --bg-product:  #eff6ff;
+      --bg-project:  #ecfdf5;
+      --bg-growth:   #fffbeb;
+      --bg-creative: #f5f3ff;
+
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+      --shadow:    0 1px 3px rgba(0,0,0,.07), 0 8px 24px rgba(0,0,0,.05);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
-      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Layout ── */
-    .page {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
+    /* ── Hero ──────────────────────────────────────────────── */
+    .hero {
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 10%, rgba(99,102,241,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 90%, rgba(139,92,246,.14) 0%, transparent 60%),
+        linear-gradient(160deg, #080c18 0%, #0f1629 55%, #160d2e 100%);
+      color: #fff;
+      padding: 80px 24px 72px;
     }
 
-    /* ── Header ── */
-    .cv-header {
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 28px;
-      margin-bottom: 40px;
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 28px;
     }
 
-    .cv-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: -0.5px;
-      line-height: 1.15;
+    .hero-badge .pulse {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 0 0 rgba(52,211,153,.5);
+      animation: pulse 2s infinite;
     }
 
-    .cv-header .subtitle {
-      font-size: 1.1rem;
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(52,211,153,.5); }
+      70%  { box-shadow: 0 0 0 6px rgba(52,211,153,0); }
+      100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .hero-role {
+      font-size: 1rem;
       font-weight: 400;
-      color: var(--muted);
-      margin-top: 6px;
-      letter-spacing: 0.4px;
+      color: rgba(255,255,255,.55);
+      letter-spacing: .02em;
+      margin-bottom: 24px;
     }
 
-    .cv-header .contacts {
-      margin-top: 14px;
+    .hero-bio {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.8);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .contacts {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      font-size: 0.88rem;
+      gap: 10px;
     }
 
-    .cv-header .contacts a {
-      color: var(--accent2);
-      text-decoration: none;
-      display: flex;
+    .contacts a {
+      display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 100px;
+      font-size: .82rem;
       font-weight: 500;
-      transition: color 0.15s;
+      text-decoration: none;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.85);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: background .15s, border-color .15s;
     }
 
-    .cv-header .contacts a:hover { color: var(--accent); }
-
-    .cv-header .contacts a svg {
-      flex-shrink: 0;
+    .contacts a:hover {
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.22);
     }
 
-    /* ── Summary ── */
-    .summary {
-      background: var(--surface);
-      border-left: 3px solid var(--accent2);
-      padding: 16px 20px;
-      margin-bottom: 44px;
-      border-radius: 0 6px 6px 0;
-      font-size: 0.98rem;
-      color: var(--text);
-    }
-
-    /* ── Sections ── */
-    section { margin-bottom: 44px; }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 24px;
-      padding-bottom: 8px;
+    /* ── Filter bar ──────────────────────────────────────────── */
+    .filter-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
-    /* ── Experience entries ── */
-    .exp-list { display: flex; flex-direction: column; gap: 36px; }
-
-    .exp-entry { position: relative; padding-left: 20px; }
-
-    .exp-entry::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent2);
-      border: 2px solid var(--accent);
+    .filter-bar-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 52px;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
 
-    .exp-header { margin-bottom: 4px; }
+    .filter-bar-inner::-webkit-scrollbar { display: none; }
 
-    .exp-role {
+    .filter-label {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-right: 4px;
+    }
+
+    .f-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      color: var(--sub);
+      transition: all .18s ease;
+    }
+
+    .f-btn .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      transition: background .18s;
+    }
+
+    .f-btn[data-f="product"] .dot  { background: var(--c-product); }
+    .f-btn[data-f="project"] .dot  { background: var(--c-project); }
+    .f-btn[data-f="growth"] .dot   { background: var(--c-growth); }
+    .f-btn[data-f="creative"] .dot { background: var(--c-creative); }
+
+    .f-btn[data-f="product"].active  { background: var(--c-product);  border-color: var(--c-product);  color: #fff; }
+    .f-btn[data-f="project"].active  { background: var(--c-project);  border-color: var(--c-project);  color: #fff; }
+    .f-btn[data-f="growth"].active   { background: var(--c-growth);   border-color: var(--c-growth);   color: #fff; }
+    .f-btn[data-f="creative"].active { background: var(--c-creative); border-color: var(--c-creative); color: #fff; }
+
+    .f-btn.active .dot { background: rgba(255,255,255,.7); }
+
+    .f-btn:hover:not(.active) {
+      border-color: #9ca3af;
+      background: var(--surface);
+    }
+
+    .f-clear {
+      margin-left: auto;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: .78rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--muted);
+      display: none;
+      white-space: nowrap;
+    }
+
+    .f-clear.visible { display: block; }
+    .f-clear:hover { color: var(--text); }
+
+    /* ── Main layout ─────────────────────────────────────────── */
+    .main { max-width: 700px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* ── Section titles ──────────────────────────────────────── */
+    .section-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* ── Job cards ───────────────────────────────────────────── */
+    .jobs { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; }
+
+    .job-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      transition: border-color .2s;
+    }
+
+    .job-card:hover { border-color: #d1d5db; }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .job-role {
       font-size: 1.05rem;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--text);
+      line-height: 1.3;
     }
 
-    .exp-company {
-      font-size: 0.9rem;
+    .job-company {
+      font-size: .85rem;
       color: var(--muted);
-      font-style: italic;
+      margin-top: 2px;
     }
 
-    .exp-meta {
+    .job-dates {
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .job-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      margin: 6px 0 10px;
-    }
-
-    .tag {
-      background: var(--tag-bg);
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 500;
-      padding: 2px 9px;
-      border-radius: 12px;
-    }
-
-    .date-tag {
-      font-size: 0.82rem;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .exp-description {
-      font-size: 0.9rem;
-      color: var(--muted);
+      gap: 6px;
       margin-bottom: 12px;
     }
 
-    .exp-achievements h4 {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      margin-bottom: 8px;
-      font-weight: 600;
+    .chip {
+      font-size: .72rem;
+      font-weight: 500;
+      padding: 2px 9px;
+      border-radius: 100px;
+      background: var(--surface);
+      color: var(--sub);
+      border: 1px solid var(--border);
     }
 
-    .exp-achievements ul {
-      list-style: none;
+    .chip-live {
+      background: #ecfdf5;
+      color: #065f46;
+      border-color: #a7f3d0;
+    }
+
+    .job-desc {
+      font-size: .87rem;
+      color: #4b5563;
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+
+    /* ── Bullets ─────────────────────────────────────────────── */
+    .bullets { list-style: none; display: flex; flex-direction: column; gap: 1px; }
+
+    .bullets li {
       display: flex;
-      flex-direction: column;
-      gap: 6px;
+      gap: 10px;
+      font-size: .88rem;
+      color: var(--sub);
+      padding: 7px 10px 7px 12px;
+      border-radius: 6px;
+      border-left: 3px solid transparent;
+      transition: opacity .22s ease, border-color .22s ease, background .22s ease;
+      line-height: 1.6;
     }
 
-    .exp-achievements li {
-      font-size: 0.9rem;
-      padding-left: 16px;
-      position: relative;
-      color: var(--text);
+    .bullets li .b-icon {
+      margin-top: 5px;
+      flex-shrink: 0;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--muted);
+      transition: background .22s;
     }
 
-    .exp-achievements li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent2);
-      font-size: 0.82rem;
-      top: 1px;
+    /* ── Filter states ───────────────────────────────────────── */
+    .filter-active .bullets li { opacity: .2; }
+
+    .filter-active .bullets li.match {
+      opacity: 1;
+      background: transparent;
     }
 
-    /* ── Additional info ── */
-    .info-grid {
+    /* Per-filter highlight colors */
+    body.f-product  .bullets li.match { border-left-color: var(--c-product);  background: var(--bg-product); }
+    body.f-project  .bullets li.match { border-left-color: var(--c-project);  background: var(--bg-project); }
+    body.f-growth   .bullets li.match { border-left-color: var(--c-growth);   background: var(--bg-growth);  }
+    body.f-creative .bullets li.match { border-left-color: var(--c-creative); background: var(--bg-creative);}
+
+    body.f-product  .bullets li.match .b-icon { background: var(--c-product); }
+    body.f-project  .bullets li.match .b-icon { background: var(--c-project); }
+    body.f-growth   .bullets li.match .b-icon { background: var(--c-growth); }
+    body.f-creative .bullets li.match .b-icon { background: var(--c-creative); }
+
+    /* also dim the desc/header when nothing matches in that card */
+    .filter-active .job-card.no-match .job-role,
+    .filter-active .job-card.no-match .job-company,
+    .filter-active .job-card.no-match .job-desc { opacity: .35; }
+
+    /* ── Earlier section ─────────────────────────────────────── */
+    .earlier-wrap {
+      margin-bottom: 48px;
+    }
+
+    .earlier-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .earlier-header .section-label { margin-bottom: 0; }
+
+    .earlier-hint {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    .job-card--earlier {
+      background: var(--surface);
+      border-style: dashed;
+    }
+
+    /* ── Additional info ─────────────────────────────────────── */
+    .extra-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
     }
 
-    .info-card {
+    .extra-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius);
       padding: 16px 18px;
     }
 
-    .info-card h4 {
-      font-size: 0.78rem;
+    .extra-card h4 {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .09em;
       text-transform: uppercase;
-      letter-spacing: 1px;
       color: var(--muted);
-      font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .info-card p, .info-card li {
-      font-size: 0.9rem;
-      color: var(--text);
+    .extra-card p, .extra-card li {
+      font-size: .87rem;
+      color: var(--sub);
+      line-height: 1.6;
     }
 
-    .info-card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    .extra-card ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
 
-    .info-card li::before {
-      content: '·  ';
-      color: var(--accent2);
-    }
+    .extra-card li::before { content: "· "; color: var(--muted); }
 
-    /* ── Print ── */
+    /* ── Print ───────────────────────────────────────────────── */
     @media print {
-      body { background: white; font-size: 13px; }
-      .page { padding: 20px; }
-      .exp-achievements li, .exp-description { font-size: 12px; }
-      .cv-header h1 { font-size: 2rem; }
+      .filter-bar { display: none; }
+      .hero { background: none !important; color: var(--text) !important; padding: 20px 0 16px; }
+      .hero h1 { -webkit-text-fill-color: var(--text); }
+      .hero-badge, .hero-bio, .contacts { display: none; }
+      .main { padding: 16px 0; }
+      .job-card { page-break-inside: avoid; border: 1px solid var(--border); }
     }
 
-    /* ── Mobile ── */
+    /* ── Mobile ──────────────────────────────────────────────── */
     @media (max-width: 600px) {
-      .cv-header h1 { font-size: 2rem; }
-      .page { padding: 32px 16px 60px; }
+      .hero { padding: 56px 20px 52px; }
+      .job-top { flex-direction: column; gap: 4px; }
+      .job-dates { align-self: flex-start; }
+      .main { padding: 32px 16px 64px; }
+      .job-card { padding: 18px 16px; }
     }
   </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- Header -->
-  <header class="cv-header">
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="pulse"></span>
+      Currently at Magnit OMNI
+    </div>
     <h1>Tyoma Domozhakov</h1>
-    <p class="subtitle">CPO &nbsp;|&nbsp; Cluster Lead</p>
+    <p class="hero-role">CPO · Cluster Lead · Personalization & Growth</p>
+    <!-- UPDATE: replace bio below with your LinkedIn "About" section -->
+    <p class="hero-bio">Product leader specializing in personalization and recommendation systems. I help founders and product teams launch technology projects in B2B and B2B2C — from rapid hypothesis testing to scaling ML-driven growth at tens of millions of users.</p>
     <div class="contacts">
       <a href="https://t.me/orchimada" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.242 13.62l-2.98-.937c-.648-.204-.66-.648.135-.961l11.666-4.498c.54-.194 1.01.131.831.997z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22-1.97 9.28c-.14.66-.54.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12L7.24 13.62l-2.98-.94c-.65-.2-.66-.65.14-.96l11.67-4.5c.54-.19 1.01.13.82.99z"/></svg>
         @orchimada
       </a>
       <a href="mailto:art.lyarsky@gmail.com">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         art.lyarsky@gmail.com
       </a>
+      <a href="https://linkedin.com/in/orchimada" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- Summary -->
-  <div class="summary">
-    I help founders and product teams launch technology projects in B2B and B2B2C segments.
+<!-- ── Filter bar ─────────────────────────────────────────── -->
+<div class="filter-bar" role="navigation" aria-label="Filter by expertise">
+  <div class="filter-bar-inner">
+    <span class="filter-label">Focus</span>
+    <button class="f-btn" data-f="product"  onclick="setFilter('product')"><span class="dot"></span>Product</button>
+    <button class="f-btn" data-f="project"  onclick="setFilter('project')"><span class="dot"></span>Project Mgmt</button>
+    <button class="f-btn" data-f="growth"   onclick="setFilter('growth')"><span class="dot"></span>Growth &amp; Economics</button>
+    <button class="f-btn" data-f="creative" onclick="setFilter('creative')"><span class="dot"></span>Creative &amp; Marketing</button>
+    <button class="f-clear" id="clearBtn" onclick="setFilter(null)">✕ Clear</button>
+  </div>
+</div>
+
+<!-- ── Main content ───────────────────────────────────────── -->
+<div class="main">
+
+  <div class="section-label">Experience</div>
+
+  <div class="jobs">
+
+    <!-- ── Magnit OMNI ─────────────────────── -->
+    <article class="job-card" data-job="magnit">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">Head of Personalization</h2>
+          <div class="job-company">Magnit OMNI</div>
+        </div>
+        <div class="job-dates">Jul 2025 — Present</div>
+      </div>
+      <div class="job-tags">
+        <span class="chip chip-live">Active</span>
+        <span class="chip">Mobile App &amp; Ecosystem</span>
+        <span class="chip">MAU 20M</span>
+      </div>
+      <p class="job-desc">Led personalization under the CHANGE approach — transitioning from segment-based to individual offer selection, growth-hacking hypotheses, and process/infrastructure transformation.</p>
+      <ul class="bullets">
+        <li data-tags="project product">
+          <span class="b-icon"></span>
+          Built a process for launching and testing growth hypotheses in the app: go-to-market for a test — <strong>one week</strong>.
+        </li>
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          ML-based look-alike audience selection for subscription product: <strong>10× business impact</strong> — 2M RUB turnover in control vs. 30M in test group.
+        </li>
+        <li data-tags="product project">
+          <span class="b-icon"></span>
+          Launched 20+ tests in under six months, 7 statistically significant wins — all scaled to full user base.
+        </li>
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          Launched cashback categories personalization: from 20 shared categories to 200 total via ML — <strong>2× MAU growth</strong> for the feature (4.7M → 10M).
+        </li>
+        <li data-tags="growth product">
+          <span class="b-icon"></span>
+          Q2 2026 upgrade to 1,068 categories with per-customer ML selection — reduced investment volume without ARPPU drop, enabling per-customer economics.
+        </li>
+      </ul>
+    </article>
+
+    <!-- ── Sber ────────────────────────────── -->
+    <article class="job-card" data-job="sber">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">Personalization Projects Lead</h2>
+          <div class="job-company">Sber</div>
+        </div>
+        <div class="job-dates">Feb 2022 — Jul 2025</div>
+      </div>
+      <div class="job-tags">
+        <span class="chip">Unified B2C Personalization Platform</span>
+        <span class="chip">3.5 yrs</span>
+      </div>
+      <p class="job-desc">Responsible for time-to-market and business impact of personalization scenarios across the ecosystem: Megamarket, SberSpasibo, Zvuk, Netologia, SberZdorovye, Edutoria, SberAvto, MRIYA Resort, SberLead, OKKO, 2GIS.</p>
+      <ul class="bullets">
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          Megamarket (homepage shelf, cart, product cards): GMV from recommendations <strong>+5%+</strong>. Partner dropped their third-party SaaS after A/B tests.
+        </li>
+        <li data-tags="product creative">
+          <span class="b-icon"></span>
+          "Power of Sound" scenario in Zvuk (streaming): Average Time Spent reached <strong>4.2 hours in-app</strong>.
+        </li>
+        <li data-tags="product growth">
+          <span class="b-icon"></span>
+          Transformer-based org recommendations in 2GIS: <strong>2× coverage, 1.5× CTR</strong> and business-connection actions.
+        </li>
+        <li data-tags="product growth creative">
+          <span class="b-icon"></span>
+          Personalized service selections at MRIYA Resort &amp; SPA on SberTV: <strong>2.4× GMV</strong> from recommendations.
+        </li>
+        <li data-tags="project product">
+          <span class="b-icon"></span>
+          Netologia personalized collections: fastest launch to date — <strong>4 weeks</strong> from brief to production A/B start.
+        </li>
+        <li data-tags="project">
+          <span class="b-icon"></span>
+          Account management &amp; legal coordination for pilot orgs: approval time <strong>cut in half</strong>.
+        </li>
+        <li data-tags="project product">
+          <span class="b-icon"></span>
+          Authored "Rules for the Use of Recommendation Technologies" template — now used across several Sber ecosystem companies, unblocking legal review.
+        </li>
+        <li data-tags="growth product">
+          <span class="b-icon"></span>
+          Developed a model for assessing personalization impact on KPIs across e-commerce and entertainment.
+        </li>
+      </ul>
+    </article>
+
+    <!-- ── Antison ─────────────────────────── -->
+    <article class="job-card" data-job="antison">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">PMM</h2>
+          <div class="job-company">Antison</div>
+        </div>
+        <div class="job-dates">Nov 2019 — Sep 2021</div>
+      </div>
+      <div class="job-tags">
+        <span class="chip">Driver Condition Monitoring</span>
+        <span class="chip">B2B SaaS</span>
+      </div>
+      <p class="job-desc">Responsible for new client acquisition, pilot launches, and conversion to commercial contracts.</p>
+      <ul class="bullets">
+        <li data-tags="project">
+          <span class="b-icon"></span>
+          Secured <strong>Skolkovo residency</strong> — tax benefits and access to cluster infrastructure.
+        </li>
+        <li data-tags="creative project">
+          <span class="b-icon"></span>
+          Completed Sber &amp; 500Startups acceleration (Sber500) — Demo Day pitch before Herman Gref and Sber ecosystem leadership; strong PR and direct ecosystem introductions.
+        </li>
+        <li data-tags="growth project">
+          <span class="b-icon"></span>
+          Brought to pilot stage: SladkayaZhizn+ (logistics), Kastor Group (hazmat transport), Unilever, Norilsk Nickel, LENTA.
+        </li>
+        <li data-tags="growth project">
+          <span class="b-icon"></span>
+          Attracted key partners: Sinara Transport Machines and Renaissance Insurance.
+        </li>
+        <li data-tags="project growth">
+          <span class="b-icon"></span>
+          Selected for RZhD and Russian Post acceleration programs — converted into pilot projects.
+        </li>
+        <li data-tags="creative growth">
+          <span class="b-icon"></span>
+          GUP Mosgortrans implementation case — <strong>best in "Logistics"</strong> at Rusbase Digital Awards 2021.
+        </li>
+      </ul>
+    </article>
+
   </div>
 
-  <!-- Experience -->
-  <section>
-    <h2 class="section-title">Professional Experience</h2>
-    <div class="exp-list">
-
-      <!-- Magnit OMNI -->
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div class="exp-role">Head of Personalization</div>
-          <div class="exp-company">Magnit OMNI</div>
-        </div>
-        <div class="exp-meta">
-          <span class="tag">Mobile Application &amp; Ecosystem</span>
-          <span class="date-tag">July 2025 — Present</span>
-        </div>
-        <p class="exp-description">Led personalization projects under the CHANGE approach: transitioning from segment-based to individual offer selection, growth-hacking hypotheses, and process/infrastructure transformation.</p>
-        <div class="exp-achievements">
-          <h4>Key Achievements</h4>
-          <ul>
-            <li>Built a process for launching and testing growth hypotheses in the mobile app (MAU 20M): go-to-market time for a test — one week.</li>
-            <li>Implemented ML-based audience selection (look-alike user acquisition for subscription product, targeting purchase-prone users): 10× business impact (2M RUB retail turnover in control group vs. 30M in test group).</li>
-            <li>Launched 20+ tests in under six months, 7 of which were successful — scaled to the full user base.</li>
-            <li>Launched and maintained personalization of the "cashback categories" product: from 20 shared categories to 200 total. Individual category selection per customer via ML model — 2× growth in active user base (4.7M → 10M MAU for the feature).</li>
-            <li>Q2 2026 upgrade: from 200 to 1,068 categories with ML-based per-customer selection — reduced investment volume without a drop in ARPPU, enabling per-customer economic management.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Sber -->
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div class="exp-role">Personalization Projects Lead</div>
-          <div class="exp-company">Sber</div>
-        </div>
-        <div class="exp-meta">
-          <span class="tag">Unified B2C Personalization Platform</span>
-          <span class="date-tag">February 2022 — July 2025</span>
-        </div>
-        <p class="exp-description">Responsible for time-to-market of personalization projects and the business impact of personalization scenarios. Launched personalization across Megamarket, SberSpasibo, Zvuk, Netologia, SberZdorovye, Edutoria, SberAvto, SberAds, MRIYA Resort &amp; SPA, SberLead, and OKKO.</p>
-        <div class="exp-achievements">
-          <h4>Key Achievements</h4>
-          <ul>
-            <li>Launched personalization in Megamarket (homepage shelf, cart, product cards): GMV from recommendations grew by 5%+. Partner dropped their third-party SaaS in favor of our product.</li>
-            <li>Launched the "Power of Sound" scenario in Zvuk (streaming): Average Time Spent grew to 4.2 hours in-app.</li>
-            <li>Launched transformer-based organization recommendations in the 2GIS mobile app: 2× coverage increase, 1.5× CTR increase.</li>
-            <li>Launched personalized service selections at MRIYA Resort &amp; SPA on SberTV: 2.4× GMV from recommendations.</li>
-            <li>Fastest launch to date at Netologia — 4 weeks from brief to production-ready A/B test.</li>
-            <li>Developed a "Rules for the Use of Recommendation Technologies" template — now used across several ecosystem companies, enabling projects to proceed without legal blockers.</li>
-            <li>Developed a model for assessing the impact of personalization on KPIs across key industries (e-commerce, entertainment).</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Antison -->
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div class="exp-role">PMM</div>
-          <div class="exp-company">Antison</div>
-        </div>
-        <div class="exp-meta">
-          <span class="tag">Driver Condition Monitoring System</span>
-          <span class="date-tag">November 2019 — September 2021</span>
-        </div>
-        <p class="exp-description">Responsible for new client acquisition, pilot launches, and conversion to commercial contracts.</p>
-        <div class="exp-achievements">
-          <h4>Key Achievements</h4>
-          <ul>
-            <li>Secured Skolkovo residency for the project (tax benefits, access to cluster infrastructure).</li>
-            <li>Completed the Sber &amp; 500Startups acceleration program (Sber500) — pitched before Herman Gref and Sber ecosystem leadership; secured strong PR and direct ecosystem engagement.</li>
-            <li>Acquired and brought to pilot stage: SladkayaZhizn+ (logistics), Kastor Group (hazmat transport), Unilever, Norilsk Nickel, LENTA.</li>
-            <li>Attracted key partners: Sinara Transport Machines and Renaissance Insurance.</li>
-            <li>Prepared an implementation case for GUP Mosgortrans — recognized as best in "Logistics" category by Rusbase Digital Awards 2021.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Fluence Labs -->
-      <div class="exp-entry">
-        <div class="exp-header">
-          <div class="exp-role">PMM &amp; Investor / Developer Relations Lead</div>
-          <div class="exp-company">Fluence Labs</div>
-        </div>
-        <div class="exp-meta">
-          <span class="tag">Decentralized Platform for Serverless Computing</span>
-          <span class="date-tag">November 2017 — October 2019</span>
-        </div>
-        <p class="exp-description">Responsible for relationships with early and new investors, blog reach in target segments (investors and developers), and brand awareness within the community.</p>
-        <div class="exp-achievements">
-          <h4>Key Achievements</h4>
-          <ul>
-            <li>Conducted a DApp Survey on decentralized applications — 3K views in the first 24 hours, featured in VentureBeat and Hackernoon.</li>
-            <li>Ran developer events in Berlin, Minsk, and Moscow that attracted new users to the product.</li>
-          </ul>
-        </div>
-      </div>
-
+  <!-- ── Earlier highlights ─────────────────────────────────── -->
+  <div class="earlier-wrap">
+    <div class="earlier-header">
+      <div class="section-label">Earlier career</div>
+      <span class="earlier-hint">Activate a filter to see relevant highlights</span>
     </div>
-  </section>
 
-  <!-- Additional Info -->
-  <section>
-    <h2 class="section-title">Additional Information</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <h4>Education</h4>
-        <p>Faculty of Physics<br>Novosibirsk State University<br>Department of Semiconductor Physics</p>
+    <article class="job-card job-card--earlier" data-job="fluence">
+      <div class="job-top">
+        <div>
+          <h2 class="job-role">PMM &amp; Investor / Developer Relations Lead</h2>
+          <div class="job-company">Fluence Labs</div>
+        </div>
+        <div class="job-dates">Nov 2017 — Oct 2019</div>
       </div>
-      <div class="info-card">
-        <h4>Languages</h4>
-        <ul>
-          <li>Russian — Native</li>
-          <li>English — C1</li>
-        </ul>
+      <div class="job-tags">
+        <span class="chip">Decentralized Platform · Serverless Computing</span>
+        <span class="chip">Web3</span>
       </div>
-      <div class="info-card">
-        <h4>Technical Skills</h4>
-        <ul>
-          <li>Jira, Confluence, project management systems</li>
-          <li>Python (web scraping, data analytics)</li>
-          <li>draw.io, systems analysis &amp; architecture documentation</li>
-        </ul>
-      </div>
+      <p class="job-desc">Relationships with early investors, developer community growth, and brand awareness in target segments.</p>
+      <ul class="bullets">
+        <li data-tags="creative growth">
+          <span class="b-icon"></span>
+          DApp Survey on decentralized applications: <strong>3K views in the first 24h</strong>, featured in VentureBeat and Hackernoon — strong community feedback loop.
+        </li>
+        <li data-tags="creative project">
+          <span class="b-icon"></span>
+          Ran developer events in Berlin, Minsk, and Moscow — new user acquisition and community building for the platform.
+        </li>
+      </ul>
+    </article>
+  </div>
+
+  <!-- ── Additional info ────────────────────────────────────── -->
+  <div class="section-label">Background</div>
+  <div class="extra-grid">
+    <div class="extra-card">
+      <h4>Education</h4>
+      <p>Faculty of Physics<br>Novosibirsk State University<br><span style="color:var(--muted);font-size:.82rem">Department of Semiconductor Physics</span></p>
     </div>
-  </section>
+    <div class="extra-card">
+      <h4>Languages</h4>
+      <ul>
+        <li>Russian — Native</li>
+        <li>English — C1</li>
+      </ul>
+    </div>
+    <div class="extra-card">
+      <h4>Tools &amp; Skills</h4>
+      <ul>
+        <li>Jira, Confluence, Notion</li>
+        <li>Python — web scraping, analytics</li>
+        <li>draw.io — architecture &amp; systems docs</li>
+      </ul>
+    </div>
+  </div>
 
-</div>
+</div><!-- .main -->
+
+<script>
+  let active = null;
+
+  const FILTER_CLASS = { product: 'f-product', project: 'f-project', growth: 'f-growth', creative: 'f-creative' };
+
+  function setFilter(key) {
+    active = (active === key) ? null : key;
+
+    // button states
+    document.querySelectorAll('.f-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.f === active);
+    });
+
+    // clear button
+    const clearBtn = document.getElementById('clearBtn');
+    clearBtn.classList.toggle('visible', !!active);
+
+    // body class (controls highlight colours via CSS)
+    Object.values(FILTER_CLASS).forEach(c => document.body.classList.remove(c));
+    if (active) document.body.classList.add(FILTER_CLASS[active]);
+
+    // bullet states
+    const allCards = document.querySelectorAll('.job-card');
+    allCards.forEach(card => {
+      const bullets = card.querySelectorAll('[data-tags]');
+      let hasMatch = false;
+
+      bullets.forEach(li => {
+        if (!active) {
+          li.classList.remove('match');
+        } else {
+          const tags = li.dataset.tags.split(' ');
+          const m = tags.includes(active);
+          li.classList.toggle('match', m);
+          if (m) hasMatch = true;
+        }
+      });
+
+      card.classList.toggle('filter-active', !!active);
+      card.classList.toggle('no-match', !!active && !hasMatch);
+    });
+  }
+
+  // sticky shadow
+  const bar = document.querySelector('.filter-bar');
+  window.addEventListener('scroll', () => {
+    bar.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,.08)' : 'none';
+  }, { passive: true });
+</script>
+
 </body>
 </html>
