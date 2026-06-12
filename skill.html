@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Judgment over Velocity — a Claude skill by Artem Domozhakov</title>
+  <meta name="description" content="A structured product-judgment engine for deciding what NOT to build — faster. Four gates: the spreadsheet test, the 80/20 cut, figure/ground analysis, evidence probes. Free Claude skill.">
+  <link rel="icon" type="image/png" href="css/images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Judgment over Velocity — a Claude skill">
+  <meta property="og:description" content="A product-judgment engine for deciding what NOT to build — faster. Install it in Claude and run the four gates on your own roadmap.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchimada.github.io/skill.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-106223856-1');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --surface: #f6f9fc;
+      --text: #0a2540;
+      --sub: #425466;
+      --muted: #8898aa;
+      --border: #e6ebf1;
+      --radius: 12px;
+      --blurple: #635bff;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .arrow-link .arr { display: inline-block; transition: transform .18s ease; }
+    .arrow-link:hover .arr { transform: translateX(3px); }
+
+    /* ── Header ── */
+    .head {
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 10%, rgba(99,91,255,.25) 0%, transparent 70%),
+        linear-gradient(160deg, #080c18 0%, #0f1629 55%, #1a0f33 100%);
+      color: #fff;
+      padding: 64px 24px 72px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
+    }
+
+    .head-inner { max-width: 700px; margin: 0 auto; }
+
+    .head .back {
+      display: inline-block;
+      font-size: .82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.62);
+      text-decoration: none;
+      margin-bottom: 36px;
+    }
+
+    .head .back:hover { color: #fff; }
+
+    .head .eyebrow {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #9d97ff;
+      margin-bottom: 12px;
+    }
+
+    .head h1 {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .head .tagline {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.8);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .head .tagline strong { font-weight: 600; color: #fff; }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .15s, border-color .15s, transform .15s;
+    }
+
+    .btn.primary { background: #fff; color: #0f1629; }
+    .btn.primary:hover { background: rgba(255,255,255,.88); transform: translateY(-1px); }
+
+    .btn.ghost {
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.85);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .btn.ghost:hover { background: rgba(255,255,255,.14); }
+
+    .head .meta-note {
+      margin-top: 14px;
+      font-size: .75rem;
+      color: rgba(255,255,255,.4);
+    }
+
+    /* ── Main ── */
+    .main { max-width: 700px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .section-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--blurple);
+      margin-bottom: 14px;
+    }
+
+    section { margin-bottom: 52px; }
+
+    p.lead {
+      font-size: .95rem;
+      color: var(--sub);
+      line-height: 1.7;
+      max-width: 620px;
+      margin-bottom: 20px;
+    }
+
+    p.lead strong { color: var(--text); font-weight: 600; }
+
+    /* ── Gates ── */
+    .gates { display: flex; flex-direction: column; gap: 10px; }
+
+    .gate {
+      display: flex;
+      gap: 18px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .gate:hover { border-color: #d5dde5; box-shadow: 0 6px 18px rgba(10,37,64,.06); }
+
+    .gate .g-num {
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: #f0efff;
+      color: var(--blurple);
+      font-weight: 700;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .gate h3 { font-size: .95rem; font-weight: 600; margin-bottom: 4px; }
+
+    .gate p { font-size: .86rem; color: var(--sub); line-height: 1.6; }
+
+    .gate p strong { color: var(--text); font-weight: 600; }
+
+    .gate-note {
+      margin-top: 14px;
+      font-size: .84rem;
+      color: var(--muted);
+    }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #0f1629;
+      color: #d6deeb;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: .78rem;
+      line-height: 1.65;
+      border-radius: 10px;
+      padding: 18px 20px;
+      overflow-x: auto;
+      margin: 14px 0;
+    }
+
+    pre .c { color: #637999; }
+    pre .g { color: #6ee7b7; }
+
+    code.inline {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: .8em;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 1px 6px;
+      color: var(--text);
+    }
+
+    /* ── Install steps ── */
+    .install-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+
+    .install-block h3 {
+      font-size: .95rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .install-block ol { padding-left: 20px; }
+
+    .install-block li {
+      font-size: .87rem;
+      color: var(--sub);
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+
+    .install-block li strong { color: var(--text); font-weight: 600; }
+
+    .install-block pre { margin: 10px 0 4px; }
+
+    /* ── What's inside ── */
+    .files { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .files li {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      font-size: .87rem;
+      color: var(--sub);
+    }
+
+    .files li code.inline { flex-shrink: 0; }
+
+    /* ── Try prompts ── */
+    .prompts { display: flex; flex-direction: column; gap: 8px; }
+
+    .prompt {
+      border-left: 3px solid var(--blurple);
+      background: var(--surface);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 16px;
+      font-size: .87rem;
+      color: var(--sub);
+      font-style: normal;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      align-items: baseline;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .footer a { color: var(--sub); font-weight: 500; text-decoration: none; }
+    .footer a:hover { color: var(--blurple); }
+
+    @media (max-width: 600px) {
+      .head { padding: 48px 20px 60px; }
+      .main { padding: 36px 16px 64px; }
+      .gate { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="head">
+  <div class="head-inner">
+    <a class="back arrow-link" href="/">← Artem Domozhakov</a>
+    <div class="eyebrow">Claude Skill · Free Download</div>
+    <h1>Judgment over Velocity</h1>
+    <p class="tagline">A structured product-judgment engine for deciding what <strong>not</strong> to build — faster. My working methodology — the spreadsheet test, the 80/20 cut, figure/ground analysis, and adversarial evidence probes — wrapped into a skill Claude runs on your own roadmap.</p>
+    <div class="btn-row">
+      <a class="btn primary" href="assets/judgment-over-velocity.skill" download>⬇ Download .skill (9 KB)</a>
+      <a class="btn ghost" href="#install">Installation guide</a>
+    </div>
+    <p class="meta-note">Works with Claude Code and claude.ai · plain Markdown inside, no code execution required</p>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- What it does -->
+  <section>
+    <div class="section-label">What it does</div>
+    <p class="lead">Give Claude a product idea, a backlog, a "should we buy a tool?" question, or any CPO-level problem — and instead of cheerfully helping you build it, the skill <strong>classifies the problem first</strong> and runs it through four kill-gates. Ideas that die get epitaphs (what killed them, what would resurrect them). Ideas that survive get the <strong>cheapest disconfirming test</strong> — not the cheapest test that could confirm them.</p>
+    <p class="lead">It is explicitly willing to answer <strong>"don't build anything"</strong> — the most common right answer and the rarest one product teams hear.</p>
+  </section>
+
+  <!-- The four gates -->
+  <section>
+    <div class="section-label">The four gates</div>
+    <div class="gates">
+      <div class="gate">
+        <div class="g-num">1</div>
+        <div>
+          <h3>The spreadsheet test</h3>
+          <p>Most product problems are <strong>discipline problems wearing tooling costumes</strong>. Could a competent operator solve this with a table, an operating rhythm, and clear decision rights? Field calibration: 4 of 6 core CPO problem clusters fail this gate. Only experiential gaps (you must build to learn) and synthesis-at-scale earn heavy machinery.</p>
+        </div>
+      </div>
+      <div class="gate">
+        <div class="g-num">2</div>
+        <div>
+          <h3>The 80/20 structural cut</h3>
+          <p>Every option framed in commercial terms — what revenue, retention, cost, or risk number does it move? The field is scored as a whole, not debated item by item. <strong>The no-list is the deliverable</strong>: each cut gets a one-line reason a stakeholder could repeat.</p>
+        </div>
+      </div>
+      <div class="gate">
+        <div class="g-num">3</div>
+        <div>
+          <h3>Figure/ground analysis</h3>
+          <p>Products judged by <strong>the behavior they install, not the features they list</strong>. What becomes scarce when your capability makes something abundant? Which assumptions are load-bearing — and which are actively melting? Does the idea sit in a defensible seam between domains, or in the middle of an incumbent's home turf?</p>
+        </div>
+      </div>
+      <div class="gate">
+        <div class="g-num">4</div>
+        <div>
+          <h3>Evidence probes &amp; adversarial loop</h3>
+          <p>Probes, not opinions. Demand signals ranked by strength: <strong>expensive workarounds &gt; apologies &gt; nostalgia &gt; stated feature requests</strong>. Every load-bearing assumption gets attacked; the survivor's prize is a disconfirming test with the kill-condition stated in advance.</p>
+        </div>
+      </div>
+    </div>
+    <p class="gate-note">Each gate can kill the idea — killing early is the point. An idea that dies at Gate 1 saves everything downstream.</p>
+  </section>
+
+  <!-- Verdict format -->
+  <section>
+    <div class="section-label">Every run ends in a verdict</div>
+<pre>## Verdict
+
+<span class="c">**Classification:**</span> DISCIPLINE | TOOLING-EARNED | HYBRID
+<span class="c">**The 20%:**</span> the 1–3 moves that carry the impact, each with its business number
+<span class="c">**The no-list:**</span> everything cut, one defensible line each
+<span class="c">**Behavior installed / scarcity owned:**</span> one line
+<span class="c">**Riskiest assumption:**</span> the load-bearing assumption most likely to be false
+<span class="c">**Cheapest disconfirming test:**</span> what to run, what it costs, what result kills it
+<span class="c">**Epitaphs:**</span> killed ideas — what killed each, what would resurrect it</pre>
+  </section>
+
+  <!-- What's inside -->
+  <section>
+    <div class="section-label">What's inside</div>
+    <ul class="files">
+      <li><code class="inline">SKILL.md</code><span>The four-gate pipeline, verdict format, and tone rules ("never soften a kill into a maybe-later").</span></li>
+      <li><code class="inline">references/spreadsheet-test.md</code><span>The full diagnostic: three classification questions, the six-cluster CPO calibration map, HYBRID handling, and named anti-patterns (tool-as-avoidance, dashboard theater, pilot purgatory).</span></li>
+      <li><code class="inline">references/figure-ground.md</code><span>Five instruments: behavior-installed test, abundance→scarcity table, invisible-assumptions audit, seams between domains, the rear-view-mirror check.</span></li>
+    </ul>
+  </section>
+
+  <!-- Install -->
+  <section id="install">
+    <div class="section-label">Installation</div>
+
+    <div class="install-block">
+      <h3>⌨️ Claude Code (CLI)</h3>
+      <ol>
+        <li><a href="assets/judgment-over-velocity.skill">Download the .skill file</a> — it's a regular zip archive.</li>
+        <li>Unzip it into your personal skills directory:
+<pre><span class="c"># personal — available in every project</span>
+unzip judgment-over-velocity.skill -d ~/.claude/skills/
+
+<span class="c"># or project-level — shared with your team via git</span>
+unzip judgment-over-velocity.skill -d .claude/skills/</pre></li>
+        <li>Restart Claude Code (or start a new session). Verify with <code class="inline">/skills</code> or just ask: <em>"do you have the judgment-over-velocity skill?"</em></li>
+      </ol>
+    </div>
+
+    <div class="install-block">
+      <h3>💬 claude.ai (web &amp; desktop)</h3>
+      <ol>
+        <li><a href="assets/judgment-over-velocity.skill">Download the .skill file</a>.</li>
+        <li>Open <strong>Settings → Capabilities → Skills</strong> and upload the file. (Skills require a paid plan; if you don't see the section, enable code execution / skills in feature previews.)</li>
+        <li>The skill activates automatically whenever you ask Claude to evaluate an idea, prioritize a backlog, or judge a build-vs-buy question.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Try it -->
+  <section>
+    <div class="section-label">Try it on</div>
+    <div class="prompts">
+      <div class="prompt">"We're thinking of building an internal dashboard to track product KPIs across teams. Should we?"</div>
+      <div class="prompt">"Here are the 14 items on our Q3 roadmap — help me prioritize." <em>(paste the list)</em></div>
+      <div class="prompt">"Sales wants us to buy a customer-feedback platform. We get ~30 feedback items a quarter."</div>
+      <div class="prompt">"Evaluate this idea: AI agent that writes PRDs from Slack threads."</div>
+    </div>
+  </section>
+
+  <!-- Provenance -->
+  <section>
+    <div class="section-label">Where this comes from</div>
+    <p class="lead">This is the operating method behind <a href="/#approach" style="color:var(--blurple); text-decoration:none; font-weight:500;">my approach</a> — built over nine years of personalization and growth work at Sber and Magnit OMNI, where the difference between a 10× experiment and a wasted quarter was almost never execution speed. It was what got cut before anyone wrote code.</p>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <span>© 2026 Artem Domozhakov</span>
+  <a class="arrow-link" href="/">interactive CV <span class="arr">→</span></a>
+  <a class="arrow-link" href="cv.html">classic view <span class="arr">→</span></a>
+  <a class="arrow-link" href="wh40k.html">Warhammer 40K <span class="arr">→</span></a>
+</footer>
+
+</body>
+</html>

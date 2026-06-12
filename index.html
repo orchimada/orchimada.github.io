@@ -737,6 +737,69 @@
 
     .approach-coda strong { color: var(--text); font-weight: 600; }
 
+    .skill-callout {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 24px;
+      background:
+        radial-gradient(ellipse 60% 80% at 85% 20%, rgba(99,91,255,.22) 0%, transparent 60%),
+        linear-gradient(160deg, #0f1629 0%, #1a0f33 100%);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      color: #fff;
+    }
+
+    .skill-callout .sc-text { flex: 1; min-width: 240px; }
+
+    .skill-callout .sc-eyebrow {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #9d97ff;
+      margin-bottom: 5px;
+    }
+
+    .skill-callout p {
+      font-size: .88rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.8);
+      line-height: 1.6;
+    }
+
+    .skill-callout p strong { font-weight: 600; color: #fff; }
+
+    .skill-callout .sc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-callout .sc-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .15s, transform .15s;
+    }
+
+    .skill-callout .sc-actions a.dl { background: #fff; color: #0f1629; }
+    .skill-callout .sc-actions a.dl:hover { background: rgba(255,255,255,.88); transform: translateY(-1px); }
+
+    .skill-callout .sc-actions a.more {
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.85);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .skill-callout .sc-actions a.more:hover { background: rgba(255,255,255,.14); }
+
     /* ── Background cards ────────────────────────────────────── */
     .extra-grid {
       display: grid;
@@ -1204,6 +1267,17 @@
     </div>
 
     <p class="approach-coda"><strong>In one line:</strong> find the new behavior a capability makes possible, name what it makes scarce, attack every assumption with the cheapest disconfirming test — and build the loop that compounds judgment, not output.</p>
+
+    <div class="skill-callout">
+      <div class="sc-text">
+        <div class="sc-eyebrow">⚡ Now a Claude skill</div>
+        <p>I've wrapped this methodology into a <strong>Claude skill — try it yourself</strong>. Install it and Claude runs the four kill-gates on your own roadmap, backlog, or build-vs-buy question.</p>
+      </div>
+      <div class="sc-actions">
+        <a class="dl" href="assets/judgment-over-velocity.skill" download>⬇ Download .skill</a>
+        <a class="more arrow-link" href="skill.html">How it works <span class="arr">→</span></a>
+      </div>
+    </div>
   </section>
 
   <!-- ── Background ─────────────────────────────────────────── -->
