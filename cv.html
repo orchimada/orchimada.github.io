@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tyoma Domozhakov — CPO · Personalization &amp; Growth</title>
+  <title>Artem Domozhakov — CPO · Personalization &amp; Growth</title>
   <meta name="description" content="Product leader. Personalization and growth for tens of millions of users at Sber and Magnit OMNI.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Tyoma Domozhakov — CPO · Personalization & Growth">
+  <meta property="og:title" content="Artem Domozhakov — CPO · Personalization & Growth">
   <meta property="og:description" content="Led cross-ecosystem personalization at Sber and Magnit OMNI: GMV, ARPPU, reach, and retention at 20M+ MAU scale.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://orchimada.github.io/cv.html">
+  <meta property="og:image" content="https://orchimada.github.io/assets/hero_portrait.jpg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tyoma Domozhakov — CPO · Personalization & Growth">
+  <meta name="twitter:title" content="Artem Domozhakov — CPO · Personalization & Growth">
   <meta name="twitter:description" content="Led cross-ecosystem personalization at Sber and Magnit OMNI: GMV, ARPPU, reach, and retention at 20M+ MAU scale.">
+  <meta name="twitter:image" content="https://orchimada.github.io/assets/hero_portrait.jpg">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
   <script>
@@ -69,7 +71,30 @@
       padding: 72px 24px 64px;
     }
 
-    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-text { flex: 1; min-width: 0; }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 232px;
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 24px 60px rgba(0,0,0,.45);
+    }
 
     .hero-badges {
       display: flex;
@@ -605,6 +630,9 @@
       .hero h1 { -webkit-text-fill-color: var(--text); }
       .hero-badges, .contacts { display: none; }
       .hero-bio { color: var(--sub); }
+      .hero-inner { gap: 24px; }
+      .hero-photo { width: 110px; }
+      .hero-photo img { box-shadow: none; }
       .main { padding: 16px 0; }
       .job-card { page-break-inside: avoid; border: 1px solid var(--border); }
       .bullets li.extra { display: flex; }
@@ -613,6 +641,16 @@
     }
 
     /* ── Mobile ──────────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .hero-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 28px;
+      }
+      .hero-photo { width: 116px; }
+      .hero-photo img { border-radius: 50%; }
+    }
+
     @media (max-width: 600px) {
       .hero { padding: 52px 20px 48px; }
       .job-top { flex-direction: column; gap: 4px; }
@@ -630,11 +668,12 @@
 <!-- ── Hero ───────────────────────────────────────────────── -->
 <section class="hero">
   <div class="hero-inner">
+    <div class="hero-text">
     <div class="hero-badges">
       <span class="badge"><span class="pulse"></span>Currently at Magnit OMNI</span>
       <span class="badge badge--open">DMs open — projects &amp; advisory</span>
     </div>
-    <h1>Tyoma Domozhakov</h1>
+    <h1>Artem Domozhakov</h1>
     <p class="hero-role">CPO · Cluster Lead</p>
     <p class="hero-bio">I lead cross-ecosystem <strong>personalization at scale</strong> — Sber, Magnit OMNI — turning ML into measurable outcomes: <strong>GMV, ARPPU, reach, retention</strong>. From 0→1 builds to scaling winning experiments across 20M+ MAU.</p>
     <div class="contacts">
@@ -650,6 +689,10 @@
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
+    </div>
+    </div><!-- .hero-text -->
+    <div class="hero-photo">
+      <img src="assets/hero_portrait.jpg" alt="Artem Domozhakov — portrait" width="900" height="900">
     </div>
   </div>
 </section>
