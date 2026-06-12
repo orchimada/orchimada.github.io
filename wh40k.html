@@ -7,7 +7,7 @@
   <meta name="description" content="Sanctioned record of the Arch-Magos of Personalization, servant of the Omnissiah, bane of unsegmented offers.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,15 +23,28 @@
       --bone:    #e8dcc0;
     }
 
+    html { font-size: 18px; }
+
     body {
       background:
         radial-gradient(ellipse 80% 50% at 50% -10%, rgba(138,28,28,.25) 0%, transparent 60%),
         var(--void);
       color: var(--parch);
       font-family: 'IM Fell English', Georgia, serif;
-      font-size: 17px;
-      line-height: 1.6;
+      font-size: 19px;
+      line-height: 1.65;
       min-height: 100vh;
+    }
+
+    /* illuminated initial — medieval manuscript drop cap */
+    .illum::first-letter {
+      font-family: 'UnifrakturMaguntia', serif;
+      font-size: 3.1em;
+      line-height: .78;
+      float: left;
+      color: var(--gold);
+      padding: 4px 10px 0 0;
+      text-shadow: 0 0 18px rgba(201,162,39,.35);
     }
 
     ::selection { background: var(--crimson); color: var(--bone); }
@@ -159,17 +172,17 @@
     }
 
     .subject-id h1 {
-      font-family: 'Cinzel', serif;
-      font-weight: 700;
-      font-size: clamp(1.7rem, 5.5vw, 2.5rem);
-      line-height: 1.15;
+      font-family: 'UnifrakturMaguntia', 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 6.5vw, 3rem);
+      line-height: 1.2;
       color: var(--bone);
-      letter-spacing: .02em;
+      letter-spacing: .01em;
       margin-bottom: 12px;
+      text-shadow: 0 0 24px rgba(201,162,39,.25);
     }
 
     .subject-id .titles {
-      font-style: italic;
       color: var(--parch);
       font-size: 1.02rem;
       line-height: 1.65;
@@ -228,14 +241,14 @@
 
     /* ── Section titles ── */
     h2.rite {
-      font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+      font-family: 'UnifrakturMaguntia', 'Cinzel', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: .02em;
       color: var(--gold);
       text-align: center;
       margin-bottom: 22px;
+      text-shadow: 0 0 18px rgba(201,162,39,.3);
     }
 
     /* ── Campaign records ── */
@@ -248,17 +261,18 @@
     }
 
     .campaign-head h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.02rem;
-      font-weight: 600;
-      letter-spacing: .06em;
+      font-family: 'UnifrakturMaguntia', 'Cinzel', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      letter-spacing: .02em;
       color: var(--bone);
+      line-height: 1.25;
     }
 
     .campaign-head .rank {
-      font-style: italic;
       color: var(--gold);
       font-size: .95rem;
+      margin-top: 2px;
     }
 
     .campaign-head .epoch {
@@ -271,7 +285,6 @@
     }
 
     .campaign > p.lore {
-      font-style: italic;
       color: var(--parch-dim);
       margin-bottom: 12px;
       font-size: .98rem;
@@ -323,10 +336,17 @@
     }
 
     .litany p {
-      font-style: italic;
       color: var(--parch);
       margin-bottom: 20px;
       font-size: .98rem;
+    }
+
+    .litany h3 {
+      font-family: 'UnifrakturMaguntia', 'Cinzel', serif;
+      font-size: 1.4rem;
+      letter-spacing: .03em;
+      text-transform: none;
+      font-weight: 400;
     }
 
     .litany a.astropath {
@@ -431,7 +451,7 @@
 
   <div class="versions">
     <a href="/">⟵ Return to realspace</a>
-    <a href="cv.html">The classical version</a>
+    <a href="cv.html">Classic view</a>
   </div>
 
   <div class="dossier">
@@ -460,7 +480,7 @@
 
     <div class="divider"><span class="glyph">☠ ⚙ ☠</span></div>
 
-    <p style="font-style:italic; text-align:center; max-width:580px; margin:0 auto 8px;">
+    <p class="illum" style="max-width:600px; margin:0 auto 8px;">
       For nine Terran years the subject has marched at the intersection of the Machine Cult, growth strategy, and commercial accountability — transmuting raw data into tithes of GMV, ARPPU, Reach, and Retention. Twenty million souls receive his personalized litanies each lunar cycle. He builds from nothing unto glory, parts seas of legal complexity, and scales victorious ordeals across entire sector populations.
     </p>
 
@@ -475,7 +495,7 @@
         <div class="rank">Magos Personalis — Master of the Forge's Indulgences</div>
         <div class="epoch">025.M3 — Present Day · Congregation: 20 million souls</div>
       </div>
-      <p class="lore">Dispatched to reform the Omni-Forge's rites under the CHANGE doctrine: casting down the crude segment-litanies of old and raising in their place offers chosen for each soul individually, as the Omnissiah intends.</p>
+      <p class="lore illum">Dispatched to reform the Omni-Forge's rites under the CHANGE doctrine: casting down the crude segment-litanies of old and raising in their place offers chosen for each soul individually, as the Omnissiah intends.</p>
       <ul class="deeds">
         <li><strong>A tenfold tithe</strong> was rendered unto the forge when the look-alike augur arrays singled out souls ripe for subscription: 2 million thrones from the unblessed control flock against 30 million from the chosen.</li>
         <li><strong>The congregation of Cashback Indulgences was doubled</strong> — from 4.7 to 10 million souls — when the 20 common litanies were expanded to 200, each soul receiving the indulgence the machine spirit deemed most pleasing.</li>
@@ -492,7 +512,7 @@
         <div class="rank">Lord-Lieutenant of Personalization — Bearer of the Unified Platform Standard</div>
         <div class="epoch">022.M3 — 025.M3 · Three and a half Terran years of unbroken campaign</div>
       </div>
-      <p class="lore">Charged with the speed of the crusade and the weight of its tithes, he carried the light of personalization to eleven worlds and more of the Sber sub-sector: the Megamarket Hive, Zvuk the Singing World, the picture-shrine OKKO, the cartographer-temple 2GIS, and others whose names are recorded in the sector annals.</p>
+      <p class="lore illum">Charged with the speed of the crusade and the weight of its tithes, he carried the light of personalization to eleven worlds and more of the Sber sub-sector: the Megamarket Hive, Zvuk the Singing World, the picture-shrine OKKO, the cartographer-temple 2GIS, and others whose names are recorded in the sector annals.</p>
       <ul class="deeds">
         <li><strong>The Megamarket Hive yielded +5% GMV</strong> from the recommendation-shrines raised in its homepage, cart, and product-reliquaries — whereupon the hive cast out its xenos SaaS mercenaries, their contracts burned after trial by combat (A/B).</li>
         <li><strong>The Power of Sound was awakened</strong> upon Zvuk: souls lingered in communion with the Singing World for 4.2 hours at a stretch, deaf to all distraction.</li>
@@ -510,7 +530,7 @@
         <div class="rank">Envoy-Procurator — Herald of the Watching Auspex</div>
         <div class="epoch">019.M3 — 021.M3 · The auspex that guards the transport-serfs from slumber</div>
       </div>
-      <p class="lore">Bore the auspex arrays that watch over the vigilance of convoy crews unto the great merchant houses, securing pilots, pacts, and patronage for the fledgling forge.</p>
+      <p class="lore illum">Bore the auspex arrays that watch over the vigilance of convoy crews unto the great merchant houses, securing pilots, pacts, and patronage for the fledgling forge.</p>
       <ul class="deeds">
         <li><strong>Five great houses entered pilot communion</strong>: Unilever, Norilsk Nickel, LENTA, SladkayaZhizn+, and Kastor Group of the hazardous cargoes; the houses Sinara and Renaissance pledged partnership.</li>
         <li><strong>He survived the Sber500 Gauntlet</strong> — from supplicant to Demo Day — and pitched before High Lord Gref himself and the assembled ecosystem lords, earning renown and open gates.</li>
@@ -527,7 +547,7 @@
         <div class="rank">Herald to Investors &amp; the Tech-Adept Brotherhood</div>
         <div class="epoch">017.M3 — 019.M3 · Before the Inquisition ruled on the decentralization question</div>
       </div>
-      <p class="lore">In his youth he spread the word of decentralized cogitation — serverless, masterless, and (the Inquisition notes with suspicion) headless — among investors and the scattered brotherhood of tech-adepts.</p>
+      <p class="lore illum">In his youth he spread the word of decentralized cogitation — serverless, masterless, and (the Inquisition notes with suspicion) headless — among investors and the scattered brotherhood of tech-adepts.</p>
       <ul class="deeds">
         <li><strong>The Great DApp Census</strong> drew three thousand eyes within a single day-cycle and was proclaimed by the town criers VentureBeat and Hackernoon to all corners of the segmentum.</li>
         <li><strong>Gatherings of the brotherhood</strong> were convened in the hives of Berlin, Minsk, and Moscow, swelling the ranks of the platform's faithful.</li>

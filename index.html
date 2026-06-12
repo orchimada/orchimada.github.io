@@ -183,6 +183,13 @@
       border-color: rgba(52,211,153,.3);
       background: rgba(52,211,153,.08);
       color: #6ee7b7;
+      text-decoration: none;
+      transition: border-color .15s, background .15s;
+    }
+
+    a.badge--open:hover {
+      border-color: rgba(52,211,153,.55);
+      background: rgba(52,211,153,.14);
     }
 
     .badge .pulse {
@@ -825,7 +832,7 @@
   <div class="topnav-inner">
     <a class="brand" href="/">Artem Domozhakov</a>
     <div class="nav-links">
-      <a class="arrow-link" href="cv.html">the classical version <span class="arr">→</span></a>
+      <a class="arrow-link" href="cv.html">classic view <span class="arr">→</span></a>
       <a class="arrow-link" href="wh40k.html">Warhammer 40k <span class="arr">→</span></a>
     </div>
   </div>
@@ -837,7 +844,7 @@
     <div class="hero-text">
     <div class="hero-badges">
       <span class="badge"><span class="pulse"></span>Currently at Magnit OMNI</span>
-      <span class="badge badge--open">DMs open — projects &amp; advisory</span>
+      <a class="badge badge--open" href="#dms">DMs open — projects &amp; advisory ↓</a>
     </div>
     <h1>Artem Domozhakov</h1>
     <p class="hero-role">Product Leadership<span class="sep">|</span>Growth-hacking<span class="sep">|</span>Unit Economics</p>
@@ -1112,7 +1119,7 @@
   </div>
 
   <!-- ── Footer CTA ─────────────────────────────────────────── -->
-  <section class="cta">
+  <section class="cta" id="dms">
     <div class="section-label">How I can help</div>
     <h3>Hit DMs if you or your team wants to:</h3>
     <ul class="cta-list">
@@ -1143,7 +1150,7 @@
 <!-- ── Footer ─────────────────────────────────────────────── -->
 <footer class="footer">
   <span>© 2026 Artem Domozhakov</span>
-  <a class="arrow-link" href="cv.html">the classical version <span class="arr">→</span></a>
+  <a class="arrow-link" href="cv.html">classic view <span class="arr">→</span></a>
   <a class="arrow-link" href="wh40k.html">Warhammer 40k <span class="arr">→</span></a>
   <a href="https://t.me/orchilux" target="_blank" rel="noopener">Telegram channel</a>
 </footer>
