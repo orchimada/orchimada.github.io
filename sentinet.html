@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentinet — see what your apps and AI agents send to the internet</title>
+  <meta name="description" content="A lightweight macOS network monitor: per-app outbound connections, live bandwidth, one-click blocking, heuristic leak alerts. Built for people who run AI agents. A pet project by Artem Domozhakov.">
+  <link rel="icon" type="image/png" href="css/images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sentinet — see what your apps and AI agents send to the internet">
+  <meta property="og:description" content="Lightweight macOS network monitor: process → host → volume, live. One-click blocking, leak alerts, honest about what TLS hides.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchimada.github.io/sentinet.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-106223856-1');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --surface: #f6f9fc;
+      --text: #0a2540;
+      --sub: #425466;
+      --muted: #8898aa;
+      --border: #e6ebf1;
+      --radius: 12px;
+      --blurple: #635bff;
+      --cyan: #00d4ff;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .arrow-link .arr { display: inline-block; transition: transform .18s ease; }
+    .arrow-link:hover .arr { transform: translateX(3px); }
+
+    /* ── Header ── */
+    .head {
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 10%, rgba(0,212,255,.16) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 15% 90%, rgba(99,91,255,.22) 0%, transparent 60%),
+        linear-gradient(160deg, #080c18 0%, #0f1629 55%, #0d1f33 100%);
+      color: #fff;
+      padding: 64px 24px 72px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
+    }
+
+    .head-inner { max-width: 700px; margin: 0 auto; }
+
+    .head .back {
+      display: inline-block;
+      font-size: .82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.62);
+      text-decoration: none;
+      margin-bottom: 36px;
+    }
+
+    .head .back:hover { color: #fff; }
+
+    .head .eyebrow {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #7dd8f0;
+      margin-bottom: 12px;
+    }
+
+    .head h1 {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,.7));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .head .tagline {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.8);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .head .tagline strong { font-weight: 600; color: #fff; }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .15s, transform .15s;
+    }
+
+    .btn.primary { background: #fff; color: #0f1629; }
+    .btn.primary:hover { background: rgba(255,255,255,.88); transform: translateY(-1px); }
+
+    .btn.ghost {
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.85);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .btn.ghost:hover { background: rgba(255,255,255,.14); }
+
+    .head .meta-note {
+      margin-top: 14px;
+      font-size: .75rem;
+      color: rgba(255,255,255,.4);
+    }
+
+    /* ── Main ── */
+    .main { max-width: 700px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .section-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--blurple);
+      margin-bottom: 14px;
+    }
+
+    section { margin-bottom: 52px; }
+
+    p.lead {
+      font-size: .95rem;
+      color: var(--sub);
+      line-height: 1.7;
+      max-width: 620px;
+      margin-bottom: 16px;
+    }
+
+    p.lead strong { color: var(--text); font-weight: 600; }
+
+    /* ── Capability cards ── */
+    .caps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .cap {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .cap:hover { border-color: #d5dde5; box-shadow: 0 6px 18px rgba(10,37,64,.06); }
+
+    .cap h3 {
+      font-size: .92rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cap p { font-size: .85rem; color: var(--sub); line-height: 1.6; }
+
+    /* ── Honesty principle ── */
+    .honest {
+      border-left: 3px solid var(--blurple);
+      background: var(--surface);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      max-width: 620px;
+      font-size: .9rem;
+      color: var(--sub);
+      line-height: 1.65;
+    }
+
+    .honest strong { color: var(--text); font-weight: 600; }
+
+    /* ── Run block ── */
+    pre {
+      background: #0f1629;
+      color: #d6deeb;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: .8rem;
+      line-height: 1.65;
+      border-radius: 10px;
+      padding: 18px 20px;
+      overflow-x: auto;
+      margin: 14px 0;
+    }
+
+    pre .c { color: #637999; }
+
+    /* ── Audience ── */
+    .aud { list-style: none; display: flex; flex-direction: column; gap: 8px; max-width: 620px; }
+
+    .aud li {
+      font-size: .88rem;
+      color: var(--sub);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .aud li::before { content: '→'; position: absolute; left: 0; color: var(--blurple); }
+
+    .aud li strong { color: var(--text); font-weight: 600; }
+
+    /* ── Footer ── */
+    .footer {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      align-items: baseline;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    .footer a { color: var(--sub); font-weight: 500; text-decoration: none; }
+    .footer a:hover { color: var(--blurple); }
+
+    @media (max-width: 600px) {
+      .head { padding: 48px 20px 60px; }
+      .main { padding: 36px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="head">
+  <div class="head-inner">
+    <a class="back arrow-link" href="/">← Artem Domozhakov</a>
+    <div class="eyebrow">Pet Project · macOS Network Monitor</div>
+    <h1>Sentinet</h1>
+    <p class="tagline">See exactly what your apps — <strong>and your AI agents</strong> — send to the internet. A lightweight macOS monitor that shows who's talking to the network, where, and how much — and lets you cut off anything suspicious <strong>before the data leaves your machine</strong>.</p>
+    <div class="btn-row">
+      <a class="btn primary" href="https://student9010.vm2.getuno.xyz" target="_blank" rel="noopener">Live demo ↗</a>
+      <a class="btn ghost" href="assets/sentinet-passive.py" download>⬇ Single-file edition (35 KB)</a>
+    </div>
+    <p class="meta-note">Python 3 · no install, no dependencies, no root, no account · macOS only</p>
+  </div>
+</header>
+
+<div class="main">
+
+  <!-- Why -->
+  <section>
+    <div class="section-label">Why it exists</div>
+    <p class="lead">You hand your AI agents access to your files, your tokens, your secrets. <strong>Do you actually know where they're sending it?</strong> Modern dev machines run dozens of processes that phone home constantly — and the one time an agent quietly ships an API key to an endpoint you never approved, you find out far too late.</p>
+    <p class="lead">Existing tools either drown you in raw packets or only tell you <em>something</em> connected. Sentinet is built to answer one question fast: <strong>"Is this normal, or should I block it?"</strong></p>
+  </section>
+
+  <!-- What it does -->
+  <section>
+    <div class="section-label">What it does</div>
+    <div class="caps">
+      <div class="cap">
+        <h3>📡 Per-app traffic visibility</h3>
+        <p>Every outbound connection mapped to the app that made it — process → host → volume. No more anonymous traffic.</p>
+      </div>
+      <div class="cap">
+        <h3>⚡ Live bandwidth &amp; speed</h3>
+        <p>Instantly tell whether an app is eating your bandwidth or the network itself is the problem.</p>
+      </div>
+      <div class="cap">
+        <h3>✂️ One-click blocking</h3>
+        <p>Kill a suspicious request on the spot — without killing the whole app.</p>
+      </div>
+      <div class="cap">
+        <h3>🚨 Heuristic leak alerts</h3>
+        <p>Risky connections flagged by host, volume, and pattern — even when the payload is encrypted. Where traffic is readable, secrets like API keys and tokens trigger alerts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honesty -->
+  <section>
+    <div class="section-label">The design principle</div>
+    <div class="honest">
+      <strong>Honest by design.</strong> Much of modern traffic is TLS-encrypted and can't be read — so Sentinet doesn't pretend. Connections it can't decrypt are marked 🔒 <em>content unavailable</em>: you still see who, where, and how much, and you can still block. Where it can't see something, it tells you it can't — instead of pretending it can. We sell trust, so we don't overpromise.
+    </div>
+  </section>
+
+  <!-- Run it -->
+  <section>
+    <div class="section-label">Run it in 10 seconds</div>
+    <p class="lead">The passive edition is a single Python file — real capture, metadata-only, opens a live dashboard in your browser:</p>
+<pre><span class="c"># download, then:</span>
+python3 sentinet-passive.py</pre>
+    <p class="lead">No install, no dependencies, no proxy, no root. Stop with <code style="font-family:'JetBrains Mono',monospace; font-size:.85em;">Ctrl+C</code>.</p>
+  </section>
+
+  <!-- Who it's for -->
+  <section>
+    <div class="section-label">Who it's for</div>
+    <ul class="aud">
+      <li><strong>Developers running AI agents</strong> (Claude Code, Cursor, autonomous scripts) who want to know what those agents send before it's gone.</li>
+      <li><strong>Engineers debugging their own apps</strong> who need a clean map of every network call.</li>
+      <li><strong>Anyone handling secrets</strong> who wants a kill switch for outbound traffic — without enterprise DLP overhead.</li>
+    </ul>
+  </section>
+
+  <!-- Status -->
+  <section>
+    <div class="section-label">Status</div>
+    <p class="lead">An MVP under active validation — currently macOS-only, real-time-only (no history yet), with deeper payload inspection, channel diagnostics, and cross-platform support on the roadmap. Feedback welcome: <a href="https://t.me/orchimada" style="color:var(--blurple); text-decoration:none; font-weight:500;">@orchimada</a>.</p>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <span>© 2026 Artem Domozhakov</span>
+  <a class="arrow-link" href="/">interactive CV <span class="arr">→</span></a>
+  <a class="arrow-link" href="skill.html">Claude skill <span class="arr">→</span></a>
+  <a class="arrow-link" href="wh40k.html">Warhammer 40K <span class="arr">→</span></a>
+</footer>
+
+</body>
+</html>
