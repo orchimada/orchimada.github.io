@@ -655,6 +655,86 @@
       border-style: dashed;
     }
 
+    /* ── Approach section ────────────────────────────────────── */
+    .approach { margin-bottom: 56px; }
+
+    .approach-headline {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.3;
+      color: var(--text);
+      max-width: 560px;
+      margin-bottom: 14px;
+    }
+
+    .approach-intro {
+      font-size: .95rem;
+      color: var(--sub);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .approach-intro strong { color: var(--text); font-weight: 600; }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .approach-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .approach-card:hover {
+      border-color: #d5dde5;
+      box-shadow: 0 6px 18px rgba(10,37,64,.06);
+    }
+
+    .approach-card .num {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--blurple);
+      margin-bottom: 10px;
+    }
+
+    .approach-card h3 {
+      font-size: .98rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -.01em;
+    }
+
+    .approach-card p {
+      font-size: .86rem;
+      color: var(--sub);
+      line-height: 1.65;
+    }
+
+    .approach-card p strong { color: var(--text); font-weight: 600; }
+
+    .approach-coda {
+      border-left: 3px solid var(--blurple);
+      background: var(--surface);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 20px;
+      font-size: .9rem;
+      color: var(--sub);
+      line-height: 1.65;
+      max-width: 620px;
+    }
+
+    .approach-coda strong { color: var(--text); font-weight: 600; }
+
     /* ── Background cards ────────────────────────────────────── */
     .extra-grid {
       display: grid;
@@ -1091,6 +1171,38 @@
       </ul>
     </article>
   </div>
+
+  <!-- ── Approach ───────────────────────────────────────────── -->
+  <section class="approach" id="approach">
+    <div class="section-label">Approach</div>
+    <h2 class="approach-headline">The job isn't to build faster. It's to decide what <em>not</em> to build — faster.</h2>
+    <p class="approach-intro">"Move fast, break things, ship more features" is the default operating mode — and the default way to burn a team's effort on the wrong 80%. I work from the other end: <strong>structural analysis to find the 20% of moves that produce 80% of the impact</strong>, and a clear, defensible <strong>no</strong> to everything else.</p>
+
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="num">01</div>
+        <h3>Judgment over velocity</h3>
+        <p>AI made prototypes cheap — <strong>judgment is the scarce asset now</strong>. I frame opportunities in commercial terms, validate demand before building, and lead trade-off conversations in business outcomes, not delivery dates.</p>
+      </div>
+      <div class="approach-card">
+        <div class="num">02</div>
+        <h3>Excel where it works, big guns where it counts</h3>
+        <p>Most product problems are <strong>discipline problems wearing tooling costumes</strong>. Four of six core CPO challenges are solved by a spreadsheet plus an operating rhythm — decision rights, cadence, ownership. I save the heavy machinery for the two that earn it: hands-on AI builds and insight synthesis at scale.</p>
+      </div>
+      <div class="approach-card">
+        <div class="num">03</div>
+        <h3>Figure from the background</h3>
+        <p>I judge products by <strong>the behavior they install, not the features they list</strong>. Surfacing invisible assumptions, working the seams between domains, naming what becomes scarce when your technology makes something abundant — that keeps the product vision alive and competitors a category behind.</p>
+      </div>
+      <div class="approach-card">
+        <div class="num">04</div>
+        <h3>Product sense, backed by evidence</h3>
+        <p>Probes, not opinions. I hunt the <strong>unnamed pain</strong> — expensive workarounds, apologies, nostalgia for the old way — then run every idea through an adversarial critique loop. Killed ideas get epitaphs; survivors get the cheapest test that could prove them wrong.</p>
+      </div>
+    </div>
+
+    <p class="approach-coda"><strong>In one line:</strong> find the new behavior a capability makes possible, name what it makes scarce, attack every assumption with the cheapest disconfirming test — and build the loop that compounds judgment, not output.</p>
+  </section>
 
   <!-- ── Background ─────────────────────────────────────────── -->
   <div class="section-label" style="margin-bottom:24px">Background</div>
