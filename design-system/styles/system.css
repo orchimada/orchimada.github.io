@@ -225,9 +225,9 @@ body.filtering .more{display:none}
 .bigcta{background:var(--carbon);border-radius:20px;padding:48px 46px;color:#fff;position:relative;overflow:hidden}
 .bigcta .eb{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sig);margin-bottom:14px}
 .bigcta h2{font-family:var(--disp);font-size:clamp(1.6rem,4.4vw,2.3rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:24px;max-width:560px}
-.bigcta ul{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:30px}
-.bigcta li{display:flex;gap:13px;font-size:1rem;color:var(--c-soft);line-height:1.6;max-width:660px}
-.bigcta li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sig);margin-top:9px;flex:0 0 auto}
+.bigcta ul{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:30px}
+.bigcta li{position:relative;padding-left:24px;font-size:1rem;color:var(--c-soft);line-height:1.65;max-width:680px}
+.bigcta li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:var(--sig)}
 .bigcta li b{color:#fff;font-weight:600}
 .bigcta .acts{display:flex;gap:10px;flex-wrap:wrap}
 .bigcta .acts a{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;text-decoration:none;padding:13px 22px;border-radius:100px;display:flex;align-items:center;gap:8px}
