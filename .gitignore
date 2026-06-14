@@ -45,3 +45,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# editor
+.vscode/
+
+# local-only pages & design explorations (kept on disk, not published)
+design-system-concepts/
+teardown.html
+wh40k.html
+
+# raw source crops / unused heavy media (kept on disk, not published)
+assets/hero_1.jpg
+assets/hero_2.jpg
+assets/hero_portrait_wh40k.png
