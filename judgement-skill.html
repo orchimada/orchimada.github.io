@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Judgment over Velocity — a Claude skill by Artem Domozhakov</title>
+<meta name="description" content="A structured product-judgment engine for deciding what NOT to build, faster. Four gates: the spreadsheet test, the 80/20 cut, figure/ground, evidence probes. Free Claude skill.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<meta property="og:title" content="Judgment over Velocity — a Claude skill">
+<meta property="og:description" content="A product-judgment engine for deciding what NOT to build, faster. Install it in Claude and run the four gates on your own roadmap.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://orchimada.github.io/judgement-skill.html">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-106223856-1');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system/styles/system.css">
+<style>
+  .hero-lead{padding:54px 0 0}
+  .hero-lead h1{font-family:var(--dot);font-size:clamp(2.2rem,7vw,4rem);font-weight:400;letter-spacing:.01em;line-height:1.02;margin:16px 0 0}
+  .hero-lead h1 .r{color:var(--sig)}
+  .hero-lead p{font-size:1.05rem;color:var(--soft);max-width:560px;margin-top:18px;line-height:1.7}
+  .hero-lead p b{color:var(--ink);font-weight:600}
+  .filter-flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-top:8px}
+  .gate-col{flex:1;min-width:120px;text-align:center;padding:0 6px}
+  .gate-col .dots{display:flex;flex-direction:column;gap:6px;align-items:center;margin-bottom:14px}
+  .gate-col .pd{width:9px;height:9px;border-radius:50%;background:#2a2b30}
+  .gate-col .pd.on{background:var(--sig);box-shadow:0 0 8px rgba(255,45,45,.6)}
+  .gate-col .gnum{font-family:var(--dot);font-size:1.5rem;color:#fff;line-height:1}
+  .gate-col .gname{font-family:var(--mono);font-size:.66rem;color:#eceef2;text-transform:uppercase;margin-top:8px;letter-spacing:.03em}
+  .gate-col .gdesc{font-family:var(--mono);font-size:.6rem;color:var(--c-soft);margin-top:4px;line-height:1.4}
+  .flow-arrow{align-self:center;color:#3a3a42;font-size:1.1rem;padding:0 2px;margin-bottom:38px}
+  @media(max-width:640px){.flow-arrow{display:none}.gate-col{min-width:45%}}
+  .specstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--c-line);border:1px solid var(--c-line);border-radius:12px;overflow:hidden;margin-top:30px}
+  @media(max-width:560px){.specstrip{grid-template-columns:repeat(2,1fr)}}
+  .specstrip .cell{background:var(--carbon);padding:18px 16px}
+  .specstrip .cell b{font-family:var(--dot);font-size:1.7rem;color:#fff;display:block;line-height:1}
+  .specstrip .cell b.r{color:var(--sig)}
+  .specstrip .cell span{font-family:var(--mono);font-size:.58rem;color:var(--c-soft);text-transform:uppercase;margin-top:8px;display:block}
+  .verdict{font-family:var(--mono);font-size:.84rem;color:#cdd3e0;line-height:1.9;background:#000;border:1px solid var(--c-line);border-radius:10px;padding:18px 20px;margin-top:14px;overflow-x:auto}
+  .verdict .k{color:#fff}.verdict .r{color:var(--sig)}
+  .prompts{display:flex;flex-direction:column;gap:9px;margin-top:8px}
+  .prompt{border-left:3px solid var(--sig);background:var(--card);border-radius:0 8px 8px 0;padding:11px 16px;font-size:.9rem;color:var(--soft)}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html"><span class="d"></span>ARTEM DOMOZHAKOV</a>
+  <div class="links">
+    <a href="#how">How it works</a><a href="#install">Install</a><a href="#try">Try it</a>
+    <a class="cta" href="assets/judgment-over-velocity.skill" download>Download</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <canvas class="grille herobg" data-ground="light"></canvas>
+  <div class="hero-content wrap">
+
+    <div class="hero-lead">
+      <span class="kick"><span class="n">▸</span>Claude skill · v1.0 · the judgment filter</span>
+      <h1>Decide what<br><span class="r">NOT</span> to build.</h1>
+      <p>A structured product-judgment engine. Four gates; most ideas die early, that is the point. Give Claude a roadmap, an idea, or a build-vs-buy question; it runs the filter and returns a verdict. <b>Willing to answer "don't build anything."</b></p>
+    </div>
+
+    <div class="stage">
+      <div class="device deeptech">
+        <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+        <div class="dev-top">
+          <div class="model">JOV—4 <span>judgment filter</span></div>
+          <div class="jacks"><span class="jack on">IDEAS IN</span><span class="jack">GATES</span><span class="jack">OUT</span></div>
+          <div class="modesw"><span class="lab concept">CONCEPT</span><span class="track"><span class="knob"></span></span><span class="lab deep">DEEPTECH</span></div>
+        </div>
+        <div class="screen">
+          <canvas class="grille"></canvas>
+          <div class="face conceptface">
+            <div class="open">free · claude code &amp; claude.ai</div>
+            <h2>The 20% worth <span class="r">building</span>, found in one pass.</h2>
+            <p class="sub">Install it. Hand Claude your backlog. Get a verdict, not a yes-man.</p>
+            <div class="stat">
+              <div><b>4</b><span>kill-gates</span></div>
+              <div><b>1</b><span>survivor</span></div>
+              <div><b>9KB</b><span>install</span></div>
+            </div>
+          </div>
+          <div class="face deepface">
+            <div class="lcd"><span class="seg" data-cycle="012|008|003|001">012</span><label>ideas in pipeline</label></div>
+            <div class="read">
+              <div class="ln"><span class="led r"></span><b>G1</b> spreadsheet test: discipline in a costume?</div>
+              <div class="ln"><span class="led"></span><b>G2</b> 80/20: keep the vital few, no-list the rest</div>
+              <div class="ln"><span class="led"></span><b>G3</b> figure/ground: behavior installed, not features</div>
+              <div class="ln"><span class="led off"></span><b>G4</b> evidence: signal-backed assumptions only</div>
+              <div class="ln"><span class="led r"></span><b>OUT</b> 1 survivor + cheapest disconfirming test</div>
+            </div>
+          </div>
+        </div>
+        <div class="deck">
+          <div class="kn-wrap deep-only"><span class="kn"></span><label>strictness</label></div>
+          <div class="deep-only" style="display:flex;align-items:flex-end"><div class="vu" data-vu="9" style="height:34px"></div></div>
+          <a class="cta" href="assets/judgment-over-velocity.skill" download><span class="d"></span>Download .skill</a>
+        </div>
+      </div>
+    </div>
+    <div class="stage-cap">↑ <b>CONCEPT</b> sells the skill · <b>DEEPTECH</b> shows it running</div>
+
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="block" id="how">
+    <div class="sec-head">
+      <span class="kick"><span class="n">01</span>How it works</span>
+      <h2>Four gates. Pore size shrinks downstream.</h2>
+      <p class="sub">Each gate can kill the idea, and killing early is the point. An idea that dies at Gate 1 saves everything below it.</p>
+    </div>
+    <div class="panel-dark">
+      <div class="pkick">FIG.1 — signal through the filter · lit = surviving</div>
+      <div class="filter-flow">
+        <div class="gate-col"><div class="dots"><span class="pd on"></span><span class="pd on"></span><span class="pd on"></span><span class="pd on"></span></div><div class="gnum">12</div><div class="gname">G1 spreadsheet</div><div class="gdesc">discipline in a costume?</div></div>
+        <span class="flow-arrow">→</span>
+        <div class="gate-col"><div class="dots"><span class="pd on"></span><span class="pd on"></span><span class="pd on"></span><span class="pd"></span></div><div class="gnum">7</div><div class="gname">G2 80/20</div><div class="gdesc">keep the vital few</div></div>
+        <span class="flow-arrow">→</span>
+        <div class="gate-col"><div class="dots"><span class="pd on"></span><span class="pd on"></span><span class="pd"></span><span class="pd"></span></div><div class="gnum">4</div><div class="gname">G3 figure/ground</div><div class="gdesc">behavior, not features</div></div>
+        <span class="flow-arrow">→</span>
+        <div class="gate-col"><div class="dots"><span class="pd on"></span><span class="pd"></span><span class="pd"></span><span class="pd"></span></div><div class="gnum r">1</div><div class="gname">G4 evidence</div><div class="gdesc">signal-backed only</div></div>
+      </div>
+      <div class="specstrip">
+        <div class="cell"><b>12</b><span>ideas in</span></div>
+        <div class="cell"><b>4</b><span>gates</span></div>
+        <div class="cell"><b class="r">1</b><span>survivor</span></div>
+        <div class="cell"><b>0</b><span>yes-men</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="sec-head"><span class="kick"><span class="n">02</span>Output</span><h2>Every run ends in a verdict.</h2></div>
+    <div class="verdict">
+<span class="k">## Verdict</span><br>
+<span class="r">Classification:</span> DISCIPLINE | TOOLING-EARNED | HYBRID<br>
+<span class="r">The 20%:</span> the 1 to 3 moves that carry the impact, each with its number<br>
+<span class="r">The no-list:</span> everything cut, one defensible line each<br>
+<span class="r">Riskiest assumption:</span> the load-bearing one most likely false<br>
+<span class="r">Cheapest disconfirming test:</span> what to run, the cost, what kills it<br>
+<span class="r">Epitaphs:</span> killed ideas, what killed each and what resurrects it
+    </div>
+  </section>
+
+  <section class="block" id="install">
+    <div class="sec-head"><span class="kick"><span class="n">03</span>Install</span><h2>Two minutes, no dependencies.</h2></div>
+    <div class="panel-dark">
+      <div class="pkick">▸ claude code</div>
+      <div class="term"><span class="c"># personal, available in every project</span><br>unzip judgment-over-velocity.skill -d ~/.claude/skills/<br><br><span class="c"># verify</span><br><span class="g">›</span> do you have the judgment-over-velocity skill?</div>
+      <div class="pkick" style="margin-top:22px">▸ claude.ai</div>
+      <div class="term">Settings <span class="c">→</span> Capabilities <span class="c">→</span> Skills <span class="c">→</span> upload the .skill file.</div>
+    </div>
+  </section>
+
+  <section class="block" id="try">
+    <div class="sec-head"><span class="kick"><span class="n">04</span>Try it on</span><h2>Hand it a real decision.</h2></div>
+    <div class="prompts">
+      <div class="prompt">"We want to build an internal dashboard to track KPIs across teams. Should we?"</div>
+      <div class="prompt">"Here are the 14 items on our Q3 roadmap, help me prioritize."</div>
+      <div class="prompt">"Sales wants a customer-feedback platform. We get ~30 items a quarter."</div>
+      <div class="prompt">"Evaluate this: an AI agent that writes PRDs from Slack threads."</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="cta-block"><div class="wrap">
+  <div class="bigcta">
+    <div class="eb">▸ get it</div>
+    <h2>Run the four gates on your own roadmap.</h2>
+    <div class="acts">
+      <a class="p" href="assets/judgment-over-velocity.skill" download><span class="d"></span>Download .skill · 9 KB</a>
+      <a class="s" href="https://github.com/orchimada/judgment-over-velocity" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </div>
+</div></div>
+
+<footer class="ft"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px 24px">
+  <span>© 2026 A. Domozhakov</span><a href="index.html">main site</a><a href="cv.html">classic view</a><a href="https://github.com/orchimada/judgment-over-velocity" target="_blank" rel="noopener">GitHub</a>
+</div></footer>
+
+<script src="design-system/styles/system.js"></script>
+</body>
+</html>

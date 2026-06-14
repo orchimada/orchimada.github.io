@@ -24,19 +24,23 @@ at [`design-system/GUIDELINES.md`](design-system/GUIDELINES.md).
 ```
 .
 ├── index.html                       # main page — self-presentation (CONCEPT)
-├── judgment-over-velocity.html      # skill page — the judgment filter (DEEPTECH)
+├── judgement-skill.html             # skill page — the judgment filter (DEEPTECH)
+├── diagram-skill.html               # skill page — technical-explanatory minimalism
 ├── sentinet.html                    # product page — macOS network monitor
 ├── cv.html                          # plain, ATS/LLM-readable classic CV
-├── skill.html                       # redirect → judgment-over-velocity.html
+├── skill.html / judgment-over-velocity.html   # redirects → judgement-skill.html
 ├── design-system/                   # the design language (single source of truth)
 │   ├── GUIDELINES.md                #   idea, constraints, voice, tones, tokens, vocabulary
 │   ├── references.md                #   what was taken from Stripe / Nothing / Teenage Engineering
 │   ├── styles/system.css            #   tokens + components
 │   ├── styles/system.js             #   dot grille, mode switch, filters, readouts
 │   └── examples/                    #   reference pages (main, skill)
-├── technical-explanatory-minimalism/# skill landing + its published interactive figures
-└── assets/                          # favicon, portrait, skill bundles, downloads, archive/
+└── assets/                          # favicon, portrait, skill bundles, downloads,
+    └── diagrams/                    #   published interactive figures for diagram-skill
 ```
+
+Every page is a flat file at the root (GitHub Pages serves them directly); skill
+pages follow the `*-skill.html` naming.
 
 Pages share `design-system/styles/system.{css,js}`; each adds only page-specific
 styles inline.
@@ -57,8 +61,8 @@ python3 -m http.server 8765
 
 Two of the highlighted projects are Claude skills, each in its own repo:
 
-- **[judgment-over-velocity](https://github.com/orchimada/judgment-over-velocity)** — a product-judgment engine for deciding what *not* to build. Page: [/judgment-over-velocity.html](https://orchimada.github.io/judgment-over-velocity.html)
-- **[technical-explanatory-minimalism](https://github.com/orchimada/technical-explanatory-minimalism)** — a technical-illustration skill (explorable figures). Page: [/technical-explanatory-minimalism/](https://orchimada.github.io/technical-explanatory-minimalism/)
+- **[judgment-over-velocity](https://github.com/orchimada/judgment-over-velocity)** — a product-judgment engine for deciding what *not* to build. Page: [/judgement-skill.html](https://orchimada.github.io/judgement-skill.html)
+- **[technical-explanatory-minimalism](https://github.com/orchimada/technical-explanatory-minimalism)** — a technical-illustration skill (explorable figures). Page: [/diagram-skill.html](https://orchimada.github.io/diagram-skill.html)
 
 ## Not published
 
