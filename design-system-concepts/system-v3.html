@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Language v3 — The Dot Field</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  :root{
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --disp:'Space Grotesk',-apple-system,system-ui,sans-serif;
+    --dot:'DotGothic16','Space Grotesk',sans-serif;
+    --body:'Inter',-apple-system,system-ui,sans-serif;
+
+    --paper:#f3f3f0; --carbon:#0a0a0b;
+    --ink:#101013; --ink-soft:#52525a; --line:#e2e2dc;
+    --grey:#8b8b84;
+    --sig:#ff2d2d;                 /* the one paint */
+    --dot-paper:rgba(16,16,19,.13);
+    --dot-carbon:rgba(255,255,255,.12);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:60;background:rgba(243,243,240,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1080px;margin:0 auto;padding:0 30px;height:58px;display:flex;align-items:center;gap:22px;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase}
+  .nav-in .b{font-weight:500;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:6px}
+  .nav-in .b .d{width:7px;height:7px;border-radius:50%;background:var(--sig)}
+  .nav-in .sp{margin-left:auto;display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}
+  .nav-in .sp::-webkit-scrollbar{display:none}
+  .nav-in a{color:var(--ink-soft);text-decoration:none;white-space:nowrap}
+  .nav-in a:hover{color:var(--ink)}
+
+  .kick{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+  .kick .n{color:var(--sig);margin-right:10px}
+
+  /* ── HERO with live dot field ── */
+  .hero{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+  #dots{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero-in{position:relative;max-width:1080px;margin:0 auto;padding:100px 30px 80px;pointer-events:none}
+  .hero h1{font-family:var(--disp);font-size:clamp(2.6rem,8vw,5.4rem);font-weight:700;letter-spacing:-.04em;line-height:.98;margin:18px 0 0}
+  .hero h1 .dotword{font-family:var(--dot);font-weight:400;color:var(--sig);letter-spacing:0}
+  .hero .thesis{margin-top:26px;font-size:1.12rem;color:var(--ink-soft);max-width:560px;line-height:1.7}
+  .hero .thesis b{color:var(--ink);font-weight:600}
+
+  section.s{padding:72px 0;border-bottom:1px solid var(--line)}
+  .s h2{font-family:var(--disp);font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:700;letter-spacing:-.03em;margin:14px 0 12px;line-height:1.1}
+  .s .lead{font-size:1.04rem;color:var(--ink-soft);max-width:700px;margin-bottom:16px;line-height:1.75}
+  .s .lead b{color:var(--ink);font-weight:600}
+
+  /* worked-back two cards */
+  .back{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+  @media(max-width:760px){.back{grid-template-columns:1fr}}
+  .bk{border:1px solid var(--line);border-radius:14px;padding:26px;background:#fff}
+  .bk.dev{background:#0a0a0b;border-color:#222}
+  .bk .h{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+  .bk.prod .h{color:#635bff}
+  .bk.dev .h{color:#7dd3fc}
+  .bk h3{font-family:var(--disp);font-size:1.2rem;font-weight:600;margin-bottom:12px;letter-spacing:-.02em}
+  .bk.dev h3{color:#f2f2f2}
+  .bk ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .bk li{font-size:.86rem;color:var(--ink-soft);padding-left:18px;position:relative;line-height:1.55}
+  .bk.dev li{color:#9aa0ab}
+  .bk li::before{content:"–";position:absolute;left:0;color:var(--grey)}
+  .lesson{margin-top:22px;border-left:3px solid var(--sig);background:#fff;border-radius:0 10px 10px 0;padding:16px 22px;font-size:.96rem;color:var(--ink-soft);line-height:1.7;max-width:720px}
+  .lesson b{color:var(--ink);font-weight:600}
+
+  /* brief: three principle tiles + inline dot demo */
+  .brief{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media(max-width:760px){.brief{grid-template-columns:1fr}}
+  .tile{border:1px solid var(--line);border-radius:14px;padding:24px;background:#fff;position:relative;overflow:hidden}
+  .tile .lab{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-bottom:40px}
+  .tile h3{font-family:var(--disp);font-size:1.12rem;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+  .tile p{font-size:.86rem;color:var(--ink-soft);line-height:1.65}
+  .tile p b{color:var(--ink);font-weight:600}
+  .tile .glyph{position:absolute;top:20px;right:22px}
+
+  /* ── SPECIMENS ── */
+  .spec-head{display:flex;align-items:baseline;gap:12px;margin:34px 0 12px}
+  .spec-head .t{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+  .spec-head .c{font-size:.82rem;color:var(--ink-soft)}
+  .frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .bar{display:flex;align-items:center;gap:6px;padding:9px 13px;border-bottom:1px solid var(--line);background:#fbfbf9}
+  .bar.dk{background:#141416;border-color:#222}
+  .bar i{width:9px;height:9px;border-radius:50%;background:#d9d9d3;display:block}
+  .bar.dk i{background:#33343a}
+  .bar .url{font-family:var(--mono);font-size:.66rem;color:#9a9a92;margin-left:8px}
+
+  /* business specimen — PAPER */
+  .biz{position:relative;padding:56px 44px;background:var(--paper);
+    background-image:radial-gradient(var(--dot-paper) 1.4px,transparent 1.4px);background-size:22px 22px}
+  .biz .wm{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:7px;margin-bottom:40px}
+  .biz .wm .d{width:8px;height:8px;border-radius:50%;background:var(--sig)}
+  .biz .open{font-family:var(--mono);font-size:.66rem;color:var(--grey);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+  .biz h3{font-family:var(--disp);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;letter-spacing:-.04em;line-height:.98}
+  .biz h3 .r{color:var(--sig)}
+  .biz .sub{margin-top:18px;font-size:1.02rem;color:var(--ink-soft);max-width:440px}
+  .biz .stats{display:flex;gap:38px;margin-top:40px}
+  .biz .stats b{font-family:var(--dot);font-size:2.2rem;font-weight:400;letter-spacing:0;display:block;line-height:1}
+  .biz .stats span{font-family:var(--mono);font-size:.66rem;color:var(--grey);text-transform:uppercase;letter-spacing:.04em;margin-top:6px;display:block}
+  .biz .cta{display:inline-flex;align-items:center;gap:8px;margin-top:40px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;padding:13px 22px;border-radius:100px}
+  .biz .cta .d{width:7px;height:7px;border-radius:50%;background:var(--sig)}
+
+  /* engineering specimen — CARBON */
+  .eng{position:relative;padding:48px 44px;background:var(--carbon);color:#f2f2f2;
+    background-image:radial-gradient(var(--dot-carbon) 1.4px,transparent 1.4px);background-size:22px 22px}
+  .eng .wm{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#f2f2f2;display:flex;align-items:center;gap:7px;margin-bottom:30px}
+  .eng .wm .d{width:8px;height:8px;border-radius:50%;background:var(--sig)}
+  .eng .tag{font-family:var(--mono);font-size:.66rem;color:#7a7a82;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+  .eng h3{font-family:var(--dot);font-size:clamp(2rem,6vw,3.6rem);font-weight:400;line-height:1;letter-spacing:.01em}
+  .eng h3 .r{color:var(--sig)}
+  .eng .sub{margin-top:16px;font-family:var(--mono);font-size:.82rem;color:#9aa0ab;max-width:460px;line-height:1.7}
+  .eng .specrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:36px;background:#222;border:1px solid #222;border-radius:10px;overflow:hidden}
+  @media(max-width:600px){.eng .specrow{grid-template-columns:repeat(2,1fr)}}
+  .eng .cell{background:var(--carbon);padding:18px 16px}
+  .eng .cell b{font-family:var(--dot);font-size:1.7rem;font-weight:400;display:block;line-height:1}
+  .eng .cell b.r{color:var(--sig)}
+  .eng .cell span{font-family:var(--mono);font-size:.6rem;color:#7a7a82;text-transform:uppercase;letter-spacing:.04em;margin-top:8px;display:block}
+  .eng .diagram{margin-top:34px;border-top:1px solid #222;padding-top:24px}
+  .eng .dlabel{font-family:var(--mono);font-size:.66rem;color:#7a7a82;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
+  .eng .gate-flow{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+  .eng .gate{flex:1;min-width:90px;text-align:center;position:relative}
+  .eng .gate .dotcol{display:flex;flex-direction:column;gap:5px;align-items:center;margin-bottom:12px}
+  .eng .gate .pd{width:8px;height:8px;border-radius:50%;background:#2a2a30}
+  .eng .gate .pd.on{background:var(--sig);box-shadow:0 0 8px rgba(255,45,45,.6)}
+  .eng .gate .gn{font-family:var(--mono);font-size:.62rem;color:#9aa0ab;text-transform:uppercase}
+  .eng .gate .gf{font-family:var(--mono);font-size:.56rem;color:#5a5a62;text-transform:uppercase;margin-top:3px}
+  .eng .arrow{color:#3a3a42;font-size:1rem;padding:0 4px;align-self:flex-start;margin-top:9px}
+
+  /* next steps */
+  .steps{counter-reset:s;list-style:none;display:flex;flex-direction:column;gap:14px;max-width:700px;margin-top:8px}
+  .steps li{counter-increment:s;padding-left:44px;position:relative;font-size:.96rem;color:var(--ink-soft);line-height:1.6}
+  .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;font-family:var(--mono);font-size:.78rem;color:var(--sig)}
+  .steps li b{color:var(--ink);font-weight:600}
+
+  footer.ft{padding:36px 0 64px;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+  <a class="b" href="#top"><span class="d"></span>LANGUAGE v3</a>
+  <div class="sp">
+    <a href="#back">Stripe, worked back</a><a href="#brief">The brief</a>
+    <a href="#biz">Business voice</a><a href="#eng">Engineering voice</a><a href="#next">Next</a>
+  </div>
+</div></nav>
+
+<!-- ── HERO ── -->
+<header class="hero" id="top">
+  <canvas id="dots"></canvas>
+  <div class="hero-in">
+    <span class="kick"><span class="n">v3</span>Design language — the dot field</span>
+    <h1>Meaning is just<br>the dots that <span class="dotword">light up.</span></h1>
+    <p class="thesis">Nothing builds a phone out of a dot-matrix and one red light. Stripe builds trust out of one flowing stripe. Mine is the <b>dot field</b>: the ground is always there — quiet, systemic — and the <b>figure is the signal that lights</b>. Move your cursor. The noise was always present; attention is what makes it mean something.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ── STRIPE WORKED BACK ── -->
+  <section class="s" id="back">
+    <span class="kick"><span class="n">01</span>Worked back from the masters</span>
+    <h2>One brand, two temperatures.</h2>
+    <p class="lead">Before adding anything of mine, I reverse-engineered how Stripe holds a business face and a developer face together. The answer is reusable: <b>one type system, one motif, one accent — run light to sell, dark to explain.</b></p>
+    <div class="back">
+      <div class="bk prod">
+        <div class="h">stripe.com · product</div>
+        <h3>Light. Confident. Sells outcomes.</h3>
+        <ul>
+          <li>Near-white, enormous whitespace, soft-shadow cards</li>
+          <li>Huge bold sans, tight tracking, navy ink + slate body</li>
+          <li>The literal motif: a flowing multi-color gradient stripe</li>
+          <li>One accent (blurple); one clear CTA per block</li>
+        </ul>
+      </div>
+      <div class="bk dev">
+        <div class="h">stripe.dev · developers</div>
+        <h3>Dark. Technical. Shows the how.</h3>
+        <ul>
+          <li>Dark surfaces, grid, code-forward, monospace</li>
+          <li>Gradient energy on black; developer-culture playfulness</li>
+          <li>Content hub — deep-dives, events, live tutorials</li>
+          <li>Precise and hands-on, not decorative</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lesson"><b>The transferable lesson:</b> Stripe doesn't run two brands. It runs one — turned up bright to sell, turned down dark to explain. So I need exactly one motif, one accent, and one type system that survives both rooms. Then Nothing taught me the second half: <b>the dark, technical room can be the boldest, most beautiful one</b> — not cramped blueprints.</p>
+  </section>
+
+  <!-- ── THE BRIEF ── -->
+  <section class="s" id="brief">
+    <span class="kick"><span class="n">02</span>The brief, laid on top</span>
+    <h2>My motif is figure &amp; ground — drawn as dots.</h2>
+    <p class="lead">Every problem is a figure on a ground; the ground is what decides the answer. The cleanest object that <b>is</b> that idea is a dot field: a grid (the system, the noise, the context) where the <b>figure appears as the dots that light</b>. Gestalt, signal-from-noise, and TRIZ in one mark — and, conveniently, the exact thing Nothing already proves can feel premium.</p>
+    <div class="brief">
+      <div class="tile">
+        <span class="lab">Rule 01 · attention</span>
+        <svg class="glyph" width="34" height="20" viewBox="0 0 34 20"><circle cx="5" cy="5" r="2" fill="#d9d9d3"/><circle cx="17" cy="5" r="2" fill="#d9d9d3"/><circle cx="29" cy="5" r="2" fill="#d9d9d3"/><circle cx="5" cy="15" r="2" fill="#d9d9d3"/><circle cx="17" cy="15" r="3.4" fill="#ff2d2d"/><circle cx="29" cy="15" r="2" fill="#d9d9d3"/></svg>
+        <h3>One dot lights</h3>
+        <p>Attention is the scarce resource. <b>One figure bright per view</b> — the rest stays quiet ground, one scroll away.</p>
+      </div>
+      <div class="tile">
+        <span class="lab">Rule 02 · one paint</span>
+        <svg class="glyph" width="34" height="20" viewBox="0 0 34 20"><rect x="2" y="6" width="9" height="9" rx="2" fill="#101013"/><rect x="13" y="6" width="9" height="9" rx="2" fill="#f3f3f0" stroke="#d9d9d3"/><rect x="24" y="6" width="9" height="9" rx="2" fill="#ff2d2d"/></svg>
+        <h3>Ink, paper, one red</h3>
+        <p>Monochrome by default; a <b>single signal red</b> spent only on what matters. Scarce color always means something.</p>
+      </div>
+      <div class="tile">
+        <span class="lab">Rule 03 · the human mark</span>
+        <svg class="glyph" width="34" height="20" viewBox="0 0 34 20"><path d="M2,14 Q10,2 18,12 T33,7" fill="none" stroke="#ff2d2d" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <h3>One detail by hand</h3>
+        <p>Against vibe-coded sameness, every page earns <b>one hand-tuned detail</b> — a real annotation, an irregular trace. Proof a human was here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUSINESS VOICE ── -->
+  <section class="s" id="biz">
+    <span class="kick"><span class="n">03</span>Voice one · figure forward</span>
+    <h2>Business — turned up bright.</h2>
+    <p class="lead">Light paper, the dot field barely whispering, the figure huge and glanceable. Sells me and my work in two seconds — Stripe-product confidence with Nothing's restraint. Dot-matrix only on the numbers that earn it; one red accent.</p>
+    <div class="spec-head"><span class="t">SELF · SKILL · PRODUCT pages</span><span class="c">the room that sells</span></div>
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><span class="url">orchimada.github.io</span></div>
+      <div class="biz">
+        <div class="wm"><span class="d"></span>ARTEM DOMOZHAKOV</div>
+        <div class="open">● open to projects &amp; advisory</div>
+        <h3>I read the <span class="r">ground</span>,<br>not just the figure.</h3>
+        <p class="sub">Personalization at scale — turning ML into GMV, ARPPU, and retention. Sber, Magnit OMNI.</p>
+        <div class="stats">
+          <div><b>20M+</b><span>MAU led</span></div>
+          <div><b>10×</b><span>vs control</span></div>
+          <div><b>11+</b><span>products</span></div>
+        </div>
+        <span class="cta"><span class="d"></span>Start a conversation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ENGINEERING VOICE ── -->
+  <section class="s" id="eng">
+    <span class="kick"><span class="n">04</span>Voice two · ground exposed</span>
+    <h2>Engineering — bold, not buried.</h2>
+    <p class="lead">Carbon black, the dot field lit and structural, big dot-matrix display — a Nothing product page, not a cramped schematic. The figure is the signal lighting through the gates; the ground (the grid, the spec, the function of each part) is the whole point, and it's <b>big and beautiful</b>.</p>
+    <div class="spec-head"><span class="t">SKILL.HOW · TEARDOWN · diagrams</span><span class="c">the room that explains</span></div>
+    <div class="frame">
+      <div class="bar dk"><i></i><i></i><i></i><span class="url">/skill.html</span></div>
+      <div class="eng">
+        <div class="wm"><span class="d"></span>JUDGMENT-OVER-VELOCITY</div>
+        <div class="tag">claude skill · v1.0 · the filter</div>
+        <h3>DECIDE WHAT<br><span class="r">NOT</span> TO BUILD.</h3>
+        <p class="sub">Four gates. Most ideas die early — that's the point. The signal that survives all four is the only thing worth building.</p>
+
+        <div class="specrow">
+          <div class="cell"><b>12</b><span>ideas in</span></div>
+          <div class="cell"><b>4</b><span>gates</span></div>
+          <div class="cell"><b class="r">1</b><span>survivor</span></div>
+          <div class="cell"><b>9KB</b><span>install</span></div>
+        </div>
+
+        <div class="diagram">
+          <div class="dlabel">FIG.1 — signal through the filter · lit = surviving</div>
+          <div class="gate-flow">
+            <div class="gate">
+              <div class="dotcol"><span class="pd on"></span><span class="pd on"></span><span class="pd on"></span><span class="pd on"></span></div>
+              <div class="gn">G1 spreadsheet</div><div class="gf">discipline?</div>
+            </div>
+            <span class="arrow">→</span>
+            <div class="gate">
+              <div class="dotcol"><span class="pd on"></span><span class="pd on"></span><span class="pd on"></span><span class="pd"></span></div>
+              <div class="gn">G2 80/20</div><div class="gf">vital few</div>
+            </div>
+            <span class="arrow">→</span>
+            <div class="gate">
+              <div class="dotcol"><span class="pd on"></span><span class="pd on"></span><span class="pd"></span><span class="pd"></span></div>
+              <div class="gn">G3 figure/ground</div><div class="gf">behavior?</div>
+            </div>
+            <span class="arrow">→</span>
+            <div class="gate">
+              <div class="dotcol"><span class="pd on"></span><span class="pd"></span><span class="pd"></span><span class="pd"></span></div>
+              <div class="gn">G4 evidence</div><div class="gf">signal-backed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEXT ── -->
+  <section class="s" id="next">
+    <span class="kick"><span class="n">05</span>What I need from you</span>
+    <h2>One language, two rooms.</h2>
+    <p class="lead">This is a single system: same dot field, same red signal, same type voices — bright paper to <b>sell</b>, carbon dark to <b>explain</b>. Both bold. Tell me where to push before I commit it.</p>
+    <ol class="steps">
+      <li><b>The signal color.</b> Nothing-red is the bet (warm, decisive, scarce). Keep it, or pull toward a cooler signal? One paint only — it has to be the right one.</li>
+      <li><b>The dot-matrix dose.</b> I used DotGothic16 for hero numerals and engineering headlines. More of it (full Nothing), or reserve it strictly for "signal" moments?</li>
+      <li><b>The hero field.</b> The cursor-reactive dot field up top — signature, or too much? It can be calmer (slow auto-scan) or bolder.</li>
+      <li><b>Then I build the tokens</b> and prove it on two real pages — the business self-page and the engineering skill-page — before converting the rest.</li>
+    </ol>
+  </section>
+
+  <footer class="ft">© 2026 A. Domozhakov · design language v3 · not linked from the live site</footer>
+
+</div>
+
+<script>
+  // ── live dot field: the ground is always there; attention lights the figure ──
+  const cv = document.getElementById('dots');
+  const ctx = cv.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W, H, pts = [], mx = -9999, my = -9999, t = 0;
+  const GAP = 26, R_LIGHT = 96;
+
+  function build(){
+    const r = cv.getBoundingClientRect();
+    W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    pts = [];
+    for(let y=GAP/2; y<H; y+=GAP)
+      for(let x=GAP/2; x<W; x+=GAP)
+        pts.push({x,y});
+  }
+
+  function frame(){
+    t += 0.016;
+    ctx.clearRect(0,0,W,H);
+    // a slow auto-roaming signal so it's alive without a cursor
+    const ax = W*(0.5 + 0.36*Math.cos(t*0.5)), ay = H*(0.5 + 0.32*Math.sin(t*0.7));
+    for(const p of pts){
+      const dmx = p.x-mx, dmy = p.y-my, dm = Math.hypot(dmx,dmy);
+      const dax = p.x-ax, day = p.y-ay, da = Math.hypot(dax,day);
+      const near = Math.min(dm, da*1.15);
+      let lit = Math.max(0, 1 - near/R_LIGHT);
+      lit = lit*lit;
+      if(lit > 0.04){
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.3 + lit*2.6, 0, 6.283);
+        ctx.fillStyle = `rgba(255,45,45,${0.25 + lit*0.75})`;
+        ctx.fill();
+      } else {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.3, 0, 6.283);
+        ctx.fillStyle = 'rgba(16,16,19,0.14)';
+        ctx.fill();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  window.addEventListener('mousemove', e => {
+    const r = cv.getBoundingClientRect();
+    mx = e.clientX - r.left; my = e.clientY - r.top;
+  });
+  window.addEventListener('mouseleave', () => { mx = my = -9999; });
+  window.addEventListener('resize', build);
+  build(); frame();
+</script>
+
+</body>
+</html>

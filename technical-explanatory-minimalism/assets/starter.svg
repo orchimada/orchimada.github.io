@@ -1,0 +1,54 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"
+     stroke-linejoin="round" stroke-linecap="round"
+     font-family="'JetBrains Mono', ui-monospace, monospace">
+  <!--
+    STATIC STARTER — house style (see references/visual-style.md).
+    Conventions baked in:
+      • JetBrains Mono labels (.lbl title / .lbl-s annotation) · two accents only
+      • .wall (ink 1.5) structure · .media (ink 1.4) surfaces · .leader (faint) callouts
+      • annotate via a horizontal leader → right-margin .lbl / .lbl-s block
+      • .caught = small faint marks (things stopped) · red = the survivor
+    Drop this <svg> inside assets/plate.html for the framed, graph-paper presentation.
+  -->
+  <style>
+    :root{ --ink:#1a1a1a; --sub:#55554f; --faint:#8a8a82; --line:#e3e2da; --red:#d23f2e; --blue:#2553c4; }
+    text{ fill:var(--ink); }
+    .lbl{ font-size:11px; font-weight:600; letter-spacing:.03em; }
+    .lbl-s{ font-size:9.5px; fill:var(--faint); letter-spacing:.02em; }
+    .lbl-r{ fill:var(--red); } .lbl-b{ fill:var(--blue); }
+    .wall{ stroke:var(--ink); stroke-width:1.5; fill:none; }
+    .media{ stroke:var(--ink); stroke-width:1.4; fill:none; }
+    .leader{ stroke:var(--faint); stroke-width:1; fill:none; }
+    .reject{ stroke:var(--red); stroke-width:1.3; fill:none; }
+    .caught{ fill:var(--faint); }
+    .node{ fill:#fff; stroke:var(--ink); stroke-width:1.5; }
+  </style>
+
+  <!-- three stages in causal order (spatial = causal) -->
+  <line class="leader" x1="70" y1="150" x2="470" y2="150"/>
+
+  <g><rect class="node" x="40"  y="128" width="84" height="44" rx="4"/><text class="lbl" x="58"  y="154">SOURCE</text></g>
+  <g><rect class="node" x="228" y="128" width="84" height="44" rx="4"/><text class="lbl" x="240" y="154">TRANSFORM</text></g>
+  <g><rect class="node" x="416" y="128" width="84" height="44" rx="4"/><text class="lbl" x="436" y="154">OUTPUT</text></g>
+
+  <!-- flow arrowheads -->
+  <polygon class="caught" points="206,144 220,150 206,156"/>
+  <polygon class="caught" points="394,144 408,150 394,156"/>
+
+  <!-- a caught mark: something stopped at the transform -->
+  <circle class="caught" cx="268" cy="112" r="4"/>
+
+  <!-- callout: leader → right-margin block -->
+  <line class="leader" x1="312" y1="150" x2="522" y2="150"/>
+  <text class="lbl"   x="530" y="142">STAGE · TRANSFORM</text>
+  <text class="lbl-s" x="530" y="156">the working surface — name it,</text>
+  <text class="lbl-s" x="530" y="168">say what passes and what stops.</text>
+
+  <!-- principle note (left margin) -->
+  <text class="lbl-s" x="20" y="206">FLOW →</text>
+  <text class="lbl-s" x="20" y="220">left to right in causal order;</text>
+  <text class="lbl-s" x="20" y="234">red marks the survivor.</text>
+
+  <!-- the survivor token, in transit toward the output -->
+  <circle cx="360" cy="150" r="5" fill="var(--red)"/>
+</svg>

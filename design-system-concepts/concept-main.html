@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artem Domozhakov — concept build (main)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="system.css">
+<style>
+  .hero-lead{padding:54px 0 0}
+  .hero-lead h1{font-family:var(--disp);font-size:clamp(2.4rem,7vw,4.2rem);font-weight:700;letter-spacing:-.04em;line-height:1;margin:16px 0 0}
+  .hero-lead .roles{font-family:var(--mono);font-size:.78rem;letter-spacing:.03em;color:var(--ink);margin-top:18px}
+  .hero-lead .roles .s{color:var(--grey);padding:0 6px}
+  .hero-lead .chain{font-family:var(--mono);font-size:.72rem;color:var(--grey);margin-top:6px}
+  .hero-lead .chain b{color:var(--sig)}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="#top"><span class="d"></span>ARTEM DOMOZHAKOV</a>
+  <div class="links">
+    <a href="#experience">Experience</a><a href="#approach">Approach</a><a href="#highlights">Highlights</a>
+    <a class="cta" href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<div class="wrap" id="top">
+
+  <!-- lead -->
+  <div class="hero-lead">
+    <span class="kick"><span class="n">01</span>Product leader · personalization &amp; growth</span>
+    <h1>I read the ground,<br>not just the figure.</h1>
+    <p class="roles">PRODUCT LEADERSHIP<span class="s">|</span>GROWTH-HACKING<span class="s">|</span>UNIT ECONOMICS</p>
+    <p class="chain">all things value: <b>creation → delivery → capture → scaling</b></p>
+  </div>
+
+  <!-- the instrument (hero only) -->
+  <div class="stage">
+    <div class="device">
+      <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+      <div class="dev-top">
+        <div class="model">AD·OS—1 <span>self</span></div>
+        <div class="jacks"><span class="jack on">GROUND</span><span class="jack">SIGNAL</span><span class="jack">OUT</span></div>
+        <div class="modesw"><span class="lab concept">CONCEPT</span><span class="track"><span class="knob"></span></span><span class="lab deep">DEEPTECH</span></div>
+      </div>
+      <div class="screen">
+        <canvas class="grille"></canvas>
+        <!-- CONCEPT: sells -->
+        <div class="face conceptface">
+          <div class="open">open to projects &amp; advisory</div>
+          <h2>Personalization at <span class="r">scale</span> — ML into real money.</h2>
+          <p class="sub">Sber · Magnit OMNI. GMV, ARPPU, reach, retention.</p>
+          <div class="stat">
+            <div><b>20M+</b><span>MAU led</span></div>
+            <div><b>10×</b><span>vs control</span></div>
+            <div><b>11+</b><span>products</span></div>
+          </div>
+        </div>
+        <!-- DEEPTECH: the person as a system -->
+        <div class="face deepface">
+          <div class="lcd"><span class="seg" data-cycle="20M|10×|11+|4.2h">20M</span><label>peak readout</label></div>
+          <div class="read">
+            <div class="ln"><span class="led r"></span><b>FN-01</b> personalization &amp; recsys</div>
+            <div class="ln"><span class="led"></span><b>FN-02</b> growth experimentation</div>
+            <div class="ln"><span class="led"></span><b>FN-03</b> unit economics / P&amp;L</div>
+            <div class="ln"><span class="led off"></span><b>FN-04</b> ML literacy · stakeholder</div>
+          </div>
+        </div>
+      </div>
+      <div class="deck">
+        <div class="deep-only" style="font-family:var(--mono);font-size:.62rem;color:var(--silk);text-transform:uppercase;letter-spacing:.05em">subject documented · 4 functions · all load-bearing</div>
+        <div class="kn-wrap deep-only"><span class="kn"></span><label>focus</label></div>
+        <a class="cta" href="#contact"><span class="d"></span>Start a conversation</a>
+      </div>
+    </div>
+  </div>
+  <div class="stage-cap">↑ flip <b>MODE</b> — concept sells the idea · deeptech exposes the system</div>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="sec-head">
+      <span class="kick"><span class="n">02</span>Experience</span>
+      <h2>Three roles, three numbers.</h2>
+      <p class="sub">Press a lens to highlight what's relevant — <a onclick="setFilter('growth')">Growth &amp; Economics</a>, say — or just read.</p>
+    </div>
+
+    <div class="filterbar">
+      <span class="fl">Lens:</span>
+      <button class="fbtn" data-f="product"><span class="pled"></span>Product</button>
+      <button class="fbtn" data-f="project"><span class="pled"></span>Project</button>
+      <button class="fbtn" data-f="growth"><span class="pled"></span>Growth</button>
+      <button class="fbtn" data-f="creative"><span class="pled"></span>Creative</button>
+    </div>
+
+    <div class="jobs">
+      <article class="job">
+        <div class="job-top"><div><div class="job-role">Head of Personalization</div><div class="job-co">Magnit OMNI</div></div><div class="job-when">2025 — now</div></div>
+        <div class="job-head">↗ 2× feature MAU in six months through ML personalization</div>
+        <div class="job-tags"><span class="tag live">current</span><span class="tag">mobile · ecosystem</span><span class="tag">MAU 20M</span></div>
+        <ul class="bullets">
+          <li data-tags="product growth"><span class="bi"></span><span class="bt"><b>10× business impact</b> from ML look-alike audience selection — 2M RUB control vs. 30M test.</span></li>
+          <li data-tags="product growth"><span class="bi"></span><span class="bt"><b>2× feature MAU (4.7M → 10M)</b> — cashback-categories personalization, 20 → 200 categories per customer.</span></li>
+          <li data-tags="project product"><span class="bi"></span><span class="bt"><b>One-week go-to-market</b> for growth tests — installed the hypothesis launch &amp; testing process.</span></li>
+          <li class="extra" data-tags="growth product"><span class="bi"></span><span class="bt"><b>1,068 categories</b> in the Q2 2026 upgrade — cut investment without an ARPPU drop.</span></li>
+        </ul>
+        <button class="more" data-label="+ 1 more" onclick="toggleMore(this)">+ 1 more</button>
+      </article>
+
+      <article class="job">
+        <div class="job-top"><div><div class="job-role">Personalization Projects Lead</div><div class="job-co">Sber</div></div><div class="job-when">2022 — 2025</div></div>
+        <div class="job-head">↗ Personalization shipped across 11+ ecosystem products</div>
+        <div class="job-tags"><span class="tag">unified B2C platform</span><span class="tag">3.5 yrs</span></div>
+        <ul class="bullets">
+          <li data-tags="product growth"><span class="bi"></span><span class="bt"><b>+5% GMV</b> in Megamarket — partner dropped their third-party SaaS after the A/B series.</span></li>
+          <li data-tags="product creative"><span class="bi"></span><span class="bt"><b>4.2h average time in-app</b> — the "Power of Sound" scenario in Zvuk streaming.</span></li>
+          <li data-tags="product growth"><span class="bi"></span><span class="bt"><b>2.4× GMV</b> from personalized selections at MRIYA Resort &amp; SPA on SberTV.</span></li>
+          <li class="extra" data-tags="project"><span class="bi"></span><span class="bt"><b>Legal approval time halved</b> — authored the recommendation-tech rules template, now used ecosystem-wide.</span></li>
+        </ul>
+        <button class="more" data-label="+ 1 more" onclick="toggleMore(this)">+ 1 more</button>
+      </article>
+
+      <article class="job">
+        <div class="job-top"><div><div class="job-role">PMM</div><div class="job-co">Antison</div></div><div class="job-when">2019 — 2021</div></div>
+        <div class="job-head">↗ Enterprise pilots with Unilever, Norilsk Nickel, LENTA</div>
+        <div class="job-tags"><span class="tag">driver monitoring</span><span class="tag">B2B SaaS</span></div>
+        <ul class="bullets">
+          <li data-tags="growth project"><span class="bi"></span><span class="bt"><b>5 enterprise pilots</b> signed; partners Sinara Transport Machines &amp; Renaissance Insurance attracted.</span></li>
+          <li data-tags="creative project"><span class="bi"></span><span class="bt"><b>Sber500 Demo Day</b> — pitched before Herman Gref &amp; ecosystem leadership.</span></li>
+          <li data-tags="creative growth"><span class="bi"></span><span class="bt"><b>Best "Logistics" case</b>, Rusbase Digital Awards 2021.</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="block" id="approach">
+    <div class="sec-head">
+      <span class="kick"><span class="n">03</span>Approach</span>
+      <h2>The job isn't to build faster.<br>It's to decide what <span style="color:var(--sig)">not</span> to build — faster.</h2>
+      <p class="sub">Structural analysis to find the 20% of moves that carry 80% of the impact — and a defensible <b style="color:var(--ink)">no</b> to the rest.</p>
+    </div>
+    <div class="gates">
+      <div class="gate"><div class="gi"><span class="led"></span>/01 judgment</div><h3>Judgment over velocity</h3><p>AI made prototypes cheap — <b>judgment is the scarce asset</b>. Opportunities framed in commercial terms; demand validated before building.</p></div>
+      <div class="gate"><div class="gi"><span class="led"></span>/02 tooling</div><h3>Excel where it works, big guns where it counts</h3><p>Most problems are <b>discipline problems in tooling costumes</b>. Heavy machinery only for hands-on AI builds and synthesis at scale.</p></div>
+      <div class="gate"><div class="gi"><span class="led"></span>/03 figure-ground</div><h3>Figure from the background</h3><p>Judge products by <b>the behavior they install</b>, not the features they list. Name what becomes scarce when capability makes something abundant.</p></div>
+      <div class="gate"><div class="gi"><span class="led"></span>/04 evidence</div><h3>Product sense, backed by evidence</h3><p>Probes, not opinions. Hunt the <b>unnamed pain</b>; every idea through an adversarial loop ending in the cheapest disconfirming test.</p></div>
+    </div>
+    <p class="coda"><b>In one line:</b> find the new behavior a capability makes possible, name what it makes scarce, attack every assumption with the cheapest disconfirming test — and build the loop that compounds judgment, not output.</p>
+
+    <div class="callout">
+      <div class="ct">
+        <div class="eb">▸ now a claude skill</div>
+        <p>I wrapped this into a <b>Claude skill — try it yourself</b>. It runs the four kill-gates on your own roadmap or build-vs-buy question.</p>
+      </div>
+      <div class="acts">
+        <a class="dl" href="../assets/judgment-over-velocity.skill" download>⬇ download .skill</a>
+        <a class="gh" href="concept-skill.html">how it works →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="block" id="highlights">
+    <div class="sec-head">
+      <span class="kick"><span class="n">04</span>Highlights</span>
+      <h2>Pet projects.</h2>
+      <p class="sub">Things I build to keep the judgment sharp.</p>
+    </div>
+    <div class="cards">
+      <div class="hcard">
+        <span class="htag">Claude skill</span>
+        <h3>Judgment over Velocity</h3>
+        <p>My methodology as an installable skill: four kill-gates that decide <b>what not to build</b>. Willing to answer "don't build anything."</p>
+        <div class="lks"><a href="concept-skill.html">How it works →</a><a href="#">GitHub</a><a href="../assets/judgment-over-velocity.skill" download>Download</a></div>
+      </div>
+      <div class="hcard">
+        <span class="htag b">macOS · monitor</span>
+        <h3>Sentinet</h3>
+        <p>See what your apps — <b>and your AI agents</b> — send to the net. Per-app traffic, one-click block, honest about what TLS hides.</p>
+        <div class="lks"><a href="#">About →</a><a href="#">Live demo</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKGROUND -->
+  <section class="block">
+    <div class="sec-head"><span class="kick"><span class="n">05</span>Background</span></div>
+    <div class="bgrid">
+      <div class="bcard"><h4>Education</h4><p>Faculty of Physics, NSU<span class="note">Semiconductor Physics — statistical foundation</span></p></div>
+      <div class="bcard"><h4>Methods</h4><ul><li>A/B testing &amp; experiment design</li><li>Unit economics &amp; KPI modeling</li><li>Evidence-based prioritization</li></ul></div>
+      <div class="bcard"><h4>Tools</h4><ul><li>Jira, Confluence, Notion</li><li>Python — scraping &amp; analytics</li><li>draw.io — systems docs</li></ul></div>
+      <div class="bcard"><h4>Languages</h4><ul><li>Russian — native</li><li>English — C1</li></ul></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- CONTACT -->
+<div class="cta-block" id="contact"><div class="wrap">
+  <div class="bigcta">
+    <div class="eb">▸ how I can help</div>
+    <h2>Hit DMs if you or your team wants to:</h2>
+    <ul>
+      <li><b>Set up a fast discovery &amp; experimentation environment</b> — data into knowledge, insights, actions.</li>
+      <li><b>Build an Amazon-style cross-functional team</b> — for a project across several domains, and succeed.</li>
+      <li><b>Estimate AI initiatives</b> — which are fads, which to ship ASAP.</li>
+    </ul>
+    <div class="acts">
+      <a class="p" href="https://t.me/orchimada"><span class="d"></span>Message @orchimada</a>
+      <a class="s" href="mailto:art.lyarsky@gmail.com">art.lyarsky@gmail.com</a>
+    </div>
+  </div>
+</div></div>
+
+<footer class="ft"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px 24px">
+  <span>© 2026 A. Domozhakov</span><a href="../cv.html">classic view</a><a href="concept-skill.html">the skill</a><a href="#">GitHub</a>
+</div></footer>
+
+<script src="system.js"></script>
+</body>
+</html>

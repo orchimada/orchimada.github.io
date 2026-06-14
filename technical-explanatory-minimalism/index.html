@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical-Explanatory Minimalism — a Claude skill</title>
+<meta name="description" content="A Claude skill that turns explanations into explorable figures: exploded views, cutaways, state diagrams on graph paper. Build the model, render every view.">
+<link rel="icon" type="image/png" href="../css/images/favicon.png">
+<meta property="og:title" content="Technical-Explanatory Minimalism — a Claude skill">
+<meta property="og:description" content="Turn an explanation into an explorable figure: exploded views, cutaways, live state diagrams. Build the model, render every view.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://orchimada.github.io/technical-explanatory-minimalism/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106223856-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-106223856-1');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../design-system/styles/system.css">
+<style>
+  .hero-lead{padding:54px 0 0}
+  .hero-lead h1{font-family:var(--dot);font-size:clamp(1.9rem,5.6vw,3.4rem);font-weight:400;letter-spacing:.01em;line-height:1.05;margin:16px 0 0}
+  .hero-lead h1 .r{color:var(--sig)}
+  .hero-lead p{font-size:1.05rem;color:var(--soft);max-width:580px;margin-top:18px;line-height:1.7}
+  .hero-lead p b{color:var(--ink);font-weight:600}
+  .rules2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  @media(max-width:680px){.rules2{grid-template-columns:1fr}}
+  .rcol{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:24px 26px}
+  .rcol .rk{font-family:var(--mono);font-size:.64rem;letter-spacing:.07em;text-transform:uppercase;color:var(--sig);margin-bottom:12px}
+  .rcol h3{font-family:var(--disp);font-size:1.1rem;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+  .rcol p{font-size:.9rem;color:var(--soft);line-height:1.7}
+  .rcol p b{color:var(--ink);font-weight:600}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .gcard{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s}
+  .gcard:hover{border-color:#cfcdc3;box-shadow:0 8px 24px rgba(20,20,22,.05)}
+  .gcard .fno{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);margin-bottom:10px}
+  .gcard h3{font-family:var(--disp);font-size:1.15rem;font-weight:600;letter-spacing:-.01em;margin-bottom:7px}
+  .gcard p{font-size:.86rem;color:var(--soft);line-height:1.6;margin-bottom:16px;flex:1}
+  .gcard a.open{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--sig);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="../index.html"><span class="d"></span>ARTEM DOMOZHAKOV</a>
+  <div class="links">
+    <a href="#figures">Figures</a><a href="#rules">The rules</a><a href="#install">Install</a>
+    <a class="cta" href="../assets/technical-explanatory-minimalism.skill" download>Download</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <canvas class="grille herobg" data-ground="light"></canvas>
+  <div class="hero-content wrap">
+
+    <div class="hero-lead">
+      <span class="kick"><span class="n">▸</span>Claude skill · technical illustration</span>
+      <h1>Build the model.<br>Render <span class="r">every</span> view.</h1>
+      <p>A Claude skill that explains how things work with <b>explorable figures</b>, not walls of text. Exploded views, cutaways, and live state diagrams on faint graph paper. A figure becomes a model that yields many views, not a drawing.</p>
+    </div>
+
+    <div class="stage">
+      <div class="device deeptech">
+        <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+        <div class="dev-top">
+          <div class="model">TEM—1 <span>figure engine</span></div>
+          <div class="jacks"><span class="jack on">MODEL</span><span class="jack">VIEW</span><span class="jack">PLATE</span></div>
+          <div class="modesw"><span class="lab concept">CONCEPT</span><span class="track"><span class="knob"></span></span><span class="lab deep">DEEPTECH</span></div>
+        </div>
+        <div class="screen">
+          <canvas class="grille"></canvas>
+          <div class="face conceptface">
+            <div class="open">SVG + vanilla JS · one file · no build</div>
+            <h2>Explain anything. <span class="r">One figure</span>, many views.</h2>
+            <p class="sub">Drag it, scrub it, step through it. It prints like a datasheet.</p>
+            <div class="stat">
+              <div><b>17</b><span>rules</span></div>
+              <div><b>5</b><span>gold figures</span></div>
+              <div><b>2</b><span>accents</span></div>
+            </div>
+          </div>
+          <div class="face deepface">
+            <div class="lcd"><span class="seg" data-cycle="SVG|3D|FSM|P–V">SVG</span><label>render target</label></div>
+            <div class="read">
+              <div class="ln"><span class="led r"></span><b>MODEL</b> parts, nesting, states encoded as data</div>
+              <div class="ln"><span class="led"></span><b>COUPLE</b> one scrub drives explode + orbit + section</div>
+              <div class="ln"><span class="led"></span><b>CAMERA</b> auto-frames the most informative angle</div>
+              <div class="ln"><span class="led off"></span><b>HONEST</b> real magnitudes, tolerances, units on the figure</div>
+            </div>
+          </div>
+        </div>
+        <div class="deck">
+          <div class="kn-wrap deep-only"><span class="kn"></span><label>explode</label></div>
+          <div class="deep-only" style="display:flex;align-items:flex-end"><div class="vu" data-vu="9" style="height:34px"></div></div>
+          <a class="cta" href="../assets/technical-explanatory-minimalism.skill" download><span class="d"></span>Download .skill</a>
+        </div>
+      </div>
+    </div>
+    <div class="stage-cap">↑ <b>CONCEPT</b> sells the idea · <b>DEEPTECH</b> shows the engine</div>
+
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- FIGURES -->
+  <section class="block" id="figures">
+    <div class="sec-head">
+      <span class="kick"><span class="n">01</span>Gold-standard figures</span>
+      <h2>Built with the skill. Open one.</h2>
+      <p class="sub">Each is a single self-contained file. Drag, scrub, toggle, step.</p>
+    </div>
+    <div class="gallery">
+      <div class="gcard"><div class="fno">FIG. 01 · cycle</div><h3>Four-stroke engine</h3><p>Cross-section, the cycle as a state diagram, and a live pressure–volume plot, all coupled.</p><a class="open" href="assets/examples/four-stroke-engine.html">open ▶</a></div>
+      <div class="gcard"><div class="fno">FIG. 02 · mechanism</div><h3>Gear train</h3><p>Meshing gears with a drag-scrub timeline. Ratio and phase stay honest as you turn it.</p><a class="open" href="assets/examples/gear-train.html">open ▶</a></div>
+      <div class="gcard"><div class="fno">FIG. 03 · reveal</div><h3>Layered reveal</h3><p>Explode the stack and X-ray it. Each layer keeps its color and name across views.</p><a class="open" href="assets/examples/layered-reveal.html">open ▶</a></div>
+      <div class="gcard"><div class="fno">FIG. 04 · 3D</div><h3>Orbit + explode</h3><p>Real 3D from a parameterized projection. One scrub orbits and explodes; a compartment opens with its own detail.</p><a class="open" href="assets/examples/orbit-explode.html">open ▶</a></div>
+      <div class="gcard"><div class="fno">FIG. 05 · logic</div><h3>Click-pen state machine</h3><p>A retractable pen modelled as states and transitions, with a linked diagram that proves the logic.</p><a class="open" href="assets/examples/state-machine.html">open ▶</a></div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section class="block" id="rules">
+    <div class="sec-head">
+      <span class="kick"><span class="n">02</span>The rules</span>
+      <h2>Two tiers. Look right, then be ours.</h2>
+      <p class="sub">Ten rules borrow the school's fidelity. Seven more turn a drawing into a model.</p>
+    </div>
+    <div class="rules2">
+      <div class="rcol">
+        <div class="rk">fidelity · 1–10</div>
+        <h3>Make it look right</h3>
+        <p>Decompose then compose. <b>Color is a stable identity</b>, never decoration. Reveal the hidden. The diagram leads, prose only glues. Annotate in place. Quiet chrome, loud content. Spatial order mirrors causality. One house style. Progressive disclosure. Curiosity as the entry point.</p>
+      </div>
+      <div class="rcol">
+        <div class="rk">model · 11–17</div>
+        <h3>Make it ours</h3>
+        <p><b>Model, don't draw</b>, then render many views from the data. Couple the controls. Depth is navigable. The camera has intent. Be data-honest with real units. Linked multi-view. A mechanism is a state machine, and the figure proves the logic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALL -->
+  <section class="block" id="install">
+    <div class="sec-head"><span class="kick"><span class="n">03</span>Install</span><h2>One file, no build step.</h2></div>
+    <div class="panel-dark">
+      <div class="pkick">▸ claude code</div>
+      <div class="term"><span class="c"># personal, available in every project</span><br>unzip technical-explanatory-minimalism.skill -d ~/.claude/skills/<br><br><span class="c"># then just ask</span><br><span class="g">›</span> explain how a four-stroke engine works as an interactive figure</div>
+      <div class="pkick" style="margin-top:22px">▸ claude.ai</div>
+      <div class="term">Settings <span class="c">→</span> Capabilities <span class="c">→</span> Skills <span class="c">→</span> upload the .skill file.</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="cta-block"><div class="wrap">
+  <div class="bigcta">
+    <div class="eb">▸ get it</div>
+    <h2>Turn your next explanation into a figure.</h2>
+    <div class="acts">
+      <a class="p" href="../assets/technical-explanatory-minimalism.skill" download><span class="d"></span>Download .skill</a>
+      <a class="s" href="https://github.com/orchimada/technical-explanatory-minimalism" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+  </div>
+</div></div>
+
+<footer class="ft"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px 24px">
+  <span>© 2026 A. Domozhakov</span><a href="../index.html">main site</a><a href="../skill.html">judgment skill</a><a href="https://github.com/orchimada/technical-explanatory-minimalism" target="_blank" rel="noopener">GitHub</a>
+</div></footer>
+
+<script src="../design-system/styles/system.js"></script>
+</body>
+</html>
