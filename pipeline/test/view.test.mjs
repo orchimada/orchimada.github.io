@@ -1,4 +1,5 @@
-/* Exercise pins.html's pure view logic: escaping, url safety, filtering. */
+/* Exercise pins.html's pure view logic: escaping, url safety, filtering,
+   and the rubric grouping's invariants against the real pins.json. */
 import fs from 'fs';
 
 const html = fs.readFileSync(new URL('../../pins.html', import.meta.url), 'utf8');
@@ -10,10 +11,10 @@ const end = js.indexOf('  function render()');
 if (start < 0 || end < 0) throw new Error('could not slice the view helpers');
 
 const H = new Function(`
-  var tag = 'all', q = '';
+  var sel = [], q = '';
   ${js.slice(start, end)}
   return { esc, safeUrl, host, when, hilite, matches, card,
-           setFilter: function(t, s){ tag = t; q = s; } };
+           setFilter: function(tags, s){ sel = [].concat(tags || []); q = s || ''; } };
 `)();
 
 let pass = 0, fail = 0;
@@ -40,12 +41,10 @@ eq('null becomes empty', H.esc(null), '');
 
 /* ── hilite must escape before it marks ── */
 eq('hilite escapes the haystack', H.hilite('<b>hi</b>', ''), '&lt;b&gt;hi&lt;/b&gt;');
-eq('hilite marks a plain match', H.hilite('hello world', 'world'),
-  'hello <mark>world</mark>');
+eq('hilite marks a plain match', H.hilite('hello world', 'world'), 'hello <mark>world</mark>');
 truthy('hilite survives regex metacharacters in the needle',
   H.hilite('cost is $5 (net)', '$5 (').includes('<mark>'));
-eq('a needle cannot inject markup', H.hilite('a<script>b', '<script>'),
-  'a&lt;script&gt;b');
+eq('a needle cannot inject markup', H.hilite('a<script>b', '<script>'), 'a&lt;script&gt;b');
 
 /* ── a hostile pin cannot break out of the card ── */
 const evil = H.card({
@@ -58,50 +57,50 @@ const evil = H.card({
   image: 'javascript:alert(1)',
 });
 eq('no raw <script> in rendered card', /<script/i.test(evil), false);
-// The real question is not whether "onload=" appears as text — escaped, it is
-// inert — but whether any tag or attribute the pin supplied survives as markup.
 eq('every tag in the card is one the template opened',
   (evil.match(/<\/?[a-z][^\s>]*/gi) || []).filter(t => !/^<\/?(a|span|img)$/i.test(t)), []);
-eq('the href cannot be broken out of', /href="[^"]*"/.test(evil) && !/href="[^"]*[<>]/.test(evil), true);
+eq('the href cannot be broken out of',
+  /href="[^"]*"/.test(evil) && !/href="[^"]*[<>]/.test(evil), true);
 eq('hostile image url is dropped', evil.includes('javascript:'), false);
 truthy('hostile title is escaped', evil.includes('&lt;img src=x'));
-
 eq('a card with an unusable url renders nothing',
   H.card({ url: 'javascript:alert(1)', title: 't', tags: [] }), '');
 
-/* ── filtering ── */
+/* ── filtering: rubrics OR together, search ANDs on top ── */
 const pins = [
-  { url: 'https://a.com/1', title: 'Rust memory model', note: 'ownership', site: 'a.com', tags: ['rust', 'deep'] },
-  { url: 'https://b.com/2', title: 'CSS grid', note: 'subgrid at last', site: 'b.com', tags: ['css'] },
-  { url: 'https://c.com/3', title: 'Ложка', note: 'любопытно', site: 'c.com', tags: ['находки'] },
+  { url: 'https://a.com/1', title: 'Rust memory model', note: 'ownership', site: 'a.com', tags: ['cs', 'book'] },
+  { url: 'https://b.com/2', title: 'CSS grid', note: 'subgrid at last', site: 'b.com', tags: ['design'] },
+  { url: 'https://c.com/3', title: 'Ложка', note: 'любопытно', site: 'c.com', tags: ['ru', 'article'] },
+  { url: 'https://d.com/4', title: 'Zed', note: 'fast editor', site: 'd.com', tags: ['swe', 'tool'] },
 ];
+const titles = () => pins.filter(H.matches).map(p => p.title);
 
-H.setFilter('all', '');
-eq('all passes everything', pins.filter(H.matches).length, 3);
+H.setFilter([], '');
+eq('no selection passes everything', titles().length, 4);
 
-H.setFilter('css', '');
-eq('tag filter narrows', pins.filter(H.matches).map(p => p.title), ['CSS grid']);
+H.setFilter(['design'], '');
+eq('one rubric narrows', titles(), ['CSS grid']);
 
-H.setFilter('all', 'subgrid');
-eq('search hits the note', pins.filter(H.matches).map(p => p.title), ['CSS grid']);
+H.setFilter(['design', 'ru'], '');
+eq('two rubrics are OR, not AND', titles(), ['CSS grid', 'Ложка']);
 
-H.setFilter('all', 'rust');
-eq('search hits the tag', pins.filter(H.matches).map(p => p.title), ['Rust memory model']);
+H.setFilter(['cs', 'swe', 'design'], '');
+eq('a whole group selection is still OR', titles().length, 3);
 
-H.setFilter('all', 'a.com');
-eq('search hits the host', pins.filter(H.matches).map(p => p.title), ['Rust memory model']);
+H.setFilter(['design', 'ru'], 'subgrid');
+eq('search ANDs on top of the OR', titles(), ['CSS grid']);
 
-H.setFilter('all', 'любопытно');
-eq('search works in cyrillic', pins.filter(H.matches).map(p => p.title), ['Ложка']);
-
-H.setFilter('css', 'rust');
-eq('tag and search are combined, not ored', pins.filter(H.matches).length, 0);
-
-H.setFilter('all', 'nothing here');
-eq('a miss yields nothing', pins.filter(H.matches).length, 0);
+H.setFilter([], 'rust');
+eq('search hits the tag', titles(), ['Rust memory model']);
+H.setFilter([], 'a.com');
+eq('search hits the host', titles(), ['Rust memory model']);
+H.setFilter([], 'любопытно');
+eq('search works in cyrillic', titles(), ['Ложка']);
+H.setFilter(['design'], 'rust');
+eq('a contradictory filter yields nothing', titles().length, 0);
 
 /* ── host + dates ── */
-H.setFilter('all', '');
+H.setFilter([], '');
 eq('host strips www', H.host({ url: 'https://www.ex.com/a' }), 'ex.com');
 eq('host prefers the stored site', H.host({ url: 'https://x.io/a', site: 'www.Real.com' }), 'Real.com');
 eq('host tolerates a broken url', H.host({ url: 'nope' }), '');
@@ -109,6 +108,28 @@ eq('undated pin renders no date', H.when(undefined), '');
 eq('today', H.when(new Date().toISOString()), 'today');
 eq('3 days ago', H.when(new Date(Date.now() - 3 * 864e5).toISOString()), '3d ago');
 eq('2 weeks ago', H.when(new Date(Date.now() - 15 * 864e5).toISOString()), '2w ago');
+
+/* ── grouping invariants: a rubric must be shown exactly once, never lost ──
+   The groups are hand-written but the tags are generated by the pipeline and
+   by whatever hashtag gets typed into Telegram, so the two drift by default. */
+const GROUPS = new Function(
+  js.slice(js.indexOf('var TAG_GROUPS'), js.indexOf('var CATCH_ALL')) + 'return TAG_GROUPS;'
+)();
+
+const listed = GROUPS.flatMap(g => g[1]);
+eq('no tag is listed in two groups', listed.length - new Set(listed).size, 0);
+
+const pinData = JSON.parse(fs.readFileSync(new URL('../../pins.json', import.meta.url), 'utf8'));
+const live = [...new Set(pinData.flatMap(p => p.tags || []))];
+const mapped = new Set(listed);
+const orphans = live.filter(t => !mapped.has(t));
+
+// Orphans are fine — they render under the catch-all — but every live tag must
+// land in exactly one place, and that place must exist.
+eq('every live tag is either grouped or an orphan (none lost)',
+  live.length, live.filter(t => mapped.has(t)).length + orphans.length);
+console.log(`       ${live.length} live rubrics: ${live.length - orphans.length} grouped, ` +
+  `${orphans.length} under the catch-all${orphans.length ? ' → ' + orphans.join(', ') : ''}`);
 
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

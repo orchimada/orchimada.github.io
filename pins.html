@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pins — Artem Domozhakov</title>
-<meta name="description" content="Curios, links and artifacts worth keeping. A running feed with a one-line reason each.">
+<meta name="description" content="A listed collection of findings and curiosities.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="theme-color" content="#eceae3">
 
 <meta property="og:title" content="Pins — Artem Domozhakov">
-<meta property="og:description" content="Curios, links and artifacts worth keeping. A running feed with a one-line reason each.">
+<meta property="og:description" content="A listed collection of findings and curiosities.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://orchimada.github.io/pins.html">
 <meta property="og:image" content="https://orchimada.github.io/assets/hero_portrait.jpg">
@@ -20,43 +20,65 @@
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="design-system/styles/system.css">
 <style>
-  /* ── page frame ── */
-  .pins-wrap{max-width:720px;margin:0 auto;padding:0 20px}
+  .pins-wrap{max-width:1000px;margin:0 auto;padding:0 20px}
 
-  .pins-head{padding:34px 0 20px}
+  /* ── masthead ── */
+  .pins-head{padding:34px 0 22px}
   .pins-head h1{font-family:var(--disp);font-size:clamp(2rem,9vw,3rem);font-weight:700;letter-spacing:-.04em;line-height:1;margin:14px 0 0}
-  .pins-head .sub{font-size:.95rem;color:var(--soft);margin-top:12px;max-width:46ch;line-height:1.6}
+  .pins-head .sub{font-size:.98rem;color:var(--soft);margin-top:12px;max-width:44ch;line-height:1.6}
   .pins-head .readout{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);margin-top:16px;display:flex;align-items:center;gap:9px}
   .pins-head .readout b{color:var(--ink);font-weight:500}
 
-  /* ── sticky control deck ── */
-  .deckbar{position:sticky;top:58px;z-index:60;background:rgba(236,234,227,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 0 11px}
-  .deckbar .pins-wrap{display:flex;flex-direction:column;gap:10px}
+  /* ── grouped rubric panel (scrolls away; every tag is on screen) ── */
+  .rubrics{border-top:1px solid var(--line);padding:14px 0 4px}
+  /* On a phone the label rides inline with its own chips — a label per row
+     would push the first pin most of a screen down. */
+  .tgroup{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:7px 0}
+  .tgroup + .tgroup{border-top:1px dashed var(--line)}
 
-  .srch{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:0 13px}
+  .glabel{flex:0 0 auto;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);background:none;border:none;padding:4px 8px 4px 0;cursor:pointer;text-align:left;display:flex;align-items:center;gap:7px;transition:color .15s}
+  .glabel::before{content:"";width:6px;height:6px;border-radius:50%;background:#cfcdc3;flex:0 0 auto;transition:background .15s,box-shadow .15s}
+  .glabel:hover{color:var(--ink)}
+  .glabel.on{color:var(--sig)}
+  .glabel.on::before{background:var(--sig);box-shadow:0 0 7px var(--sig)}
+
+  .grow{display:flex;flex-wrap:wrap;gap:6px}
+
+  .chip{font-family:var(--mono);font-size:.66rem;letter-spacing:.02em;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 7px 5px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:border-color .15s,background .15s,color .15s}
+  .chip:hover{border-color:var(--grey)}
+  .chip i{font-style:normal;font-family:var(--mono);font-size:.6rem;font-weight:600;color:var(--sig);background:#fdecec;border-radius:5px;padding:2px 5px 1px;min-width:19px;text-align:center;transition:background .15s,color .15s}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .chip.on i{background:var(--sig);color:#fff}
+
+  /* ── sticky deck: search + what is currently on ── */
+  .deckbar{position:sticky;top:58px;z-index:60;background:rgba(236,234,227,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:11px 0}
+  .deckbar .pins-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+
+  .srch{flex:1 1 240px;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:0 13px;min-width:0}
   .srch .d{width:7px;height:7px;border-radius:50%;background:var(--grey);flex:0 0 auto;transition:background .2s}
   .srch.active .d{background:var(--sig);box-shadow:0 0 7px var(--sig)}
-  .srch input{flex:1;border:none;background:none;outline:none;font-family:var(--mono);font-size:.82rem;color:var(--ink);padding:12px 0;min-width:0}
+  .srch input{flex:1;border:none;background:none;outline:none;font-family:var(--mono);font-size:.82rem;color:var(--ink);padding:11px 0;min-width:0}
   .srch input::placeholder{color:var(--grey);text-transform:uppercase;font-size:.68rem;letter-spacing:.06em}
-  .srch .clr{border:none;background:none;font-family:var(--mono);font-size:.66rem;color:var(--grey);text-transform:uppercase;cursor:pointer;padding:6px;display:none}
-  .srch.active .clr{display:block}
 
-  .chips{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:1px 20px 2px}
-  .chips::-webkit-scrollbar{display:none}
-  .chips .fbtn{white-space:nowrap;flex:0 0 auto;padding:8px 12px 6px;font-size:.62rem}
-  .chips .fbtn .ct{color:var(--grey);font-size:.58rem}
-  .chips .fbtn.on .ct{color:rgba(255,255,255,.55)}
+  .active-sum{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--grey)}
+  .active-sum .on-tag{background:var(--ink);color:#fff;border-radius:100px;padding:4px 9px 3px}
+  .reset{font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--sig);background:none;border:1px solid var(--line);border-radius:100px;padding:6px 12px 5px;cursor:pointer}
+  .reset:hover{border-color:var(--sig)}
 
-  /* ── feed ── */
-  .feed{display:flex;flex-direction:column;gap:10px;padding:18px 0 40px;min-height:50vh}
+  /* ── feed: two columns, newest first, filling left→right ── */
+  .feed{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;padding:18px 0 40px;min-height:50vh}
 
   .pin{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;text-decoration:none;color:inherit;transition:border-color .18s,box-shadow .18s,transform .18s}
   .pin:active{transform:scale(.994)}
   @media(hover:hover){.pin:hover{border-color:#cfcdc3;box-shadow:0 8px 24px rgba(20,20,22,.06)}}
 
-  .pin .thumb{flex:0 0 auto;width:58px;height:58px;border-radius:10px;overflow:hidden;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-  .pin .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .pin .thumb{position:relative;flex:0 0 auto;width:58px;height:58px;border-radius:10px;overflow:hidden;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
   .pin .thumb .mark{font-family:var(--dot);font-size:1.5rem;line-height:1;color:var(--grey);text-transform:uppercase}
+  /* The image lies over the letter. A host that blocks hotlinking or 404s
+     removes the img and the mark underneath shows — never an empty frame. */
+  /* No background here on purpose: while the image is still loading it stays
+     transparent and the letter shows through, rather than a blank grey box. */
+  .pin .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
   .pin .body{flex:1;min-width:0}
   .pin .ttl{display:block;font-family:var(--disp);font-size:1rem;font-weight:600;letter-spacing:-.015em;line-height:1.3;overflow-wrap:anywhere}
@@ -64,22 +86,23 @@
   .pin .meta .host{color:var(--soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%}
   .pin .meta .sep{color:var(--line)}
   .pin .note{display:block;font-size:.9rem;color:var(--soft);line-height:1.55;margin-top:9px;overflow-wrap:anywhere}
-  .pin .note mark{background:#fdecec;color:var(--ink);border-radius:3px;padding:0 2px}
+  .pin mark{background:#fdecec;color:var(--ink);border-radius:3px;padding:0 2px}
   .pin .tgs{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
   .pin .tgs .tag{font-size:.57rem;padding:3px 9px;letter-spacing:.05em}
   .pin .tgs .tag.hit{background:#fdecec;border-color:#f6c9c9;color:#b51a1a}
 
-  /* ── states ── */
-  .state{text-align:center;padding:56px 20px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);line-height:2}
+  .state{grid-column:1/-1;text-align:center;padding:56px 20px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);line-height:2}
   .state b{display:block;color:var(--ink);font-size:.8rem}
   .state .sig{color:var(--sig)}
 
-  @media(min-width:620px){
+  @media(min-width:720px){
     .pins-wrap{padding:0 30px}
-    .chips{margin:0 -30px;padding:1px 30px 2px}
+    .feed{grid-template-columns:1fr 1fr;gap:12px}
+    .tgroup{display:grid;grid-template-columns:104px 1fr;gap:10px;align-items:baseline}
+    .glabel{padding-top:7px}
     .pin{padding:18px 20px;gap:16px}
-    .pin .thumb{width:76px;height:76px}
-    .pin .ttl{font-size:1.08rem}
+    .pin .thumb{width:72px;height:72px}
+    .pin .ttl{font-size:1.05rem}
   }
 </style>
 </head>
@@ -96,17 +119,18 @@
 <header class="pins-head"><div class="pins-wrap">
   <span class="kick"><span class="n">05</span>Field notes</span>
   <h1>Pins.</h1>
-  <p class="sub">Curios, links and artifacts I stumbled into and did not want to lose. One line each on why it is here.</p>
+  <p class="sub">A listed collection of findings and curiosities.</p>
   <div class="readout"><span class="led" id="ledStatus"></span><b id="cntPins">—</b> pins <span style="color:var(--line)">/</span> <b id="cntTags">—</b> rubrics</div>
 </div></header>
+
+<section class="rubrics"><div class="pins-wrap" id="rubrics"></div></section>
 
 <div class="deckbar"><div class="pins-wrap">
   <label class="srch" id="srchBox">
     <span class="d"></span>
     <input id="q" type="search" placeholder="Filter pins" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
-    <button class="clr" id="clr" type="button" aria-label="Clear filter">esc</button>
   </label>
-  <div class="chips" id="chips"></div>
+  <div class="active-sum" id="activeSum"></div>
 </div></div>
 
 <main class="feed pins-wrap" id="feed">
@@ -119,14 +143,31 @@
 
 <script>
 (function(){
-  var feed  = document.getElementById('feed'),
-      chips = document.getElementById('chips'),
-      qIn   = document.getElementById('q'),
-      clr   = document.getElementById('clr'),
-      box   = document.getElementById('srchBox'),
-      led   = document.getElementById('ledStatus');
+  var feed    = document.getElementById('feed'),
+      panel   = document.getElementById('rubrics'),
+      sumEl   = document.getElementById('activeSum'),
+      qIn     = document.getElementById('q'),
+      box     = document.getElementById('srchBox'),
+      led     = document.getElementById('ledStatus');
 
-  var PINS = [], tag = 'all', q = '';
+  /* Rubrics carry two different meanings: what a pin is ABOUT, and what FORM
+     it takes. Grouping along that split is the only honest grouping — it is
+     the same split the import pipeline writes.
+
+     Tags absent from this map are not dropped; they collect under "Other", so
+     a new #hashtag typed into Telegram shows up without touching this file. */
+  var TAG_GROUPS = [
+    ['Software', ['swe','cs','ai','claude','security','data','engineering','programmingmath']],
+    ['Hardware', ['hardware','robotics','keyboards']],
+    ['Craft',    ['product','design','productivity','ux','fintech']],
+    ['Ideas',    ['ideas','learning','math']],
+    ['Culture',  ['games','music']],
+    ['Form',     ['article','tool','repo','book','guide','interactive','blog',
+                  'paper','reference','media','podcast','talk']]
+  ];
+  var CATCH_ALL = 'Other';
+
+  var PINS = [], sel = [], q = '', COUNTS = {};
 
   /* ── helpers ── */
   function esc(s){
@@ -164,12 +205,16 @@
     return out.replace(re,'<mark>$1</mark>');
   }
 
-  /* ── filtering ── */
+  /* ── filtering: selected rubrics are OR'd, then the search is AND'd ── */
   function matches(p){
-    if(tag !== 'all' && (p.tags || []).indexOf(tag) === -1) return false;
+    var tags = p.tags || [];
+    if(sel.length){
+      var hit = false;
+      for(var i = 0; i < sel.length; i++) if(tags.indexOf(sel[i]) !== -1){ hit = true; break; }
+      if(!hit) return false;
+    }
     if(!q) return true;
-    var hay = [p.title, p.note, host(p)].concat(p.tags || []).join(' ').toLowerCase();
-    return hay.indexOf(q) !== -1;
+    return [p.title, p.note, host(p)].concat(tags).join(' ').toLowerCase().indexOf(q) !== -1;
   }
 
   /* ── render ── */
@@ -179,13 +224,13 @@
     var h = host(p), img = safeUrl(p.image),
         title = p.title || h || url,
         tags = (p.tags || []).map(function(t){
-          return '<span class="tag' + (t === tag ? ' hit' : '') + '">#' + esc(t) + '</span>';
+          return '<span class="tag' + (sel.indexOf(t) !== -1 ? ' hit' : '') + '">#' + esc(t) + '</span>';
         }).join('');
 
     return '<a class="pin" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
-      '<span class="thumb">' + (img
-        ? '<img src="' + esc(img) + '" alt="" loading="lazy" decoding="async" onerror="this.remove()">'
-        : '<span class="mark">' + esc((h || '?').charAt(0)) + '</span>') + '</span>' +
+      '<span class="thumb"><span class="mark">' + esc((h || '?').charAt(0)) + '</span>' +
+        (img ? '<img src="' + esc(img) + '" alt="" loading="lazy" decoding="async" onerror="this.remove()">' : '') +
+      '</span>' +
       '<span class="body">' +
         '<span class="ttl">' + hilite(title, q) + '</span>' +
         '<span class="meta"><span class="host">' + esc(h) + '</span>' +
@@ -202,39 +247,83 @@
       ? shown.map(card).join('')
       : '<div class="state"><b>Nothing here</b>no pin matches that filter</div>';
 
-    Array.prototype.forEach.call(chips.children, function(el){
-      el.classList.toggle('on', el.dataset.tag === tag);
+    // chip + group-label state
+    Array.prototype.forEach.call(panel.querySelectorAll('.chip'), function(el){
+      var on = sel.indexOf(el.dataset.tag) !== -1;
+      el.classList.toggle('on', on);
+      el.setAttribute('aria-pressed', on);
     });
+    Array.prototype.forEach.call(panel.querySelectorAll('.glabel'), function(el){
+      var members = el.dataset.tags.split(',');
+      var all = members.length && members.every(function(t){ return sel.indexOf(t) !== -1; });
+      el.classList.toggle('on', all);
+      el.setAttribute('aria-pressed', all);
+    });
+
+    // sticky summary
+    sumEl.innerHTML = (sel.length || q)
+      ? sel.map(function(t){ return '<span class="on-tag">#' + esc(t) + '</span>'; }).join('') +
+        '<button class="reset" type="button" id="reset">clear</button>'
+      : '<span>all ' + PINS.length + '</span>';
+    var r = document.getElementById('reset');
+    if(r) r.addEventListener('click', reset);
+
     document.getElementById('cntPins').textContent = shown.length;
     box.classList.toggle('active', !!q);
   }
 
-  function buildChips(){
-    var counts = {};
+  function buildRubrics(){
+    COUNTS = {};
     PINS.forEach(function(p){
-      (p.tags || []).forEach(function(t){ counts[t] = (counts[t] || 0) + 1; });
+      (p.tags || []).forEach(function(t){ COUNTS[t] = (COUNTS[t] || 0) + 1; });
     });
-    var names = Object.keys(counts).sort(function(a, b){
-      return counts[b] - counts[a] || a.localeCompare(b);
-    });
+    var all = Object.keys(COUNTS);
+    document.getElementById('cntTags').textContent = all.length;
 
-    document.getElementById('cntTags').textContent = names.length;
+    var mapped = {};
+    TAG_GROUPS.forEach(function(g){ g[1].forEach(function(t){ mapped[t] = 1; }); });
+    var groups = TAG_GROUPS.concat([[CATCH_ALL, all.filter(function(t){ return !mapped[t]; })]]);
 
-    chips.innerHTML = ['all'].concat(names).map(function(t){
-      var n = t === 'all' ? PINS.length : counts[t];
-      return '<button class="fbtn" type="button" data-tag="' + esc(t) + '">' +
-        '<span class="pled"></span>' + esc(t === 'all' ? 'all' : '#' + t) +
-        ' <span class="ct">' + n + '</span></button>';
+    panel.innerHTML = groups.map(function(g){
+      // Only tags that actually occur, biggest first.
+      var members = g[1].filter(function(t){ return COUNTS[t]; })
+                        .sort(function(a,b){ return COUNTS[b] - COUNTS[a] || a.localeCompare(b); });
+      if(!members.length) return '';
+      return '<div class="tgroup">' +
+        '<button class="glabel" type="button" data-tags="' + esc(members.join(',')) + '">' + esc(g[0]) + '</button>' +
+        '<div class="grow">' + members.map(function(t){
+          return '<button class="chip" type="button" data-tag="' + esc(t) + '">#' +
+                 esc(t) + '<i>' + COUNTS[t] + '</i></button>';
+        }).join('') + '</div></div>';
     }).join('');
 
-    Array.prototype.forEach.call(chips.children, function(el){
-      el.addEventListener('click', function(){
-        tag = (tag === el.dataset.tag && tag !== 'all') ? 'all' : el.dataset.tag;
-        render();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+    Array.prototype.forEach.call(panel.querySelectorAll('.chip'), function(el){
+      el.addEventListener('click', function(){ toggle(el.dataset.tag); });
+    });
+    Array.prototype.forEach.call(panel.querySelectorAll('.glabel'), function(el){
+      el.addEventListener('click', function(){ toggleGroup(el.dataset.tags.split(',')); });
     });
   }
+
+  /* ── selection ── */
+  function toggle(t){
+    var i = sel.indexOf(t);
+    if(i === -1) sel.push(t); else sel.splice(i, 1);
+    render();
+  }
+
+  // A group label is a shortcut for its whole row: all on → clear them, else add.
+  function toggleGroup(members){
+    var all = members.every(function(t){ return sel.indexOf(t) !== -1; });
+    members.forEach(function(t){
+      var i = sel.indexOf(t);
+      if(all && i !== -1) sel.splice(i, 1);
+      else if(!all && i === -1) sel.push(t);
+    });
+    render();
+  }
+
+  function reset(){ sel = []; q = ''; qIn.value = ''; qIn.blur(); render(); }
 
   /* ── controls ── */
   var timer;
@@ -243,9 +332,6 @@
     timer = setTimeout(function(){ q = qIn.value.trim().toLowerCase(); render(); }, 120);
   });
   qIn.addEventListener('keydown', function(e){ if(e.key === 'Escape') reset(); });
-  clr.addEventListener('click', reset);
-
-  function reset(){ qIn.value = ''; q = ''; qIn.blur(); render(); }
 
   /* ── load ── */
   // GitHub Pages caches JSON for ~10 min; the stamp makes a fresh pin show up now.
@@ -255,7 +341,7 @@
       PINS = (Array.isArray(data) ? data : data.pins || [])
         .filter(function(p){ return p && safeUrl(p.url); })
         .sort(function(a, b){ return Date.parse(b.ts || 0) - Date.parse(a.ts || 0); });
-      buildChips();
+      buildRubrics();
       render();
     })
     .catch(function(err){
