@@ -54,6 +54,11 @@ design-system-concepts/
 teardown.html
 wh40k.html
 
+# pin pipeline — local secrets and tooling, never published
+pipeline/.dev.vars
+pipeline/node_modules/
+pipeline/.wrangler/
+
 # raw source crops / unused heavy media (kept on disk, not published)
 assets/hero_1.jpg
 assets/hero_2.jpg

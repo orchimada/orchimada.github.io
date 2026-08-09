@@ -28,6 +28,8 @@ at [`design-system/GUIDELINES.md`](design-system/GUIDELINES.md).
 ├── diagram-skill.html               # skill page — technical-explanatory minimalism
 ├── sentinet.html                    # product page — macOS network monitor
 ├── cv.html                          # plain, ATS/LLM-readable classic CV
+├── pins.html                        # mobile-first feed of saved curios (reads pins.json)
+├── pins.json                        # the pin data — written by the pipeline, not by hand
 ├── skill.html / judgment-over-velocity.html   # redirects → judgement-skill.html
 ├── design-system/                   # the design language (single source of truth)
 │   ├── GUIDELINES.md                #   idea, constraints, voice, tones, tokens, vocabulary
@@ -35,6 +37,10 @@ at [`design-system/GUIDELINES.md`](design-system/GUIDELINES.md).
 │   ├── styles/system.css            #   tokens + components
 │   ├── styles/system.js             #   dot grille, mode switch, filters, readouts
 │   └── examples/                    #   reference pages (main, skill)
+├── pipeline/                        # the pin capture pipeline (Cloudflare Worker)
+│   ├── README.md                    #   setup runbook — bot, tokens, deploy, webhook
+│   ├── src/index.js                 #   Telegram webhook → pins.json → channel + Bluesky
+│   └── tools/                       #   import-bookmarks.mjs — Obsidian note → pins.json
 └── assets/                          # favicon, portrait, skill bundles, downloads,
     └── diagrams/                    #   published interactive figures for diagram-skill
 ```
@@ -56,6 +62,17 @@ exactly as on GitHub Pages:
 python3 -m http.server 8765
 # then open http://localhost:8765/
 ```
+
+## Pins
+
+[/pins.html](https://orchimada.github.io/pins.html) is a running feed of links and
+artifacts worth keeping, one line each on why. The page is static and reads
+`pins.json` at load; nothing is written by hand.
+
+Posting is a Telegram DM — a link, a note, some `#tags` — which a Cloudflare
+Worker turns into a commit here plus a channel post and a Bluesky post. Setup and
+operation live in [`pipeline/README.md`](pipeline/README.md). No secret is stored
+in this repo; they all live in Worker secrets.
 
 ## The skills
 

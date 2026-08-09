@@ -1,0 +1,19 @@
+name = "pin-pipeline"
+main = "src/index.js"
+compatibility_date = "2026-06-01"
+
+# Non-secret configuration. Secrets never live here — see README.md.
+[vars]
+GH_REPO   = "orchimada/orchimada.github.io"
+GH_BRANCH = "master"
+GH_PATH   = "pins.json"
+SITE_URL  = "https://orchimada.github.io/pins.html"
+
+# Your Telegram numeric user id — the only account allowed to write.
+TG_OWNER_ID = ""
+
+# Public channel to mirror into. Leave empty to publish to the site only.
+TG_CHANNEL_ID = ""
+
+# Bluesky handle, e.g. "orchimada.bsky.social". Empty disables the fan-out.
+BSKY_HANDLE = ""

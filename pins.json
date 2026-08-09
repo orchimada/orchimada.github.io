@@ -1,0 +1,2131 @@
+[
+  {
+    "id": "1rw14sf",
+    "ts": "2026-05-09T11:48:27Z",
+    "tg": 0,
+    "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/",
+    "title": "Algorithms — Jeff Erickson",
+    "site": "jeffe.cs.illinois.edu",
+    "note": "Free, rigorous algorithms textbook from UIUC. Covers graphs, DP, randomisation and more. · Used in university courses; very well regarded",
+    "tags": [
+      "cs",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1fnm564",
+    "ts": "2026-05-09T11:47:27Z",
+    "tg": 0,
+    "url": "https://en.algorithmica.org/hpc/",
+    "title": "Algorithms for Modern Hardware — Algorithmica",
+    "site": "en.algorithmica.org",
+    "note": "Deep dive into HPC topics: SIMD, cache, branch prediction, and CPU-level optimisation. · Practical low-level focus; pairs with Knuth",
+    "tags": [
+      "cs",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "19vx1i6",
+    "ts": "2026-05-09T11:46:27Z",
+    "tg": 0,
+    "url": "https://xlinux.nist.gov/dads/",
+    "title": "Dictionary of Algorithms and Data Structures — NIST",
+    "site": "xlinux.nist.gov",
+    "note": "Authoritative reference encyclopedia for algorithms and data structure terminology. · Good for looking up formal definitions",
+    "tags": [
+      "cs",
+      "reference"
+    ],
+    "image": ""
+  },
+  {
+    "id": "194ycvu",
+    "ts": "2026-05-09T11:45:27Z",
+    "tg": 0,
+    "url": "http://cslibrary.stanford.edu/101/EssentialC.pdf",
+    "title": "Essential C — Stanford",
+    "site": "cslibrary.stanford.edu",
+    "note": "Concise Stanford PDF covering C fundamentals for programmers who already know another language. · Short and practical; great refresher",
+    "tags": [
+      "cs",
+      "guide"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0zf572s",
+    "ts": "2026-05-09T11:44:27Z",
+    "tg": 0,
+    "url": "https://cpu.land/",
+    "title": "Putting the \"You\" in CPU",
+    "site": "cpu.land",
+    "note": "Interactive explainer on how CPUs actually execute programs — syscalls, processes, memory. · Very approachable for non-specialists",
+    "tags": [
+      "cs",
+      "interactive"
+    ],
+    "image": "https://cpu.land/banner.png"
+  },
+  {
+    "id": "06ssiyh",
+    "ts": "2026-05-09T11:43:27Z",
+    "tg": 0,
+    "url": "https://danluu.com/malloc-tutorial/",
+    "title": "Malloc tutorial — Dan Luu",
+    "site": "danluu.com",
+    "note": "Build a simple memory allocator from scratch in C, step by step. · Great for understanding heap internals",
+    "tags": [
+      "cs",
+      "guide"
+    ],
+    "image": ""
+  },
+  {
+    "id": "07ta2is",
+    "ts": "2026-05-09T11:42:27Z",
+    "tg": 0,
+    "url": "https://mlu-explain.github.io/decision-tree/",
+    "title": "Decision Trees — MLU Explain",
+    "site": "mlu-explain.github.io",
+    "note": "Visual, interactive explainer of decision tree ML models. · Part of Amazon's MLU Explain series",
+    "tags": [
+      "cs",
+      "interactive"
+    ],
+    "image": "https://mlu-explain.github.io/assets/ogimages/ogimage-decision-tree.png"
+  },
+  {
+    "id": "0n31mce",
+    "ts": "2026-05-09T11:41:27Z",
+    "tg": 0,
+    "url": "https://aosabook.org/en/v1/llvm.html",
+    "title": "LLVM — Architecture of Open Source Applications",
+    "site": "aosabook.org",
+    "note": "Chapter on LLVM's design: IR, passes, backends, and the overall architecture. · Foundational reading for compiler understanding",
+    "tags": [
+      "cs",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "15w24y8",
+    "ts": "2026-05-09T11:40:27Z",
+    "tg": 0,
+    "url": "https://www.makingsoftware.com/chapters/shaders",
+    "title": "Making Software: Shaders",
+    "site": "makingsoftware.com",
+    "note": "Visual explanation of how GPU shaders work, from first principles. · Part of the Making Software series",
+    "tags": [
+      "cs",
+      "interactive"
+    ],
+    "image": ""
+  },
+  {
+    "id": "11t5sgq",
+    "ts": "2026-05-09T11:39:27Z",
+    "tg": 0,
+    "url": "https://www.makingsoftware.com/chapters/how-is-data-stored",
+    "title": "Making Software: How is data stored?",
+    "site": "makingsoftware.com",
+    "note": "Explains binary, bytes, encoding, and storage from the ground up. · Good primer for beginners and refresher for others",
+    "tags": [
+      "cs",
+      "interactive"
+    ],
+    "image": ""
+  },
+  {
+    "id": "13zluga",
+    "ts": "2026-05-09T11:38:27Z",
+    "tg": 0,
+    "url": "https://github.com/aphyr/distsys-class",
+    "title": "Distributed Systems class materials — aphyr",
+    "site": "github.com",
+    "note": "Lecture notes and reading list for a distributed systems course by Kyle Kingsbury (aphyr). · Companion to the Jepsen work",
+    "tags": [
+      "cs",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/aphyr/distsys-class"
+  },
+  {
+    "id": "1ug2lm8",
+    "ts": "2026-05-09T11:37:27Z",
+    "tg": 0,
+    "url": "https://book.systemsapproach.org/foundation/problem.html",
+    "title": "Computer Networks: A Systems Approach",
+    "site": "book.systemsapproach.org",
+    "note": "Open textbook on networking fundamentals: protocols, layering, and system design. · Clear, systems-oriented framing",
+    "tags": [
+      "cs",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0tha9xp",
+    "ts": "2026-05-09T11:36:27Z",
+    "tg": 0,
+    "url": "https://www.inf.ed.ac.uk/teaching/courses/seoc/2005_2006/resources/statecharts.pdf",
+    "title": "Statecharts — Edinburgh",
+    "site": "inf.ed.ac.uk",
+    "note": "Original Harel paper on statecharts as a visual formalism for complex reactive systems. · Foundational CS paper; influenced many languages",
+    "tags": [
+      "cs",
+      "paper"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0wi4bdf",
+    "ts": "2026-05-09T11:35:27Z",
+    "tg": 0,
+    "url": "https://mcfunley.com/choose-boring-technology",
+    "title": "Choose Boring Technology — Dan McKinley",
+    "site": "mcfunley.com",
+    "note": "Argues for using well-understood, proven tech over new shiny alternatives. Classic essay. · Widely cited; essential reading for eng leads",
+    "tags": [
+      "swe",
+      "article"
+    ],
+    "image": "https://mcfunley.com/assets/images/mountains-square.jpg"
+  },
+  {
+    "id": "1l3grvj",
+    "ts": "2026-05-09T11:34:27Z",
+    "tg": 0,
+    "url": "https://semaphoreci.com/blog/property-based-testing-python-hypothesis-pytest",
+    "title": "Property-Based Testing in Python — Semaphore",
+    "site": "semaphoreci.com",
+    "note": "Practical intro to property-based testing using Hypothesis and pytest. · Hands-on; includes code examples",
+    "tags": [
+      "swe",
+      "guide"
+    ],
+    "image": "https://semaphore.io/wp-content/uploads/2023/01/IGetting-Started-With-Property-Based-Testing-in-Python-With-Hypothesis-and-Pytestpng.png"
+  },
+  {
+    "id": "1lb6uj2",
+    "ts": "2026-05-09T11:33:27Z",
+    "tg": 0,
+    "url": "https://danluu.com/why-benchmark/",
+    "title": "Measurement & benchmarking are underrated — Dan Luu",
+    "site": "danluu.com",
+    "note": "Makes the case for rigorous measurement and data analysis in engineering decisions. · Typical Dan Luu depth; long and worth it",
+    "tags": [
+      "swe",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0ga07s8",
+    "ts": "2026-05-09T11:32:27Z",
+    "tg": 0,
+    "url": "https://www.evanjones.ca/jvm-mmap-pause.html",
+    "title": "The Four Month Bug: JVM & GC pauses",
+    "site": "evanjones.ca",
+    "note": "War story about a subtle GC pause caused by JVM statistics using mmap. · Excellent example of deep debugging methodology",
+    "tags": [
+      "swe",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0qr6cjo",
+    "ts": "2026-05-09T11:31:27Z",
+    "tg": 0,
+    "url": "https://lethain.com/eng-strategies/",
+    "title": "Writing an engineering strategy — Will Larson",
+    "site": "lethain.com",
+    "note": "Framework for writing effective, actionable engineering strategies. · Practical; from Lethain's Irrational Exuberance blog",
+    "tags": [
+      "swe",
+      "article"
+    ],
+    "image": "https://lethain.com/static/author.png"
+  },
+  {
+    "id": "00kurt9",
+    "ts": "2026-05-09T11:30:27Z",
+    "tg": 0,
+    "url": "https://tailscale.com/blog/how-nat-traversal-works",
+    "title": "How NAT traversal works — Tailscale",
+    "site": "tailscale.com",
+    "note": "Detailed technical explanation of how peer-to-peer connections are established through NAT. · One of the best deep-dives on NAT; very clear",
+    "tags": [
+      "swe",
+      "article"
+    ],
+    "image": "https://cdn.sanity.io/images/w77i7m8x/production/bbf71d57c972243cea664219fc80dcfc301252c6-1200x600.png"
+  },
+  {
+    "id": "0n5391i",
+    "ts": "2026-05-09T11:29:27Z",
+    "tg": 0,
+    "url": "https://www.feynmanlectures.caltech.edu/I_toc.html",
+    "title": "Feynman Lectures Vol. I",
+    "site": "feynmanlectures.caltech.edu",
+    "note": "Full text of Feynman's legendary physics lectures, free online. · Timeless; Vol I covers mechanics and math",
+    "tags": [
+      "swe",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "04b4e7h",
+    "ts": "2026-05-09T11:28:27Z",
+    "tg": 0,
+    "url": "https://simonwillison.net/guides/agentic-engineering-patterns/",
+    "title": "Agentic Engineering Patterns — Simon Willison",
+    "site": "simonwillison.net",
+    "note": "Patterns and best practices for building reliable LLM agent systems. · Up-to-date; from a trusted practitioner",
+    "tags": [
+      "swe",
+      "guide"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0vid6n1",
+    "ts": "2026-05-09T11:27:27Z",
+    "tg": 0,
+    "url": "https://zed.dev/",
+    "title": "Zed editor",
+    "site": "zed.dev",
+    "note": "Fast, collaborative code editor built in Rust. · Native performance; built-in AI features",
+    "tags": [
+      "swe",
+      "tool"
+    ],
+    "image": "https://zed.dev/img/home/og.webp"
+  },
+  {
+    "id": "1fpmpp2",
+    "ts": "2026-05-09T11:26:27Z",
+    "tg": 0,
+    "url": "https://workers.cloudflare.com/",
+    "title": "Cloudflare Workers",
+    "site": "workers.cloudflare.com",
+    "note": "Serverless compute platform running at the edge; V8-based. · Good for low-latency global deployments",
+    "tags": [
+      "swe",
+      "tool"
+    ],
+    "image": "https://www.cloudflare.com/preview.png"
+  },
+  {
+    "id": "0ee8l9r",
+    "ts": "2026-05-09T11:25:27Z",
+    "tg": 0,
+    "url": "https://vercel.com/",
+    "title": "Vercel",
+    "site": "vercel.com",
+    "note": "Frontend deployment and hosting platform; tight Next.js integration. · The default for modern JS frontend deployments",
+    "tags": [
+      "swe",
+      "tool"
+    ],
+    "image": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/og-home-not-x.png"
+  },
+  {
+    "id": "13auay6",
+    "ts": "2026-05-09T11:24:27Z",
+    "tg": 0,
+    "url": "https://starship.rs/",
+    "title": "Starship prompt",
+    "site": "starship.rs",
+    "note": "Minimal, fast, and highly customisable shell prompt written in Rust. · Works across shells; great out-of-the-box defaults",
+    "tags": [
+      "swe",
+      "tool"
+    ],
+    "image": "https://starship.rs/icon.png"
+  },
+  {
+    "id": "15kzbr0",
+    "ts": "2026-05-09T11:23:27Z",
+    "tg": 0,
+    "url": "https://github.com/tw93/Mole",
+    "title": "Mole — Mac cleaner",
+    "site": "github.com",
+    "note": "Open-source Mac app for deep cleaning and optimising system storage. · Lightweight; privacy-respecting",
+    "tags": [
+      "swe",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/tw93/Mole"
+  },
+  {
+    "id": "1fp8vx9",
+    "ts": "2026-05-09T11:22:27Z",
+    "tg": 0,
+    "url": "https://futuresearch.ai/blog/litellm-pypi-supply-chain-attack/",
+    "title": "Supply chain attack in litellm",
+    "site": "futuresearch.ai",
+    "note": "Post-mortem on a malicious package published to PyPI targeting litellm users. · Important read for anyone using OSS AI tooling",
+    "tags": [
+      "swe",
+      "article"
+    ],
+    "image": "https://futuresearch.ai/futuresearch-logo.webp"
+  },
+  {
+    "id": "0p5omg3",
+    "ts": "2026-05-09T11:21:27Z",
+    "tg": 0,
+    "url": "https://blog.technitium.com/2022/06/how-to-self-host-your-own-domain-name.html",
+    "title": "Self-hosting your own domain — Technitium",
+    "site": "blog.technitium.com",
+    "note": "Step-by-step guide to running your own authoritative DNS server. · Practical; uses Technitium DNS Server",
+    "tags": [
+      "swe",
+      "guide"
+    ],
+    "image": "https://lh3.googleusercontent.com/blogger_img_proxy/AEn0k_tQUGLb91AKbq1tdlYRenK4OByKoHjbmOxXT-iHiu7gHmXGVTC2fq_YLkI8JWHZ5sqECnct-ITvjUlNDwr2r7gnD4mFhinDt-8rzOknWhsR94azhbqHrEp5wWdwbD6dHOqQd4OYq3unc7w=w1200-h630-p-k-no-nu"
+  },
+  {
+    "id": "1m3lgyt",
+    "ts": "2026-05-09T11:20:27Z",
+    "tg": 0,
+    "url": "https://www.inkandswitch.com/untangle/",
+    "title": "Untangle: Fuzzy constraints — Ink & Switch",
+    "site": "inkandswitch.com",
+    "note": "Research prototype for solving scheduling problems with soft constraints in a visual UI. · From Ink & Switch; explores new interaction paradigms",
+    "tags": [
+      "swe",
+      "paper"
+    ],
+    "image": "https://www.inkandswitch.com/untangle/project-024-untangle--social-image--L1050318--16x9--1024x576.jpg"
+  },
+  {
+    "id": "0l7hroj",
+    "ts": "2026-05-09T11:19:27Z",
+    "tg": 0,
+    "url": "https://github.com/harvard-edge/cs249r_book",
+    "title": "Introduction to ML Systems — Harvard Edge",
+    "site": "github.com",
+    "note": "Open textbook on building and deploying ML systems, including edge and embedded contexts. · Academic; comprehensive; free",
+    "tags": [
+      "ai",
+      "book"
+    ],
+    "image": "https://opengraph.githubassets.com/1/harvard-edge/cs249r_book"
+  },
+  {
+    "id": "1pmjf5o",
+    "ts": "2026-05-09T11:18:27Z",
+    "tg": 0,
+    "url": "https://github.com/facebookresearch/llm-transparency-tool",
+    "title": "LLM Transparency Tool — Facebook Research",
+    "site": "github.com",
+    "note": "Interactive toolkit for visualising and analysing transformer internals. · Has a live Hugging Face demo",
+    "tags": [
+      "ai",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/facebookresearch/llm-transparency-tool"
+  },
+  {
+    "id": "1co25ho",
+    "ts": "2026-05-09T11:17:27Z",
+    "tg": 0,
+    "url": "https://github.com/microsoft/BitNet",
+    "title": "BitNet: 1-bit LLM inference — Microsoft",
+    "site": "github.com",
+    "note": "Official inference framework for running 1-bit quantised large language models efficiently. · Significant research direction for on-device LLMs",
+    "tags": [
+      "ai",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/microsoft/BitNet"
+  },
+  {
+    "id": "1deh757",
+    "ts": "2026-05-09T11:16:27Z",
+    "tg": 0,
+    "url": "https://www.marktechpost.com/2025/12/05/how-to-design-a-fully-local-multi-agent-orchestration-system-using-tinyllama-for-intelligent-task-decomposition-and-autonomous-collaboration/",
+    "title": "Local multi-agent orchestration with TinyLlama",
+    "site": "marktechpost.com",
+    "note": "Tutorial on building a fully offline multi-agent AI system using TinyLlama. · Practical; privacy-preserving approach",
+    "tags": [
+      "ai",
+      "guide"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0iodz6y",
+    "ts": "2026-05-09T11:15:27Z",
+    "tg": 0,
+    "url": "https://www.modular.com/blog/the-claude-c-compiler-what-it-reveals-about-the-future-of-software",
+    "title": "The Claude C Compiler — Modular",
+    "site": "modular.com",
+    "note": "Analysis of what Claude's ability to compile C code reveals about AI and software's future. · Thought-provoking; from Modular (Mojo creators)",
+    "tags": [
+      "ai",
+      "article"
+    ],
+    "image": "https://cdn.prod.website-files.com/68c9c3107effc2ea46e1a82c/6996624ca950e0f8926d6f86_Option05.png"
+  },
+  {
+    "id": "0mi35el",
+    "ts": "2026-05-09T11:14:27Z",
+    "tg": 0,
+    "url": "https://martinalderson.com/posts/ai-agents-are-starting-to-eat-saas/",
+    "title": "AI agents are starting to eat SaaS",
+    "site": "martinalderson.com",
+    "note": "Argues that agentic AI will displace traditional SaaS by doing tasks rather than enabling them. · Useful mental model for product strategy",
+    "tags": [
+      "ai",
+      "article"
+    ],
+    "image": "https://martinalderson.com/img/og/ai-agents-are-starting-to-eat-saas.png"
+  },
+  {
+    "id": "0bt1sjo",
+    "ts": "2026-05-09T11:13:27Z",
+    "tg": 0,
+    "url": "https://tecunningham.github.io/posts/2026-01-29-knowledge-creating-llms.html",
+    "title": "Knowledge-Creating LLMs — Tom Cunningham",
+    "site": "tecunningham.github.io",
+    "note": "Explores whether LLMs can genuinely create new knowledge rather than recombine existing ideas. · Intellectually ambitious; worth sitting with",
+    "tags": [
+      "ai",
+      "article"
+    ],
+    "image": "https://tecunningham.github.io/posts/2026-01-29-knowledge-creating-llms_files/figure-html/unnamed-chunk-1-1.png"
+  },
+  {
+    "id": "0i8i6lu",
+    "ts": "2026-05-09T11:12:27Z",
+    "tg": 0,
+    "url": "https://www.noemamag.com/cognizant-machines-a-what-is-not-a-who/",
+    "title": "Cognizant Machines: A What Is Not A Who — Noema",
+    "site": "noemamag.com",
+    "note": "Philosophical essay on why AI systems should not be granted moral personhood. · Rigorous; Noema is a serious magazine",
+    "tags": [
+      "ai",
+      "article"
+    ],
+    "image": "https://noemamag.imgix.net/2022/08/a-intelligences.jpg?fit=crop&fm=pjpg&h=628&ixlib=php-3.3.1&w=1200&wpsize=noema-social-facebook&s=3e551ce080f030b56cfe5bb4c3a2ca89"
+  },
+  {
+    "id": "1hyzsjg",
+    "ts": "2026-05-09T11:11:27Z",
+    "tg": 0,
+    "url": "https://www.byhand.ai/",
+    "title": "AI by Hand — Prof. Tom Yeh",
+    "site": "byhand.ai",
+    "note": "Substack newsletter teaching AI/ML concepts through hand-drawn worked examples. · Unusually clear visual pedagogy",
+    "tags": [
+      "ai",
+      "blog"
+    ],
+    "image": "https://substackcdn.com/image/fetch/$s_!uug6!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Faibyhand.substack.com%2Ftwitter%2Fsubscribe-card.jpg%3Fv%3D-636237388%26version%3D9"
+  },
+  {
+    "id": "03dooka",
+    "ts": "2026-05-09T11:10:27Z",
+    "tg": 0,
+    "url": "https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation",
+    "title": "Waymo World Model",
+    "site": "waymo.com",
+    "note": "Waymo's world model for generating realistic autonomous driving simulations. · Shows frontier of simulation-based AI training",
+    "tags": [
+      "ai",
+      "blog"
+    ],
+    "image": "https://lh3.googleusercontent.com/pcL3e60qMHH67WyyOeA1d-8Tjx2B4kwe90bpyvAyWOgf8Clb40mPxyjhpSAaH1ZsJzvtOxhU-eMYvfy5G_YYPYyGvRmRYlLHxOs"
+  },
+  {
+    "id": "1yi27sl",
+    "ts": "2026-05-09T11:09:27Z",
+    "tg": 0,
+    "url": "https://github.com/HKUDS/DeepTutor",
+    "title": "DeepTutor: AI-Powered Learning Assistant",
+    "site": "github.com",
+    "note": "AI tutoring system that provides personalised explanations and adaptive learning. · From HKUDS research group",
+    "tags": [
+      "ai",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/HKUDS/DeepTutor"
+  },
+  {
+    "id": "12apd7f",
+    "ts": "2026-05-09T11:08:27Z",
+    "tg": 0,
+    "url": "https://github.com/bytedance/UI-TARS-desktop",
+    "title": "UI-TARS Desktop — ByteDance",
+    "site": "github.com",
+    "note": "Open-source multimodal AI agent stack that can operate desktop GUIs autonomously. · Production-grade; ByteDance's open agent infra",
+    "tags": [
+      "ai",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/bytedance/UI-TARS-desktop"
+  },
+  {
+    "id": "0fohsn3",
+    "ts": "2026-05-09T11:07:27Z",
+    "tg": 0,
+    "url": "https://github.com/kitspace/awesome-electronics",
+    "title": "Awesome Electronics — Kitspace",
+    "site": "github.com",
+    "note": "Curated list of electronics resources: tools, tutorials, communities, and reference material. · Good starting point; well-maintained",
+    "tags": [
+      "hardware",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/kitspace/awesome-electronics"
+  },
+  {
+    "id": "00fcp9c",
+    "ts": "2026-05-09T11:06:27Z",
+    "tg": 0,
+    "url": "https://github.com/joaocarvalhoopen/How_to_learn_modern_electronics",
+    "title": "How to learn modern electronics",
+    "site": "github.com",
+    "note": "Opinionated learning roadmap covering theory, simulation, PCB design, and embedded systems. · Thorough; with book and resource recommendations",
+    "tags": [
+      "hardware",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/joaocarvalhoopen/How_to_learn_modern_electronics"
+  },
+  {
+    "id": "1axfbje",
+    "ts": "2026-05-09T11:05:27Z",
+    "tg": 0,
+    "url": "https://voidstarsec.com/roadmap/",
+    "title": "Embedded Hacking Resources — VoidStar",
+    "site": "voidstarsec.com",
+    "note": "Comprehensive roadmap for learning embedded systems security and hardware hacking. · Practical; tool-focused",
+    "tags": [
+      "hardware",
+      "guide"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1hjsz27",
+    "ts": "2026-05-09T11:04:27Z",
+    "tg": 0,
+    "url": "https://voidstarsec.com/blog/intro-to-embedded-part-1",
+    "title": "Intro to Embedded Reverse Engineering — VoidStar",
+    "site": "voidstarsec.com",
+    "note": "Series walkthrough of tools and methodology for reversing embedded firmware. · Hands-on; good for security researchers",
+    "tags": [
+      "hardware",
+      "guide"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1enfshy",
+    "ts": "2026-05-09T11:03:27Z",
+    "tg": 0,
+    "url": "https://blog.adafruit.com/2026/03/11/practical-guide-to-bare-metal-c/",
+    "title": "Practical Guide to Bare Metal C++ — Adafruit",
+    "site": "blog.adafruit.com",
+    "note": "Introduction to writing C++ for microcontrollers without an OS or HAL. · Covers linker scripts, startup, peripheral access",
+    "tags": [
+      "hardware",
+      "guide"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0b3oid7",
+    "ts": "2026-05-09T11:02:27Z",
+    "tg": 0,
+    "url": "https://www.hackatronic.com/switch-mode-power-supply-circuit-smps-block-diagram-working/",
+    "title": "Switch Mode Power Supply (SMPS)",
+    "site": "hackatronic.com",
+    "note": "Explains SMPS circuit topology, block diagram, and operating principles. · Good conceptual intro to SMPS design",
+    "tags": [
+      "hardware",
+      "article"
+    ],
+    "image": "https://www.hackatronic.com/wp-content/uploads/2024/06/SMPS-Switch-Mode-Power-Supply-Block-Diagram.webp"
+  },
+  {
+    "id": "0r34t3a",
+    "ts": "2026-05-09T11:01:27Z",
+    "tg": 0,
+    "url": "https://www.elektormagazine.com/articles/simple-signal-generator-using-the-rp2040",
+    "title": "Simple Signal Generator with RP2040 — Elektor",
+    "site": "elektormagazine.com",
+    "note": "Build an analog and digital signal generator for ~€10 using the RP2040 microcontroller. · Practical; cheap and useful bench tool",
+    "tags": [
+      "hardware",
+      "tool"
+    ],
+    "image": "https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F42%2F20260202191426_elektor---simple-sig-gen--2-.png"
+  },
+  {
+    "id": "1qkaqtn",
+    "ts": "2026-05-09T11:00:27Z",
+    "tg": 0,
+    "url": "https://github.com/CircuitProApp/CircuitPro",
+    "title": "CircuitPro — Mac-native PCB design",
+    "site": "github.com",
+    "note": "Free, native macOS PCB design application for personal and commercial use. · New; alternative to KiCad on Mac",
+    "tags": [
+      "hardware",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/CircuitProApp/CircuitPro"
+  },
+  {
+    "id": "0t6c9dn",
+    "ts": "2026-05-09T10:59:27Z",
+    "tg": 0,
+    "url": "https://www.ti.com/tool/WEBENCH-CIRCUIT-DESIGNER",
+    "title": "WEBENCH Circuit Designer — TI",
+    "site": "ti.com",
+    "note": "Texas Instruments' online tool for designing and simulating power supply circuits. · Great for quickly designing TI-based power circuits",
+    "tags": [
+      "hardware",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "19kiplg",
+    "ts": "2026-05-09T10:58:27Z",
+    "tg": 0,
+    "url": "https://github.com/iic-jku/IIC-OSIC-TOOLS",
+    "title": "IIC-OSIC-TOOLS — chip design Docker",
+    "site": "github.com",
+    "note": "All-in-one Docker image for open-source analog and digital chip design (SKY130/GF180). · Lowers barrier to IC design significantly",
+    "tags": [
+      "hardware",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/iic-jku/IIC-OSIC-TOOLS"
+  },
+  {
+    "id": "1i73584",
+    "ts": "2026-05-09T10:57:27Z",
+    "tg": 0,
+    "url": "https://tinytapeout.com/chips/",
+    "title": "Tiny Tapeout Chips",
+    "site": "tinytapeout.com",
+    "note": "Platform for submitting small digital designs to shared silicon runs cheaply. · Good entry point into physical chip design",
+    "tags": [
+      "hardware",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0crz6lc",
+    "ts": "2026-05-09T10:56:27Z",
+    "tg": 0,
+    "url": "https://www.zerotoasiccourse.com/post/year_update_2025/",
+    "title": "Zero to ASIC Course — 2025 review",
+    "site": "zerotoasiccourse.com",
+    "note": "Annual update from the Zero to ASIC course on the state of open-source chip design. · Good orientation to the open-source EDA ecosystem",
+    "tags": [
+      "hardware",
+      "blog"
+    ],
+    "image": "https://www.zerotoasiccourse.com/keepcalmandmakeasics.jpeg"
+  },
+  {
+    "id": "1o2l8w7",
+    "ts": "2026-05-09T10:55:27Z",
+    "tg": 0,
+    "url": "https://www.gqrx.dk/",
+    "title": "Gqrx SDR",
+    "site": "gqrx.dk",
+    "note": "Open-source software-defined radio application supporting a wide range of hardware. · Popular; supports RTL-SDR, HackRF, and more",
+    "tags": [
+      "hardware",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1m3oyz9",
+    "ts": "2026-05-09T10:54:27Z",
+    "tg": 0,
+    "url": "https://www.withdiode.com/projects/373b4668-086c-4842-b473-c640e88011b2",
+    "title": "Astable Multivibrator — Diode",
+    "site": "withdiode.com",
+    "note": "Interactive circuit simulation of an astable multivibrator using Diode's browser-based tool. · Good for learning oscillator fundamentals",
+    "tags": [
+      "hardware",
+      "interactive"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1cttjrp",
+    "ts": "2026-05-09T10:53:27Z",
+    "tg": 0,
+    "url": "http://calculusmadeeasy.org/",
+    "title": "Calculus Made Easy",
+    "site": "calculusmadeeasy.org",
+    "note": "Silvanus Thompson's 1910 classic making calculus intuitive and accessible. Free online. · Timeless; the best intro for most people",
+    "tags": [
+      "math",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1tqp9rz",
+    "ts": "2026-05-09T10:52:27Z",
+    "tg": 0,
+    "url": "https://ciechanow.ski/cameras-and-lenses/",
+    "title": "Cameras and Lenses — Bartosz Ciechanowski",
+    "site": "ciechanow.ski",
+    "note": "Stunning interactive article explaining optics, focal length, aperture, and sensors. · Ciechanowski's articles are best-in-class",
+    "tags": [
+      "math",
+      "interactive"
+    ],
+    "image": "https://ciechanow.ski/images/og/lenses.jpg"
+  },
+  {
+    "id": "0kpvbnd",
+    "ts": "2026-05-09T10:51:27Z",
+    "tg": 0,
+    "url": "https://ciechanow.ski/sound/",
+    "title": "Sound — Bartosz Ciechanowski",
+    "site": "ciechanow.ski",
+    "note": "Deep interactive explainer on the physics of sound, waves, and acoustics. · Same high standard as Cameras and Lenses",
+    "tags": [
+      "math",
+      "interactive"
+    ],
+    "image": "https://ciechanow.ski/images/og/sound.png"
+  },
+  {
+    "id": "0xaq1sn",
+    "ts": "2026-05-09T10:50:27Z",
+    "tg": 0,
+    "url": "https://c82.net/euclid/book1/",
+    "title": "Byrne's Euclid — Book I",
+    "site": "c82.net",
+    "note": "Beautiful colour-coded digital edition of Euclid's Elements using shapes instead of letters. · A design and mathematical classic",
+    "tags": [
+      "math",
+      "interactive"
+    ],
+    "image": "https://www.c82.net/images/euclid/social-preview.jpg"
+  },
+  {
+    "id": "07njpp1",
+    "ts": "2026-05-09T10:49:27Z",
+    "tg": 0,
+    "url": "https://blog.richardekwonye.com/bezier-curves",
+    "title": "Bézier Curves — Richard Ekwonye",
+    "site": "blog.richardekwonye.com",
+    "note": "Visual, mathematically grounded explanation of Bézier curves and their construction. · Excellent for designers and developers alike",
+    "tags": [
+      "math",
+      "interactive"
+    ],
+    "image": "https://www.blog.richardekwonye.com/images/bezier-curves-cover.jpg"
+  },
+  {
+    "id": "1f5oktv",
+    "ts": "2026-05-09T10:48:27Z",
+    "tg": 0,
+    "url": "https://matthematics.com/redoak/sec_anagrammer.html",
+    "title": "Anagram Algebra",
+    "site": "matthematics.com",
+    "note": "Mathematical treatment of anagramming using algebraic structures. · Niche but delightful",
+    "tags": [
+      "math",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "03zta8o",
+    "ts": "2026-05-09T10:47:27Z",
+    "tg": 0,
+    "url": "https://axiomelab.gitlab.io/hp-integral/article_hp_en.html",
+    "title": "Numerical Integration on HP Calculators",
+    "site": "axiomelab.gitlab.io",
+    "note": "Investigation of how vintage HP calculators performed numerical integration internally. · Fascinating mix of history and math",
+    "tags": [
+      "math",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0ygbyh8",
+    "ts": "2026-05-09T10:46:27Z",
+    "tg": 0,
+    "url": "https://github.com/michiganrobotics/rob501",
+    "title": "Mathematics for Robotics — Michigan",
+    "site": "github.com",
+    "note": "Open course materials covering the math needed for robotics: transforms, linear algebra, etc. · University-level; well-structured",
+    "tags": [
+      "math",
+      "repo",
+      "robotics"
+    ],
+    "image": "https://opengraph.githubassets.com/1/michiganrobotics/rob501"
+  },
+  {
+    "id": "0ilc2hz",
+    "ts": "2026-05-09T10:45:27Z",
+    "tg": 0,
+    "url": "https://mousemath.ru/",
+    "title": "Мышематика от Жени Кац",
+    "site": "mousemath.ru",
+    "note": "Russian-language blog with playful math activities and games for children and parents. · In Russian; creative approach to early math",
+    "tags": [
+      "math",
+      "blog",
+      "ru"
+    ],
+    "image": "https://mousemath.ru/wp-content/uploads/2024/10/jenny-kats-600x600.jpg"
+  },
+  {
+    "id": "05dr2sv",
+    "ts": "2026-05-09T10:44:27Z",
+    "tg": 0,
+    "url": "https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/",
+    "title": "Strategy Letter V — Joel on Software",
+    "site": "joelonsoftware.com",
+    "note": "Joel Spolsky on why companies commoditise their complements — a foundational strategy essay. · Must-read; written in 2002 but still sharp",
+    "tags": [
+      "product",
+      "article"
+    ],
+    "image": "https://www.joelonsoftware.com/wp-content/uploads/2002/06/eazel-closed.gif"
+  },
+  {
+    "id": "13lrpdp",
+    "ts": "2026-05-09T10:43:27Z",
+    "tg": 0,
+    "url": "https://www.eugenewei.com/blog/2018/5/21/invisible-asymptotes",
+    "title": "Invisible Asymptotes — Eugene Wei",
+    "site": "eugenewei.com",
+    "note": "How to identify the hidden ceiling that limits a product's growth before it hits it. · One of the best product strategy essays written",
+    "tags": [
+      "product",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0p4f8nz",
+    "ts": "2026-05-09T10:42:27Z",
+    "tg": 0,
+    "url": "https://www.eugenewei.com/blog/2013/10/25/amazon-and-the-profitless-business-model-narrative",
+    "title": "Amazon & the \"profitless\" narrative — Eugene Wei",
+    "site": "eugenewei.com",
+    "note": "Defends Amazon's long-term reinvestment strategy against short-term profit criticism. · Aged well; useful frame for evaluating businesses",
+    "tags": [
+      "product",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0k87rfb",
+    "ts": "2026-05-09T10:41:27Z",
+    "tg": 0,
+    "url": "https://creativestrategies.com/best-product-beats-best-bundle/",
+    "title": "Best Product Beats Best Bundle — Creative Strategies",
+    "site": "creativestrategies.com",
+    "note": "Argues that focused, best-in-class products win over bundled mediocrity long term. · Relevant to platform vs. point solution debates",
+    "tags": [
+      "product",
+      "tool"
+    ],
+    "image": "https://creativestrategies.com/wp-content/uploads/2021/04/creativelogo.svg"
+  },
+  {
+    "id": "1exc76m",
+    "ts": "2026-05-09T10:40:27Z",
+    "tg": 0,
+    "url": "https://cloudedjudgement.substack.com/p/clouded-judgement-121225-long-live",
+    "title": "Long Live Systems of Record — Clouded Judgement",
+    "site": "cloudedjudgement.substack.com",
+    "note": "Why systems-of-record SaaS are more defensible than AI-first competitors claim. · Useful counterpoint to AI disruption hype",
+    "tags": [
+      "product",
+      "blog"
+    ],
+    "image": "https://substackcdn.com/image/fetch/$s_!MNoe!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8418b7c-1aa2-414e-ae01-9018d4897b2d_1231x664.png"
+  },
+  {
+    "id": "1rl21zz",
+    "ts": "2026-05-09T10:39:27Z",
+    "tg": 0,
+    "url": "https://blog.sbensu.com/posts/high-variance-management/",
+    "title": "High Variance Management — sbensu",
+    "site": "blog.sbensu.com",
+    "note": "Framework for managing high-variance work: when to bet on upside vs. reduce variance. · Practical; particularly relevant for R&D teams",
+    "tags": [
+      "product",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0fb5ilv",
+    "ts": "2026-05-09T10:38:27Z",
+    "tg": 0,
+    "url": "https://perell.com/essay/the-microwave-economy/",
+    "title": "The Microwave Economy — David Perell",
+    "site": "perell.com",
+    "note": "Essay on how optimising for speed and convenience is hollowing out quality and depth. · Thought-provoking; classic Perell long-form",
+    "tags": [
+      "product",
+      "article"
+    ],
+    "image": "https://i0.wp.com/perell.com/wp-content/uploads/2021/03/daniel-barnes-PyFzygP2eNg-unsplash-scaled.jpg?fit=2560%2C1438&ssl=1"
+  },
+  {
+    "id": "0cbh3a7",
+    "ts": "2026-05-09T10:37:27Z",
+    "tg": 0,
+    "url": "https://blog.kilo.ai/p/the-future-of-product-managers",
+    "title": "The future of Product Managers — Kilo",
+    "site": "blog.kilo.ai",
+    "note": "Explores how AI is reshaping the product management role and what skills matter going forward. · Current; useful for PMs thinking about career",
+    "tags": [
+      "product",
+      "tool"
+    ],
+    "image": "https://substackcdn.com/image/fetch/$s_!MSXc!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ece7534-d724-4fad-b7f5-9f6e49a6ae4b_2816x1536.png"
+  },
+  {
+    "id": "0rws990",
+    "ts": "2026-05-09T10:36:27Z",
+    "tg": 0,
+    "url": "https://danluu.com/culture/",
+    "title": "Culture matters — Dan Luu",
+    "site": "danluu.com",
+    "note": "Data-driven analysis of how company culture affects engineering output and quality. · Empirical approach; atypical for culture writing",
+    "tags": [
+      "product",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0orove1",
+    "ts": "2026-05-09T10:35:27Z",
+    "tg": 0,
+    "url": "https://patticus.com/2023/12/16/competitive-research-playbook/",
+    "title": "Competitor Research Playbook — Patticus",
+    "site": "patticus.com",
+    "note": "Structured methodology for conducting deep competitive research and developing strategy. · Actionable; step-by-step",
+    "tags": [
+      "product",
+      "guide"
+    ],
+    "image": "https://patticus.com/wp-content/uploads/2023/12/Screenshot-2023-12-23-at-7.52.13-PM.png"
+  },
+  {
+    "id": "13acl7b",
+    "ts": "2026-05-09T10:34:27Z",
+    "tg": 0,
+    "url": "https://www.growthunhinged.com/p/an-outbound-playbook-for-2025",
+    "title": "An outbound playbook for 2025",
+    "site": "growthunhinged.com",
+    "note": "Tactical guide to modern outbound sales in an era of inbox fatigue and AI-written spam. · Practical; up-to-date with current norms",
+    "tags": [
+      "product",
+      "blog"
+    ],
+    "image": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/844a4ade-4b69-465a-a636-cf6e6f037a3e/dd00d4de-3499-43f9-861c-411af06131cf_1080x847.png?t=1767117772"
+  },
+  {
+    "id": "0lenpcj",
+    "ts": "2026-05-09T10:33:27Z",
+    "tg": 0,
+    "url": "https://www.palladiummag.com/about/",
+    "title": "Palladium Magazine",
+    "site": "palladiummag.com",
+    "note": "Long-form magazine covering governance, political economy, and societal change. · High quality; serious intellectual tone",
+    "tags": [
+      "product",
+      "book"
+    ],
+    "image": "https://pdmedia.b-cdn.net/2022/09/07-pd-landing-web.png"
+  },
+  {
+    "id": "00zygl4",
+    "ts": "2026-05-09T10:32:27Z",
+    "tg": 0,
+    "url": "https://apenwarr.ca/log/20201227",
+    "title": "Systems design explains the world — apenwarr",
+    "site": "apenwarr.ca",
+    "note": "Long essay using systems design concepts (feedback loops, incentives) to explain social phenomena. · Dense and rewarding; worth re-reading",
+    "tags": [
+      "product",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1mswzji",
+    "ts": "2026-05-09T10:31:27Z",
+    "tg": 0,
+    "url": "https://buttondown.email/hillelwayne/archive/whats-the-most-expensive-software-per-byte/",
+    "title": "What's the Most Expensive Software Per Byte? — Hillel Wayne",
+    "site": "buttondown.email",
+    "note": "Entertaining investigation into which software costs the most relative to its file size. · Fun and informative; Hillel Wayne's usual quality",
+    "tags": [
+      "product",
+      "article"
+    ],
+    "image": "https://static-assets.buttondown.com/images/icons/icon-square%40400.png"
+  },
+  {
+    "id": "1yoyzcs",
+    "ts": "2026-05-09T10:30:27Z",
+    "tg": 0,
+    "url": "https://darknetdiaries.com/",
+    "title": "Darknet Diaries podcast",
+    "site": "darknetdiaries.com",
+    "note": "Narrative podcast covering hacks, breaches, cybercrime, and the dark side of the internet. · Accessible storytelling; well-researched episodes",
+    "tags": [
+      "security",
+      "podcast"
+    ],
+    "image": "https://darknetdiaries.com/imgs/darknet-diaries-sm.jpg"
+  },
+  {
+    "id": "1casdmw",
+    "ts": "2026-05-09T10:29:27Z",
+    "tg": 0,
+    "url": "https://it4sec.github.io/",
+    "title": "it4sec — Denis Laskov",
+    "site": "it4sec.github.io",
+    "note": "Personal blog covering security research, tools, and writeups. · Niche; technical depth",
+    "tags": [
+      "security",
+      "blog"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1ff1gui",
+    "ts": "2026-05-09T10:28:27Z",
+    "tg": 0,
+    "url": "https://getmeridian.org/",
+    "title": "Meridian — Censorship-Resistant Proxy",
+    "site": "getmeridian.org",
+    "note": "Self-hostable censorship-resistant proxy designed for ease of deployment. · Aims to be simpler to run than Tor-based solutions",
+    "tags": [
+      "security",
+      "tool"
+    ],
+    "image": "https://getmeridian.org/img/og.png"
+  },
+  {
+    "id": "07h8m1d",
+    "ts": "2026-05-09T10:27:27Z",
+    "tg": 0,
+    "url": "https://usefathom.com/about",
+    "title": "Fathom Analytics",
+    "site": "usefathom.com",
+    "note": "Privacy-first web analytics that doesn't track individuals or sell data. · GDPR-compliant; good GA alternative",
+    "tags": [
+      "security",
+      "tool"
+    ],
+    "image": "https://usefathom.com/assets/src/pages/about-fathom-usefathom.com.jpg"
+  },
+  {
+    "id": "1k5idu9",
+    "ts": "2026-05-09T10:26:27Z",
+    "tg": 0,
+    "url": "https://ethereum.org/en/developers/docs/mev/",
+    "title": "Maximal Extractable Value (MEV) — Ethereum",
+    "site": "ethereum.org",
+    "note": "Ethereum's official explainer on MEV — how validators extract value by reordering transactions. · Essential for understanding DeFi risk",
+    "tags": [
+      "security",
+      "reference"
+    ],
+    "image": "https://ethereum.org/images/heroes/developers-hub-hero.png"
+  },
+  {
+    "id": "14p0ovb",
+    "ts": "2026-05-09T10:25:27Z",
+    "tg": 0,
+    "url": "https://gwern.net/spaced-repetition",
+    "title": "Spaced Repetition — Gwern",
+    "site": "gwern.net",
+    "note": "Comprehensive survey of spaced repetition research, algorithms, and practical applications. · The definitive reference on the topic",
+    "tags": [
+      "learning",
+      "article"
+    ],
+    "image": "https://gwern.net/doc/psychology/spaced-repetition/2013-memotrainerrr.png"
+  },
+  {
+    "id": "17h8k2s",
+    "ts": "2026-05-09T10:24:27Z",
+    "tg": 0,
+    "url": "https://en.m.wikipedia.org/wiki/Spacing_effect",
+    "title": "Spacing effect — Wikipedia",
+    "site": "en.m.wikipedia.org",
+    "note": "Wikipedia entry on the spacing effect; good overview of the underlying cognitive science. · Good starting point; links to primary research",
+    "tags": [
+      "learning",
+      "reference"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1w57baz",
+    "ts": "2026-05-09T10:23:27Z",
+    "tg": 0,
+    "url": "https://josephnoelwalker.com/141-intellectual-exoskeletons-andy-matuschak/",
+    "title": "Intellectual Exoskeletons — Andy Matuschak",
+    "site": "josephnoelwalker.com",
+    "note": "Podcast conversation with Andy Matuschak on tools that augment thinking and learning. · Companion to Matuschak's written work",
+    "tags": [
+      "learning",
+      "podcast"
+    ],
+    "image": "https://storage.ghost.io/c/8c/71/8c715a52-7cca-45a9-bba6-dc01735d5ec9/content/images/2022/12/Babel-1.webp"
+  },
+  {
+    "id": "1v4doj6",
+    "ts": "2026-05-09T10:22:27Z",
+    "tg": 0,
+    "url": "https://www.alexcrompton.com/blog/how-to-learn-chess",
+    "title": "How to learn chess as an adult — Alex Crompton",
+    "site": "alexcrompton.com",
+    "note": "Detailed account of going from 300 to 1500 ELO in 9 months, with generalised learning lessons. · Unusually specific; great on deliberate practice",
+    "tags": [
+      "learning",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0ru2i8k",
+    "ts": "2026-05-09T10:21:27Z",
+    "tg": 0,
+    "url": "https://commoncog.com/expertise-acceleration-experiment-judo/",
+    "title": "Expertise Acceleration in Judo — Commoncog",
+    "site": "commoncog.com",
+    "note": "Case study on applying cognitive science to dramatically speed up expertise acquisition in judo. · Commoncog is consistently excellent on this topic",
+    "tags": [
+      "learning",
+      "article"
+    ],
+    "image": "https://commoncog.com/content/images/2023/02/expertise_acceleration_judo.jpg"
+  },
+  {
+    "id": "07losf4",
+    "ts": "2026-05-09T10:20:27Z",
+    "tg": 0,
+    "url": "https://www.cs.virginia.edu/~robins/YouAndYourResearch.html",
+    "title": "You and Your Research — Hamming",
+    "site": "cs.virginia.edu",
+    "note": "Richard Hamming's famous 1986 talk on what separates great researchers from merely good ones. · Classic; applies far beyond research contexts",
+    "tags": [
+      "learning",
+      "talk"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0l9ei11",
+    "ts": "2026-05-09T10:19:27Z",
+    "tg": 0,
+    "url": "https://buttondown.email/hillelwayne/archive/how-knowing-math-helps-you-write-better-software/",
+    "title": "How math helps you write better software — Hillel Wayne",
+    "site": "buttondown.email",
+    "note": "Concrete examples of how mathematical thinking improves software design and reasoning. · Practical; avoids being preachy",
+    "tags": [
+      "learning",
+      "article"
+    ],
+    "image": "https://buttondown-attachments.s3.us-west-2.amazonaws.com/images/adb4d683-bc6d-48d6-9d20-a5166683682c.png"
+  },
+  {
+    "id": "1dp9rmf",
+    "ts": "2026-05-09T10:18:27Z",
+    "tg": 0,
+    "url": "https://www.beapolymath.app/",
+    "title": "PolymathOS",
+    "site": "beapolymath.app",
+    "note": "AI-powered learning platform designed around systems thinking and cross-domain mastery. · Ambitious concept; worth watching",
+    "tags": [
+      "learning",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1v4y8dx",
+    "ts": "2026-05-09T10:17:27Z",
+    "tg": 0,
+    "url": "https://www.biorxiv.org/content/10.1101/2021.11.16.468360v4",
+    "title": "Optimal info loading into working memory — bioRxiv",
+    "site": "biorxiv.org",
+    "note": "Neuroscience preprint on how the prefrontal cortex optimally loads information into working memory. · Technical; relevant to learning research",
+    "tags": [
+      "learning",
+      "paper"
+    ],
+    "image": "https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png"
+  },
+  {
+    "id": "17nigfu",
+    "ts": "2026-05-09T10:16:27Z",
+    "tg": 0,
+    "url": "https://saaslandingpage.com/",
+    "title": "SaaS Landing Page",
+    "site": "saaslandingpage.com",
+    "note": "Curated gallery of high-quality SaaS landing pages for design inspiration. · Useful when starting a new marketing page",
+    "tags": [
+      "design",
+      "reference"
+    ],
+    "image": "https://saaslandingpage.com/wp-content/uploads/2023/12/Link-Share-Img@2x.png"
+  },
+  {
+    "id": "07qwtf1",
+    "ts": "2026-05-09T10:15:27Z",
+    "tg": 0,
+    "url": "https://tubikstudio.com/",
+    "title": "Tubik Studio",
+    "site": "tubikstudio.com",
+    "note": "Award-winning UX and branding agency; their blog has strong design process articles. · Good portfolio and educational content",
+    "tags": [
+      "design",
+      "blog"
+    ],
+    "image": "https://cdn.prod.website-files.com/616d2f7455edd882e659539e/681b75895b963d08b6759539_Social%20preview%20image.png"
+  },
+  {
+    "id": "1ewip3k",
+    "ts": "2026-05-09T10:14:27Z",
+    "tg": 0,
+    "url": "https://www.supercreative.design/",
+    "title": "Supercreative",
+    "site": "supercreative.design",
+    "note": "Curated tools, resources, and inspiration for growing a creative business. · Mix of design tools and business advice",
+    "tags": [
+      "design"
+    ],
+    "image": "https://framerusercontent.com/images/NpX9mMRs8BX29rhGlTa1fBFaSs.jpg"
+  },
+  {
+    "id": "0nofwol",
+    "ts": "2026-05-09T10:13:27Z",
+    "tg": 0,
+    "url": "https://github.com/tombetthauser/watercolor-basics",
+    "title": "Watercolor basics — Tom Betthauser",
+    "site": "github.com",
+    "note": "Personal notes on watercolor techniques compiled from 10+ years teaching and making art. · Informal and practical; honest about what works",
+    "tags": [
+      "design",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/tombetthauser/watercolor-basics"
+  },
+  {
+    "id": "1uzvh4k",
+    "ts": "2026-05-09T10:12:27Z",
+    "tg": 0,
+    "url": "https://www.designweek.co.uk/issues/28-september-4-october/david-pearson-profile/",
+    "title": "David Pearson on book design — Design Week",
+    "site": "designweek.co.uk",
+    "note": "Profile of influential British book designer David Pearson on his philosophy and practice. · Good perspective on constraint-driven design",
+    "tags": [
+      "design",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0aoi5gq",
+    "ts": "2026-05-09T10:11:27Z",
+    "tg": 0,
+    "url": "https://astropad.com/",
+    "title": "Astropad",
+    "site": "astropad.com",
+    "note": "Turns iPad into a professional drawing tablet and adds tools for creative workflows on Mac. · Used by illustrators and designers professionally",
+    "tags": [
+      "design",
+      "tool"
+    ],
+    "image": "https://astropad.com/wp-content/uploads/2026/04/Workbench-Poppy-Claude-1-1.webp"
+  },
+  {
+    "id": "185q5qa",
+    "ts": "2026-05-09T10:10:27Z",
+    "tg": 0,
+    "url": "https://mikematas.com/",
+    "title": "Mike Matas — portfolio",
+    "site": "mikematas.com",
+    "note": "Portfolio of designer Mike Matas, known for iBooks, Push Pop Press, and Oculus work. · Influential work in digital interaction design",
+    "tags": [
+      "design"
+    ],
+    "image": "https://s3.us-west-2.amazonaws.com/media.zkz.dev/og.jpg"
+  },
+  {
+    "id": "0263vfv",
+    "ts": "2026-05-09T10:09:27Z",
+    "tg": 0,
+    "url": "https://animationobsessive.substack.com/p/dangerous-light",
+    "title": "Dangerous Light — Animation Obsessive",
+    "site": "animationobsessive.substack.com",
+    "note": "Deep dive into the use of light as a narrative and expressive tool in animation. · Animation Obsessive is consistently excellent",
+    "tags": [
+      "design",
+      "article"
+    ],
+    "image": "https://substackcdn.com/image/fetch/$s_!uOlw!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd0c667b8-d19f-4f1a-bbd8-5e3405b227cc_1920x960.png"
+  },
+  {
+    "id": "1pry4c8",
+    "ts": "2026-05-09T10:08:27Z",
+    "tg": 0,
+    "url": "https://pixeljoint.com/pixelart/162970.htm",
+    "title": "Europan Mining Operations — pixel art",
+    "site": "pixeljoint.com",
+    "note": "Highly detailed pixel art piece set in a sci-fi underwater mining environment. · Exceptional technique; worth studying",
+    "tags": [
+      "design",
+      "media"
+    ],
+    "image": ""
+  },
+  {
+    "id": "07gq4gf",
+    "ts": "2026-05-09T10:07:27Z",
+    "tg": 0,
+    "url": "https://illustrated-manuscript.vercel.app/",
+    "title": "Illustrated Manuscript",
+    "site": "illustrated-manuscript.vercel.app",
+    "note": "Web-based tool or project exploring the aesthetics of illustrated manuscripts digitally. · Visually interesting experiment",
+    "tags": [
+      "design",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0p4txne",
+    "ts": "2026-05-09T10:06:27Z",
+    "tg": 0,
+    "url": "https://www.lrb.co.uk/the-paper/v47/n21/david-runciman/are-we-doomed",
+    "title": "Are we doomed? — David Runciman / LRB",
+    "site": "lrb.co.uk",
+    "note": "Review essay on existential risk, civilisational collapse, and how we think about species survival. · Runciman is a sharp political thinker",
+    "tags": [
+      "ideas",
+      "article"
+    ],
+    "image": "https://www.lrb.co.uk/storage/social_image/images/0/4/4/2/30892440-1-eng-GB/9e6cde765716-parents-with-one-child-illustration.jpg"
+  },
+  {
+    "id": "1ejlvua",
+    "ts": "2026-05-09T10:05:27Z",
+    "tg": 0,
+    "url": "https://asteriskmag.com/issues/1/review-what-we-owe-the-future",
+    "title": "What We Owe The Future — Asterisk",
+    "site": "asteriskmag.com",
+    "note": "Critical review of William MacAskill's longtermist manifesto from Asterisk Magazine. · Balanced; not uncritical of the book",
+    "tags": [
+      "ideas",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0vby11v",
+    "ts": "2026-05-09T10:04:27Z",
+    "tg": 0,
+    "url": "https://www.astralcodexten.com/p/come-on-obviously-the-purpose-of",
+    "title": "The Purpose of a System — ACX",
+    "site": "astralcodexten.com",
+    "note": "Scott Alexander on why \"the purpose of a system is what it does\" is too simple a heuristic. · Typical ACX quality; nuanced and fun",
+    "tags": [
+      "ideas",
+      "article"
+    ],
+    "image": "https://substackcdn.com/image/fetch/$s_!D0CX!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe93c760b-ae05-4e9d-ae9e-691c2fa3436f_355x201.png"
+  },
+  {
+    "id": "1bkaubv",
+    "ts": "2026-05-09T10:03:27Z",
+    "tg": 0,
+    "url": "https://www.noemamag.com/article-topic/future-of-capitalism/",
+    "title": "Future of Capitalism — Noema",
+    "site": "noemamag.com",
+    "note": "Noema Magazine's ongoing collection of essays on economic systems and alternatives. · High-quality, diverse perspectives",
+    "tags": [
+      "ideas",
+      "article"
+    ],
+    "image": "https://noemamag.imgix.net/2021/09/Noema-Logo-Facebook-Size.jpg?fm=pjpg&ixlib=php-3.3.0&s=642da54a74dac0f533434b995bb2ec3b"
+  },
+  {
+    "id": "19aukiu",
+    "ts": "2026-05-09T10:02:27Z",
+    "tg": 0,
+    "url": "https://doriantaylor.com/",
+    "title": "Make Things. Make Sense. — Dorian Taylor",
+    "site": "doriantaylor.com",
+    "note": "Personal site of Dorian Taylor exploring the overlap of design, knowledge, and systems. · Dense and original; rewards patience",
+    "tags": [
+      "ideas",
+      "blog"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1cf11oz",
+    "ts": "2026-05-09T10:01:27Z",
+    "tg": 0,
+    "url": "https://policymemos.hks.harvard.edu/files/policymemos/files/churchill_memo_on_brevity.pdf",
+    "title": "Churchill memo on brevity — Harvard",
+    "site": "policymemos.hks.harvard.edu",
+    "note": "Churchill's 1940 memo urging officials to write shorter, clearer reports. · One page; timeless advice",
+    "tags": [
+      "ideas",
+      "paper"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1qkhwc7",
+    "ts": "2026-05-09T10:00:27Z",
+    "tg": 0,
+    "url": "https://www.macguffinmagazine.com/",
+    "title": "MacGuffin Magazine",
+    "site": "macguffinmagazine.com",
+    "note": "Design and culture magazine exploring the lives and meanings of everyday objects. · Beautiful production; thoughtful perspective",
+    "tags": [
+      "ideas",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0p36wnd",
+    "ts": "2026-05-09T09:59:27Z",
+    "tg": 0,
+    "url": "https://pagedout.institute/",
+    "title": "Paged Out! zine",
+    "site": "pagedout.institute",
+    "note": "Free zine with one-page articles on programming, security, and hacking culture. · Community-made; surprisingly high quality",
+    "tags": [
+      "ideas",
+      "book"
+    ],
+    "image": "https://pagedout.institute/static/img/issue_9_cover_og.png"
+  },
+  {
+    "id": "0x4vz4t",
+    "ts": "2026-05-09T09:58:27Z",
+    "tg": 0,
+    "url": "https://knightcolumbia.org/blog/tiktoks-secret-sauce",
+    "title": "TikTok's Secret Sauce — Knight Institute",
+    "site": "knightcolumbia.org",
+    "note": "Analysis of TikTok's recommendation algorithm and its First Amendment implications. · Well-sourced; good on algorithmic power",
+    "tags": [
+      "ideas",
+      "article"
+    ],
+    "image": "https://kfai-documents.s3.us-east-1.amazonaws.com/images/fa8e3d3206/a3884ir1108_medium.png"
+  },
+  {
+    "id": "1390jxa",
+    "ts": "2026-05-09T09:57:27Z",
+    "tg": 0,
+    "url": "https://theconversation.com/out-of-the-rabbit-hole-new-research-shows-people-can-change-their-minds-about-conspiracy-theories-222507",
+    "title": "Conspiracy theories & changing minds — The Conversation",
+    "site": "theconversation.com",
+    "note": "Summary of research showing people can and do exit conspiracy theory rabbit holes. · Hopeful and evidence-based",
+    "tags": [
+      "ideas",
+      "article"
+    ],
+    "image": "https://images.theconversation.com/files/575734/original/file-20240214-28-tup4k5.jpg?ixlib=rb-4.1.1&amp;rect=8%2C441%2C5880%2C2940&amp;q=45&amp;auto=format&amp;w=1356&amp;h=668&amp;fit=crop"
+  },
+  {
+    "id": "1r4f82n",
+    "ts": "2026-05-09T09:56:27Z",
+    "tg": 0,
+    "url": "https://linguaignota.bandcamp.com/album/the-end-live-at-islington-assembly-hall",
+    "title": "Lingua Ignota — The End (Live)",
+    "site": "linguaignota.bandcamp.com",
+    "note": "Live recording of Kristin Hayter's final performance as Lingua Ignota at Islington Assembly Hall. · Intense and emotionally brutal; a document of closure",
+    "tags": [
+      "music",
+      "media"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0il97uf",
+    "ts": "2026-05-09T09:55:27Z",
+    "tg": 0,
+    "url": "https://musically.com/2020/05/13/what-are-user-centric-music-streaming-payouts/",
+    "title": "User-centric streaming payouts — Musically",
+    "site": "musically.com",
+    "note": "Explainer on the user-centric vs. pro-rata payout debate in music streaming economics. · Good primer on streaming economics for musicians",
+    "tags": [
+      "music",
+      "article"
+    ],
+    "image": "https://i0.wp.com/musically.com/wp-content/uploads/2018/08/money-e1533549621932.jpg?fit=2000%2C1333&ssl=1"
+  },
+  {
+    "id": "1hjduy2",
+    "ts": "2026-05-09T09:54:27Z",
+    "tg": 0,
+    "url": "https://en.wikipedia.org/wiki/Sketch_Show_(band\\",
+    "title": "Sketch Show — Wikipedia",
+    "site": "en.wikipedia.org",
+    "note": "Wikipedia article on the Japanese electronic duo Sketch Show (Haruomi Hosono & Yukihiro Takahashi). · Ambient/electronic; related to Yellow Magic Orchestra",
+    "tags": [
+      "music",
+      "reference"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1epc19p",
+    "ts": "2026-05-09T09:53:27Z",
+    "tg": 0,
+    "url": "https://gametank.zone/",
+    "title": "GameTank",
+    "site": "gametank.zone",
+    "note": "Open-source 8-bit game console designed for hobbyists to build and program from scratch. · A fun hardware + software creative outlet",
+    "tags": [
+      "games",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0xoo5d6",
+    "ts": "2026-05-09T09:52:27Z",
+    "tg": 0,
+    "url": "https://archiveofourown.org/works/search?work_search%5Bquery%5D=Laezel",
+    "title": "Laezel fanfics — AO3",
+    "site": "archiveofourown.org",
+    "note": "Archive of Our Own search results for fanfiction featuring Lae'zel from Baldur's Gate 3. · Large collection; varies widely in quality",
+    "tags": [
+      "games",
+      "media"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0w0qvpe",
+    "ts": "2026-05-09T09:51:27Z",
+    "tg": 0,
+    "url": "https://archiveofourown.org/works/55222999",
+    "title": "a beast called love — AO3",
+    "site": "archiveofourown.org",
+    "note": "Specific Baldur's Gate fanfic work on Archive of Our Own.",
+    "tags": [
+      "games",
+      "media"
+    ],
+    "image": ""
+  },
+  {
+    "id": "00mc1j1",
+    "ts": "2026-05-09T09:50:27Z",
+    "tg": 0,
+    "url": "https://archiveofourown.org/works/51523519/chapters/130219582",
+    "title": "Handle Her — AO3",
+    "site": "archiveofourown.org",
+    "note": "Multi-chapter Baldur's Gate fanfic on Archive of Our Own.",
+    "tags": [
+      "games",
+      "media"
+    ],
+    "image": ""
+  },
+  {
+    "id": "04pkv3s",
+    "ts": "2026-05-09T09:49:27Z",
+    "tg": 0,
+    "url": "https://banteg.xyz/posts/crimsonland/",
+    "title": "Resurrecting Crimsonland — banteg",
+    "site": "banteg.xyz",
+    "note": "Technical post on reverse-engineering and reviving the classic 2003 top-down shooter Crimsonland. · Interesting mix of nostalgia and technical depth",
+    "tags": [
+      "games",
+      "article"
+    ],
+    "image": "https://banteg.xyz/posts/crimsonland/cover.avif"
+  },
+  {
+    "id": "0fry73c",
+    "ts": "2026-05-09T09:48:27Z",
+    "tg": 0,
+    "url": "https://github.com/mithi/hexapod",
+    "title": "Hexapod robot simulator — mithi",
+    "site": "github.com",
+    "note": "Web-based hexapod robot simulator for visualising leg kinematics in the browser. · Fast and interactive; great for learning IK",
+    "tags": [
+      "robotics",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/mithi/hexapod"
+  },
+  {
+    "id": "1nn1j18",
+    "ts": "2026-05-09T09:46:27Z",
+    "tg": 0,
+    "url": "https://github.com/evezor/tobor_v00",
+    "title": "Tobor — open-source robotics",
+    "site": "github.com",
+    "note": "Modular, open-source robotics system designed for versatility and extensibility. · Early stage; ambitious scope",
+    "tags": [
+      "robotics",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/evezor/tobor_v00"
+  },
+  {
+    "id": "0t3gsdf",
+    "ts": "2026-05-09T09:45:27Z",
+    "tg": 0,
+    "url": "https://www.mathworks.com/products/simulink.html",
+    "title": "Simulink — MathWorks",
+    "site": "mathworks.com",
+    "note": "Model-based simulation environment for designing and testing dynamic systems. · Industry standard for control engineering",
+    "tags": [
+      "robotics",
+      "tool"
+    ],
+    "image": "https://www.mathworks.com/products/simulink/_jcr_content/thumbnail.adapt.1200.medium.jpg/1595614540722.jpg"
+  },
+  {
+    "id": "1bgax8r",
+    "ts": "2026-05-09T09:44:27Z",
+    "tg": 0,
+    "url": "https://oa.mg/work/10.5302/j.icros.2022.22.0176",
+    "title": "Triple Inverted Pendulum — paper",
+    "site": "oa.mg",
+    "note": "Korean paper on structural design and swing-up control of a triple inverted pendulum system. · Classic benchmark problem for nonlinear control",
+    "tags": [
+      "robotics",
+      "paper"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1ll0llj",
+    "ts": "2026-05-09T09:43:27Z",
+    "tg": 0,
+    "url": "https://github.com/Sneftel/gull",
+    "title": "Gull — laser-cut ergonomic keyboard",
+    "site": "github.com",
+    "note": "Open-source ergonomic keyboard design made from laser-cut pieces; fully DIY. · Low-cost entry to custom keyboard building",
+    "tags": [
+      "keyboards",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/Sneftel/gull"
+  },
+  {
+    "id": "06c5nri",
+    "ts": "2026-05-09T09:42:27Z",
+    "tg": 0,
+    "url": "https://ekaeoq.github.io/project-writeups/split-keyboard-writeup.html",
+    "title": "Split Keyboard Project",
+    "site": "ekaeoq.github.io",
+    "note": "Detailed writeup of a DIY split keyboard build, including design decisions and lessons learned. · Good documentation of the design process",
+    "tags": [
+      "keyboards",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1bvjk6l",
+    "ts": "2026-05-09T09:41:27Z",
+    "tg": 0,
+    "url": "https://github.com/opulo-inc/lumenpnp",
+    "title": "LumenPnP — open source pick and place",
+    "site": "github.com",
+    "note": "Open-source pick and place machine for PCB assembly; designed for small-scale production. · Active project; commercial kits available",
+    "tags": [
+      "keyboards",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/opulo-inc/lumenpnp"
+  },
+  {
+    "id": "1jdvchv",
+    "ts": "2026-05-09T09:40:27Z",
+    "tg": 0,
+    "url": "https://blog.analytics-toolkit.com/2020/underpowered-a-b-tests-confusions-myths-reality/",
+    "title": "Underpowered A/B Tests — Analytics-Toolkit",
+    "site": "blog.analytics-toolkit.com",
+    "note": "Clears up common misconceptions about statistical power in A/B testing. · Technical; corrects widespread errors in practice",
+    "tags": [
+      "data",
+      "article"
+    ],
+    "image": "https://blog.analytics-toolkit.com/wp-content/uploads/2020/02/2020-02-12-Underpowered-Tests.jpg"
+  },
+  {
+    "id": "0306s7i",
+    "ts": "2026-05-09T09:39:27Z",
+    "tg": 0,
+    "url": "https://thisisdata.ru/blog/chek-list-po-pravilnomu-a-b-testirovaniyu/",
+    "title": "A/B testing checklist (Russian)",
+    "site": "thisisdata.ru",
+    "note": "Russian-language checklist for setting up statistically valid A/B tests correctly. · In Russian; practical step-by-step format",
+    "tags": [
+      "data",
+      "article",
+      "ru"
+    ],
+    "image": ""
+  },
+  {
+    "id": "0cf4noz",
+    "ts": "2026-05-09T09:38:27Z",
+    "tg": 0,
+    "url": "https://habr.com/ru/companies/avito/articles/929894/",
+    "title": "A/B test setup at Avito — Habr",
+    "site": "habr.com",
+    "note": "How Avito redesigned their A/B test setup to halve the MDE for revenue metrics. · In Russian; solid engineering case study",
+    "tags": [
+      "data",
+      "article",
+      "ru"
+    ],
+    "image": "https://habrastorage.org/getpro/habr/upload_files/69a/5ca/a99/69a5caa99cb2602a1ae1f992c80edb2a.jpg"
+  },
+  {
+    "id": "1xa8yg5",
+    "ts": "2026-05-09T09:37:27Z",
+    "tg": 0,
+    "url": "https://www.dedp.online/part-1/1-introduction/history-and-state-of-data-engineering.html",
+    "title": "History and State of Data Engineering",
+    "site": "dedp.online",
+    "note": "Overview chapter tracing data engineering from early data warehouses to modern stacks. · Free online book; good orientation",
+    "tags": [
+      "data",
+      "book"
+    ],
+    "image": "https://www.dedp.online/static/og-image.png"
+  },
+  {
+    "id": "1m0d6vb",
+    "ts": "2026-05-09T09:36:27Z",
+    "tg": 0,
+    "url": "https://untools.co/ishikawa-diagram/",
+    "title": "Ishikawa Diagram — Untools",
+    "site": "untools.co",
+    "note": "Guide to using fishbone/Ishikawa diagrams for root-cause analysis. · Part of the excellent Untools toolkit",
+    "tags": [
+      "productivity",
+      "guide"
+    ],
+    "image": "https://assets-us-01.kc-usercontent.com/c6e42f10-0ed4-0062-585c-b740aa1ad46c/bd7dc3cb-6ad9-4d8f-9d03-4d2660b96fe3/ishikawa-diagram-icon.png"
+  },
+  {
+    "id": "1li5o1d",
+    "ts": "2026-05-09T09:35:27Z",
+    "tg": 0,
+    "url": "https://able.ac/",
+    "title": "ABLE — note-taking & search",
+    "site": "able.ac",
+    "note": "AI-powered tool for searching, capturing, and organising knowledge across sources. · Combines search, notes, and writing in one place",
+    "tags": [
+      "productivity",
+      "tool"
+    ],
+    "image": "https://cdn.prod.website-files.com/62762d850c924b3c367a6dac/644fc36692b38d44d7997887_Frame%20915.jpg"
+  },
+  {
+    "id": "0blziip",
+    "ts": "2026-05-09T09:34:27Z",
+    "tg": 0,
+    "url": "https://github.com/johansan/notebook-navigator",
+    "title": "Notebook Navigator — Obsidian plugin",
+    "site": "github.com",
+    "note": "Obsidian plugin replacing the default file explorer with a two-pane folder + preview interface. · Well-featured; keyboard-navigable",
+    "tags": [
+      "productivity",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/johansan/notebook-navigator"
+  },
+  {
+    "id": "1ipsdcl",
+    "ts": "2026-05-09T09:33:27Z",
+    "tg": 0,
+    "url": "https://www.inkandswitch.com/crosscut/",
+    "title": "Crosscut: Dynamic Models — Ink & Switch",
+    "site": "inkandswitch.com",
+    "note": "Research prototype for drawing and thinking with dynamic computational models visually. · Ink & Switch research; forward-looking",
+    "tags": [
+      "productivity",
+      "paper"
+    ],
+    "image": "https://www.inkandswitch.com/crosscut/photo-crosscut-tablet.jpeg"
+  },
+  {
+    "id": "0jze8h4",
+    "ts": "2026-05-09T09:32:27Z",
+    "tg": 0,
+    "url": "https://suma.edu.mk/stability-instability-metastability-state-transitions/",
+    "title": "Stability–Instability–Metastability",
+    "site": "suma.edu.mk",
+    "note": "Explanation of state transition concepts — stable, unstable, and metastable equilibria. · Useful mental model for complex systems",
+    "tags": [
+      "productivity",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "02cp57i",
+    "ts": "2026-05-09T09:31:27Z",
+    "tg": 0,
+    "url": "https://yandori.io/news-flow/",
+    "title": "Yandori News Flow",
+    "site": "yandori.io",
+    "note": "AI-curated news aggregation tool surfacing signal from noise across multiple sources. · Hackernews-featured; early stage",
+    "tags": [
+      "productivity",
+      "tool"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1gh3369",
+    "ts": "2026-05-09T09:30:27Z",
+    "tg": 0,
+    "url": "https://www.userinterviews.com/blog/how-to-break-open-the-recruiting-bottleneck",
+    "title": "Breaking the UX Research Recruiting Bottleneck",
+    "site": "userinterviews.com",
+    "note": "Strategies for solving the chronic problem of slow participant recruitment in UX research. · Practical; from User Interviews",
+    "tags": [
+      "ux",
+      "article"
+    ],
+    "image": "https://cdn.prod.website-files.com/59b1667dd2e65000019d07be/65725db2e35e8d399ad9c47d_Blog-4.jpg"
+  },
+  {
+    "id": "0oa2cme",
+    "ts": "2026-05-09T09:29:27Z",
+    "tg": 0,
+    "url": "https://medium.com/researchops-community/introducing-the-minimum-viable-taxonomy-level-1-63d13589fdcb",
+    "title": "Minimum Viable Taxonomy — ResearchOps",
+    "site": "medium.com",
+    "note": "Introduces a lightweight taxonomy framework for organising research findings and insights. · Part of an ongoing ResearchOps community series",
+    "tags": [
+      "ux",
+      "article"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1dpc8te",
+    "ts": "2026-05-09T09:28:27Z",
+    "tg": 0,
+    "url": "https://medium.com/researchops-community/interoperability-openness-and-research-ops-4a957bc85ff9",
+    "title": "Interoperability & Research Ops",
+    "site": "medium.com",
+    "note": "Explores how open standards and interoperability can improve research operations at scale. · Conceptual; useful for maturing research practices",
+    "tags": [
+      "ux",
+      "article"
+    ],
+    "image": "https://miro.medium.com/v2/resize:fit:1200/1*ECy7Dx3LRrX4BeI7uEL2aw.png"
+  },
+  {
+    "id": "1vi0wq7",
+    "ts": "2026-05-09T09:27:27Z",
+    "tg": 0,
+    "url": "https://habr.com/ru/articles/759914/",
+    "title": "Разбор 64b intro: radar — Хабр",
+    "site": "habr.com",
+    "note": "Deep technical breakdown of a 64-byte demo intro called \"radar\" — demoscene analysis. · In Russian; fascinating code golf",
+    "tags": [
+      "ru",
+      "interactive"
+    ],
+    "image": "https://habrastorage.org/getpro/habr/upload_files/125/187/b42/125187b42c1595cbbe4129af641c4e30.gif"
+  },
+  {
+    "id": "1ixepsb",
+    "ts": "2026-05-09T09:26:27Z",
+    "tg": 0,
+    "url": "https://habr.com/ru/companies/yadro/articles/964752/",
+    "title": "Netlink-обертка на C++ — Хабр",
+    "site": "habr.com",
+    "note": "How to speed up Linux network subsystem management by writing a C++ Netlink wrapper. · In Russian; practical systems programming",
+    "tags": [
+      "ru",
+      "article"
+    ],
+    "image": "https://habrastorage.org/getpro/habr/upload_files/ed3/ed0/4e9/ed3ed04e98e95a4395e04f109659f541.png"
+  },
+  {
+    "id": "17ogmql",
+    "ts": "2026-05-09T09:25:27Z",
+    "tg": 0,
+    "url": "https://habr.com/ru/articles/982820/",
+    "title": "Нейросети для самых маленьких — Хабр",
+    "site": "habr.com",
+    "note": "Introductory series on neural networks for beginners, in Russian. · In Russian; friendly entry point",
+    "tags": [
+      "ru",
+      "article"
+    ],
+    "image": "https://habrastorage.org/getpro/habr/upload_files/4f2/253/1b0/4f22531b052a6ed1046d8ba817c02c7f.jpeg"
+  },
+  {
+    "id": "1lu2z3v",
+    "ts": "2026-05-09T09:24:27Z",
+    "tg": 0,
+    "url": "https://www.alib.ru/",
+    "title": "Alib.ru — букинистические книги",
+    "site": "alib.ru",
+    "note": "Russian online marketplace for buying and selling second-hand and antiquarian books. · In Russian; good for sourcing rare Russian books",
+    "tags": [
+      "ru",
+      "book"
+    ],
+    "image": ""
+  },
+  {
+    "id": "1w7dae1",
+    "ts": "2026-05-09T09:23:27Z",
+    "tg": 0,
+    "url": "https://system-design.space/",
+    "title": "System Design Space",
+    "site": "system-design.space",
+    "note": "Russian-language resource for learning system design concepts and preparing for interviews. · In Russian; structured learning path",
+    "tags": [
+      "ru"
+    ],
+    "image": "https://system-design.space/og-image.png"
+  },
+  {
+    "id": "0okg8h7",
+    "ts": "2026-05-09T09:22:27Z",
+    "tg": 0,
+    "url": "https://useful.expert/foreign-accounts.html",
+    "title": "Guide to foreign accounts",
+    "site": "useful.expert",
+    "note": "Practical guide for Russian-speakers on managing foreign bank and financial accounts. · In Russian; practical relocation resource",
+    "tags": [
+      "ru",
+      "guide"
+    ],
+    "image": "https://www.jcm-plombier-chauffagiste.com/1.jpg"
+  },
+  {
+    "id": "0nes6ze",
+    "ts": "2026-05-09T09:21:27Z",
+    "tg": 0,
+    "url": "https://code.claude.com/docs/en/settings",
+    "title": "Claude Code settings — docs",
+    "site": "code.claude.com",
+    "note": "Official documentation for configuring Claude Code, Anthropic's CLI coding agent. · Official reference",
+    "tags": [
+      "claude",
+      "reference"
+    ],
+    "image": "https://claude-code.mintlify.app/_next/image?url=%2F_mintlify%2Fapi%2Fog%3Fdivision%3DSettings%2Band%2Bpermissions%26appearance%3Dsystem%26title%3DClaude%2BCode%2Bsettings%26description%3DConfigure%2BClaude%2BCode%2Bwith%2Bglobal%2Band%2Bproject-level%2Bsettings%252C%2Band%2Benvironment%2Bvariables.%26logoLight%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Flight.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D78fd01ff4f4340295a4f66e2ea54903c%26logoDark%3Dhttps%253A%252F%252Fmintcdn.com%252Fclaude-code%252Fc5r9_6tjPMzFdDDT%252Flogo%252Fdark.svg%253Ffit%253Dmax%2526auto%253Dformat%2526n%253Dc5r9_6tjPMzFdDDT%2526q%253D85%2526s%253D1298a0c3b3a1da603b190d0de0e31712%26primaryColor%3D%25230E0E0E%26lightColor%3D%2523D4A27F%26backgroundLight%3D%2523FDFDF7%26backgroundDark%3D%252309090B&amp;w=1200&amp;q=100"
+  },
+  {
+    "id": "0bml3y1",
+    "ts": "2026-05-09T09:20:27Z",
+    "tg": 0,
+    "url": "https://sankalp.bearblog.dev/my-experience-with-claude-code-20-and-how-to-get-better-at-using-coding-agents/",
+    "title": "Guide to Claude Code 2.0 — Sankalp",
+    "site": "sankalp.bearblog.dev",
+    "note": "Practitioner's guide to using Claude Code effectively, with hard-won tips and patterns. · Practical; written by an experienced user",
+    "tags": [
+      "claude",
+      "tool"
+    ],
+    "image": "https://bear-images.sfo2.cdn.digitaloceanspaces.com/sankalp/dario-2.webp"
+  },
+  {
+    "id": "1rmiici",
+    "ts": "2026-05-09T09:19:27Z",
+    "tg": 0,
+    "url": "https://github.com/luongnv89/claude-howto",
+    "title": "Claude Code how-to — luongnv89",
+    "site": "github.com",
+    "note": "Visual, example-driven guide to Claude Code from basic to advanced agent use. · Good copy-paste templates included",
+    "tags": [
+      "claude",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/luongnv89/claude-howto"
+  },
+  {
+    "id": "1av16sr",
+    "ts": "2026-05-09T09:18:27Z",
+    "tg": 0,
+    "url": "https://github.com/virgiliojr94/book-to-skill",
+    "title": "Book to Skill — Claude Code tool",
+    "site": "github.com",
+    "note": "Converts technical book PDFs into Claude Code skill files for reference while working. · Creative use of the skills system",
+    "tags": [
+      "claude",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/virgiliojr94/book-to-skill"
+  },
+  {
+    "id": "0vrtr76",
+    "ts": "2026-05-09T09:17:27Z",
+    "tg": 0,
+    "url": "https://github.com/snarktank/ralph",
+    "title": "Ralph — autonomous agent loop",
+    "site": "github.com",
+    "note": "Agent that runs Amp (AI coding tool) in a loop until all PRD items are complete. · Interesting pattern for hands-off coding tasks",
+    "tags": [
+      "claude",
+      "repo"
+    ],
+    "image": "https://opengraph.githubassets.com/1/snarktank/ralph"
+  },
+  {
+    "id": "0kcumee",
+    "ts": "2026-05-09T09:16:27Z",
+    "tg": 0,
+    "url": "https://boundaryml.com/podcast/2025-10-28-ralph-wiggum-coding-agent-power-tools",
+    "title": "Coding agent power tools — BAML podcast",
+    "site": "boundaryml.com",
+    "note": "Podcast episode on advanced patterns and power tools for coding agent workflows. · From the BAML (Boundary ML) team",
+    "tags": [
+      "claude",
+      "podcast"
+    ],
+    "image": "https://boundaryml.com/api/og?title=Ralph+Wiggum+under+the+hood%3A+Coding+Agent+Power+Tools&amp;eyebrow=ai+that+works&amp;desc=We%27ve+talked+a+lot+about+how+to+use+context+engineering+to+get+more+out+of+coding+agents.+In+this+episode%2C%0Awe+dive+deep+on+the+Ralph+Wiggum+technique+and+why+this+different+approach+can+reshape+your+coding+workflow.%0AWe+explore+how+Ralph+handles+greenfield+work%2C+refactors%2C+and+spec+generation%E2%80%94surprise%3A+it%27s+all+about%0Ahigher-quality+context+engineering.%0A"
+  }
+]

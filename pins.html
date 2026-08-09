@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pins — Artem Domozhakov</title>
+<meta name="description" content="Curios, links and artifacts worth keeping. A running feed with a one-line reason each.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="theme-color" content="#eceae3">
+
+<meta property="og:title" content="Pins — Artem Domozhakov">
+<meta property="og:description" content="Curios, links and artifacts worth keeping. A running feed with a one-line reason each.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://orchimada.github.io/pins.html">
+<meta property="og:image" content="https://orchimada.github.io/assets/hero_portrait.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system/styles/system.css">
+<style>
+  /* ── page frame ── */
+  .pins-wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  .pins-head{padding:34px 0 20px}
+  .pins-head h1{font-family:var(--disp);font-size:clamp(2rem,9vw,3rem);font-weight:700;letter-spacing:-.04em;line-height:1;margin:14px 0 0}
+  .pins-head .sub{font-size:.95rem;color:var(--soft);margin-top:12px;max-width:46ch;line-height:1.6}
+  .pins-head .readout{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);margin-top:16px;display:flex;align-items:center;gap:9px}
+  .pins-head .readout b{color:var(--ink);font-weight:500}
+
+  /* ── sticky control deck ── */
+  .deckbar{position:sticky;top:58px;z-index:60;background:rgba(236,234,227,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 0 11px}
+  .deckbar .pins-wrap{display:flex;flex-direction:column;gap:10px}
+
+  .srch{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:0 13px}
+  .srch .d{width:7px;height:7px;border-radius:50%;background:var(--grey);flex:0 0 auto;transition:background .2s}
+  .srch.active .d{background:var(--sig);box-shadow:0 0 7px var(--sig)}
+  .srch input{flex:1;border:none;background:none;outline:none;font-family:var(--mono);font-size:.82rem;color:var(--ink);padding:12px 0;min-width:0}
+  .srch input::placeholder{color:var(--grey);text-transform:uppercase;font-size:.68rem;letter-spacing:.06em}
+  .srch .clr{border:none;background:none;font-family:var(--mono);font-size:.66rem;color:var(--grey);text-transform:uppercase;cursor:pointer;padding:6px;display:none}
+  .srch.active .clr{display:block}
+
+  .chips{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:1px 20px 2px}
+  .chips::-webkit-scrollbar{display:none}
+  .chips .fbtn{white-space:nowrap;flex:0 0 auto;padding:8px 12px 6px;font-size:.62rem}
+  .chips .fbtn .ct{color:var(--grey);font-size:.58rem}
+  .chips .fbtn.on .ct{color:rgba(255,255,255,.55)}
+
+  /* ── feed ── */
+  .feed{display:flex;flex-direction:column;gap:10px;padding:18px 0 40px;min-height:50vh}
+
+  .pin{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;text-decoration:none;color:inherit;transition:border-color .18s,box-shadow .18s,transform .18s}
+  .pin:active{transform:scale(.994)}
+  @media(hover:hover){.pin:hover{border-color:#cfcdc3;box-shadow:0 8px 24px rgba(20,20,22,.06)}}
+
+  .pin .thumb{flex:0 0 auto;width:58px;height:58px;border-radius:10px;overflow:hidden;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+  .pin .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .pin .thumb .mark{font-family:var(--dot);font-size:1.5rem;line-height:1;color:var(--grey);text-transform:uppercase}
+
+  .pin .body{flex:1;min-width:0}
+  .pin .ttl{display:block;font-family:var(--disp);font-size:1rem;font-weight:600;letter-spacing:-.015em;line-height:1.3;overflow-wrap:anywhere}
+  .pin .meta{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;color:var(--grey);margin-top:5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .pin .meta .host{color:var(--soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%}
+  .pin .meta .sep{color:var(--line)}
+  .pin .note{display:block;font-size:.9rem;color:var(--soft);line-height:1.55;margin-top:9px;overflow-wrap:anywhere}
+  .pin .note mark{background:#fdecec;color:var(--ink);border-radius:3px;padding:0 2px}
+  .pin .tgs{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
+  .pin .tgs .tag{font-size:.57rem;padding:3px 9px;letter-spacing:.05em}
+  .pin .tgs .tag.hit{background:#fdecec;border-color:#f6c9c9;color:#b51a1a}
+
+  /* ── states ── */
+  .state{text-align:center;padding:56px 20px;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);line-height:2}
+  .state b{display:block;color:var(--ink);font-size:.8rem}
+  .state .sig{color:var(--sig)}
+
+  @media(min-width:620px){
+    .pins-wrap{padding:0 30px}
+    .chips{margin:0 -30px;padding:1px 30px 2px}
+    .pin{padding:18px 20px;gap:16px}
+    .pin .thumb{width:76px;height:76px}
+    .pin .ttl{font-size:1.08rem}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html"><span class="d"></span>ARTEM DOMOZHAKOV</a>
+  <div class="links">
+    <a href="index.html#experience">Experience</a><a href="index.html#highlights">Highlights</a>
+    <a class="cta" href="index.html#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="pins-head"><div class="pins-wrap">
+  <span class="kick"><span class="n">05</span>Field notes</span>
+  <h1>Pins.</h1>
+  <p class="sub">Curios, links and artifacts I stumbled into and did not want to lose. One line each on why it is here.</p>
+  <div class="readout"><span class="led" id="ledStatus"></span><b id="cntPins">—</b> pins <span style="color:var(--line)">/</span> <b id="cntTags">—</b> rubrics</div>
+</div></header>
+
+<div class="deckbar"><div class="pins-wrap">
+  <label class="srch" id="srchBox">
+    <span class="d"></span>
+    <input id="q" type="search" placeholder="Filter pins" autocomplete="off" autocorrect="off" spellcheck="false" enterkeyhint="search">
+    <button class="clr" id="clr" type="button" aria-label="Clear filter">esc</button>
+  </label>
+  <div class="chips" id="chips"></div>
+</div></div>
+
+<main class="feed pins-wrap" id="feed">
+  <div class="state"><b>Loading</b><span class="sig">···</span></div>
+</main>
+
+<footer class="ft"><div class="pins-wrap" style="display:flex;flex-wrap:wrap;gap:10px 24px">
+  <span>© 2026 A. Domozhakov</span><a href="index.html">home</a><a href="cv.html">classic view</a><a href="https://github.com/orchimada" target="_blank" rel="noopener">GitHub</a>
+</div></footer>
+
+<script>
+(function(){
+  var feed  = document.getElementById('feed'),
+      chips = document.getElementById('chips'),
+      qIn   = document.getElementById('q'),
+      clr   = document.getElementById('clr'),
+      box   = document.getElementById('srchBox'),
+      led   = document.getElementById('ledStatus');
+
+  var PINS = [], tag = 'all', q = '';
+
+  /* ── helpers ── */
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  // Only http(s) survives — a pin's url comes from an external pipeline.
+  function safeUrl(u){
+    try{ var p = new URL(u); return (p.protocol === 'http:' || p.protocol === 'https:') ? p.href : ''; }
+    catch(e){ return ''; }
+  }
+
+  function host(p){
+    if(p.site) return p.site.replace(/^www\./,'');
+    try{ return new URL(p.url).hostname.replace(/^www\./,''); }catch(e){ return ''; }
+  }
+
+  function when(ts){
+    var t = Date.parse(ts);
+    if(isNaN(t)) return '';
+    var d = Math.floor((Date.now() - t) / 86400000);
+    if(d <= 0) return 'today';
+    if(d === 1) return 'yesterday';
+    if(d < 7)  return d + 'd ago';
+    if(d < 28) return Math.floor(d / 7) + 'w ago';
+    return new Date(t).toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'2-digit' });
+  }
+
+  function hilite(text, needle){
+    var out = esc(text);
+    if(!needle) return out;
+    var re = new RegExp('(' + needle.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig');
+    return out.replace(re,'<mark>$1</mark>');
+  }
+
+  /* ── filtering ── */
+  function matches(p){
+    if(tag !== 'all' && (p.tags || []).indexOf(tag) === -1) return false;
+    if(!q) return true;
+    var hay = [p.title, p.note, host(p)].concat(p.tags || []).join(' ').toLowerCase();
+    return hay.indexOf(q) !== -1;
+  }
+
+  /* ── render ── */
+  function card(p){
+    var url = safeUrl(p.url);
+    if(!url) return '';
+    var h = host(p), img = safeUrl(p.image),
+        title = p.title || h || url,
+        tags = (p.tags || []).map(function(t){
+          return '<span class="tag' + (t === tag ? ' hit' : '') + '">#' + esc(t) + '</span>';
+        }).join('');
+
+    return '<a class="pin" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
+      '<span class="thumb">' + (img
+        ? '<img src="' + esc(img) + '" alt="" loading="lazy" decoding="async" onerror="this.remove()">'
+        : '<span class="mark">' + esc((h || '?').charAt(0)) + '</span>') + '</span>' +
+      '<span class="body">' +
+        '<span class="ttl">' + hilite(title, q) + '</span>' +
+        '<span class="meta"><span class="host">' + esc(h) + '</span>' +
+          '<span class="sep">/</span><span>' + esc(when(p.ts)) + '</span></span>' +
+        (p.note ? '<span class="note">' + hilite(p.note, q) + '</span>' : '') +
+        (tags ? '<span class="tgs">' + tags + '</span>' : '') +
+      '</span></a>';
+  }
+
+  function render(){
+    var shown = PINS.filter(matches);
+
+    feed.innerHTML = shown.length
+      ? shown.map(card).join('')
+      : '<div class="state"><b>Nothing here</b>no pin matches that filter</div>';
+
+    Array.prototype.forEach.call(chips.children, function(el){
+      el.classList.toggle('on', el.dataset.tag === tag);
+    });
+    document.getElementById('cntPins').textContent = shown.length;
+    box.classList.toggle('active', !!q);
+  }
+
+  function buildChips(){
+    var counts = {};
+    PINS.forEach(function(p){
+      (p.tags || []).forEach(function(t){ counts[t] = (counts[t] || 0) + 1; });
+    });
+    var names = Object.keys(counts).sort(function(a, b){
+      return counts[b] - counts[a] || a.localeCompare(b);
+    });
+
+    document.getElementById('cntTags').textContent = names.length;
+
+    chips.innerHTML = ['all'].concat(names).map(function(t){
+      var n = t === 'all' ? PINS.length : counts[t];
+      return '<button class="fbtn" type="button" data-tag="' + esc(t) + '">' +
+        '<span class="pled"></span>' + esc(t === 'all' ? 'all' : '#' + t) +
+        ' <span class="ct">' + n + '</span></button>';
+    }).join('');
+
+    Array.prototype.forEach.call(chips.children, function(el){
+      el.addEventListener('click', function(){
+        tag = (tag === el.dataset.tag && tag !== 'all') ? 'all' : el.dataset.tag;
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+
+  /* ── controls ── */
+  var timer;
+  qIn.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){ q = qIn.value.trim().toLowerCase(); render(); }, 120);
+  });
+  qIn.addEventListener('keydown', function(e){ if(e.key === 'Escape') reset(); });
+  clr.addEventListener('click', reset);
+
+  function reset(){ qIn.value = ''; q = ''; qIn.blur(); render(); }
+
+  /* ── load ── */
+  // GitHub Pages caches JSON for ~10 min; the stamp makes a fresh pin show up now.
+  fetch('pins.json?v=' + Math.floor(Date.now() / 60000), { cache: 'no-cache' })
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data){
+      PINS = (Array.isArray(data) ? data : data.pins || [])
+        .filter(function(p){ return p && safeUrl(p.url); })
+        .sort(function(a, b){ return Date.parse(b.ts || 0) - Date.parse(a.ts || 0); });
+      buildChips();
+      render();
+    })
+    .catch(function(err){
+      led.classList.add('r');
+      feed.innerHTML = '<div class="state"><b>Feed unavailable</b>' + esc(err.message) + '</div>';
+      document.getElementById('cntPins').textContent = '0';
+      document.getElementById('cntTags').textContent = '0';
+    });
+})();
+</script>
+</body>
+</html>
