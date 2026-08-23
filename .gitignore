@@ -63,3 +63,8 @@ pipeline/.wrangler/
 assets/hero_1.jpg
 assets/hero_2.jpg
 assets/hero_portrait_wh40k.png
+
+# index rework in progress — draft, backup and its stylesheet stay local
+index-draft.html
+index-old-backup.html
+design-system/styles/reframe.css
