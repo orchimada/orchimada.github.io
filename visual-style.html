@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Visual Style for a Product Owner — Artem Domozhakov</title>
+<meta name="description" content="Case study: escaping the AI-generic look — four concepts, a words-first niche search, the Opalescence design system, and a bespoke variable font.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="theme-color" content="#0A0A0C">
+<meta property="og:title" content="A Visual Style for a Product Owner">
+<meta property="og:description" content="From four mutually exclusive prototypes to Opalescence and the Manifest variable font — the project behind this site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @font-face{
+    font-family:'Manifest';
+    src:url(data:font/woff2;base64,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) format('woff2-variations');
+    font-display:swap;
+  }
+  :root{
+    --soot:#0A0A0C; --panel:#101013; --line:#1E1E24;
+    --bone:#EDEBE4; --fog:#8D8B96;
+    --opal:linear-gradient(100deg,#9DB4EA 0%,#CCA0E2 30%,#8AD1C0 62%,#A6ABEF 100%);
+    --opal-solid:#A6ABEF;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --sans:'Instrument Sans',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--soot);color:var(--bone);font-family:var(--sans);
+    font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--bone);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--fog)}
+  a:hover,a:focus-visible{color:var(--opal-solid);text-decoration-color:var(--opal-solid)}
+  a:focus-visible{outline:2px solid var(--opal-solid);outline-offset:3px}
+  .col{max-width:1080px;margin:0 auto;padding:0 24px}
+  .shimmer{background:var(--opal);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .top{border-bottom:1px solid var(--line)}
+  .top .in{max-width:1080px;margin:0 auto;padding:22px 24px;display:flex;
+    justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .top .who{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+  .top .who a{text-decoration:none}
+  .top .who span{color:var(--fog)}
+  .top nav{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .top nav a{text-decoration:none;color:var(--fog)}
+  .top nav a:hover,.top nav a:focus-visible{color:var(--opal-solid)}
+
+  section{border-bottom:1px solid var(--line);padding:64px 0 56px}
+  section:last-of-type{border-bottom:none}
+  .sn{font-family:var(--mono);font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--fog);margin-bottom:20px}
+  h1,h2{font-family:'Manifest',var(--sans);font-weight:400;text-transform:uppercase;
+    font-variation-settings:'MNFS' 100;line-height:1.12;text-wrap:balance;overflow-wrap:anywhere}
+  h1{font-size:clamp(2rem,6.4vw,4.2rem);max-width:18ch;margin-bottom:26px}
+  h2{font-size:clamp(1.5rem,4.2vw,2.4rem);max-width:24ch;margin-bottom:22px}
+  .sub{max-width:60ch}
+  .sub p{margin-bottom:14px}
+  .sub b{font-weight:600}
+  .q{font-family:var(--mono);font-size:13.5px;color:var(--fog);border-left:2px solid var(--line);
+     padding-left:14px;max-width:56ch;margin:18px 0}
+
+  .protos{list-style:none;max-width:900px}
+  .protos li{border-top:1px solid var(--line);padding:20px 0;display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:8px 32px}
+  @media (max-width:720px){.protos li{grid-template-columns:1fr}}
+  .protos .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--fog);display:block;margin-bottom:6px}
+  .protos .name{font-family:'Manifest',var(--sans);text-transform:uppercase;
+    font-variation-settings:'MNFS' 100;font-size:clamp(1.2rem,2.8vw,1.7rem);line-height:1.25;overflow-wrap:anywhere}
+  .protos .about{font-size:14.5px}
+  .protos .about .links{display:block;margin-top:8px;font-family:var(--mono);font-size:12.5px}
+  .protos .about .links a{margin-right:16px}
+  .protos .won .name{color:var(--opal-solid)}
+
+  .rules{list-style:none;max-width:660px}
+  .rules li{padding:10px 0 10px 24px;text-indent:-24px;border-top:1px solid var(--line);font-size:15px}
+  .rules li::before{content:"— "}
+  .rules b{font-weight:600}
+
+  /* live specimen */
+  .axis{border:1px solid var(--line);background:var(--panel);max-width:820px;margin:22px 0 8px}
+  .axis .in{padding:20px 18px 6px}
+  .axis .line{font-family:'Manifest',var(--sans);text-transform:uppercase;
+    font-size:clamp(1.4rem,4.4vw,2.6rem);line-height:1.25;overflow-wrap:anywhere;
+    font-variation-settings:'MNFS' var(--mnfs,100);margin-bottom:14px}
+  .axis .bar{display:flex;align-items:center;gap:14px;padding:12px 18px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fog)}
+  .axis input[type=range]{flex:1;min-width:160px;accent-color:var(--opal-solid)}
+  .axis output{min-width:10ch}
+
+  footer{border-top:1px solid var(--line);padding:20px 0 48px}
+  footer .col{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--fog)}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="in">
+  <p class="who"><a href="index.html"><b>Artem Domozhakov</b></a> <span>· orchimada</span></p>
+  <nav aria-label="Site">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#deliverables">Deliverables</a>
+    <a href="index.html#dispatches">Dispatches</a>
+    <a href="index.html#desk">The desk</a>
+    <a href="pins.html">Pins</a>
+    <a href="cv.html">CV, classic view</a>
+  </nav>
+</div></div>
+
+<section>
+  <div class="col">
+    <p class="sn">Case study · design · Aug 2026</p>
+    <h1>A visual style for a product owner</h1>
+    <div class="sub">
+      <p>The problem: AI-made websites converge. Same frames, same lines, same proportions, same tasteful gradients — including the previous version of this one. A page built from defaults says nothing, because a word every candidate can use identifies no candidate, and the same holds for pixels.</p>
+      <p>The brief I gave the work: <b>post-punk in philosophy, not in costume</b> — simplicity, defiance of the common norms, grit, boldness — and one hard rule: <b>no element without a job.</b> If a line, a color, or a letterform doesn't communicate, it goes.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="sn">01 · Four concepts, mutually exclusive</p>
+    <h2>One page, four ways to refuse</h2>
+    <div class="sub"><p>Escalating risk, from hireable-radical to outright provocation. Each prototype takes one post-punk move and commits to it completely.</p></div>
+    <ul class="protos">
+      <li>
+        <div><span class="tag">Concept 1 · Factory Records lineage</span><span class="name">Catalogue raisonné</span></div>
+        <div class="about">Defiance through withholding: the CV as a museum accession catalogue. Cold paper, numbered works, one ultramarine. The refusal is refusing to sell.
+          <span class="links"><a href="design-system-concepts/catalogue-raisonne.html">Prototype →</a></span></div>
+      </li>
+      <li>
+        <div><span class="tag">Concept 2 · samizdat lineage</span><span class="name">The working copy</span></div>
+        <div class="about">Refusal of polish: a typewritten memo with the edits left visible. Strikethroughs are decision records; one toggle shows what "professional" erases.
+          <span class="links"><a href="design-system-concepts/working-copy.html">Prototype →</a></span></div>
+      </li>
+      <li>
+        <div><span class="tag">Concept 3 · Berlin industrial lineage</span><span class="name">Betriebsanleitung</span></div>
+        <div class="about">Deadpan: not a personal brand but heavy equipment, with an operating manual. DIN numbering, spec tables, one hazard warning: "this unit will answer 'build nothing' — this is not a malfunction."
+          <span class="links"><a href="design-system-concepts/betriebsanleitung.html">Prototype →</a></span></div>
+      </li>
+      <li class="won">
+        <div><span class="tag">Concept 4 · the provocation — chosen</span><span class="name">The refusals</span></div>
+        <div class="about">An agit-prop manifesto: five viewport-scale refusals with the CV demoted to evidence footnotes, and the one yes on an inverted ground. It won because it performs the judgment instead of claiming it.
+          <span class="links"><a href="design-system-concepts/the-refusals.html">Prototype →</a></span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="sn">02 · Words before visuals</p>
+    <h2>The recognitions</h2>
+    <div class="sub">
+      <p>Before choosing pixels, the language had to stop being generic. A lexical contrast of this site against the standard register of senior-PM summaries showed the fingerprint words living in the basement while the genre words (<i>product, growth, value, impact</i>) held the title positions. Recognition is surprisal: the fix was architectural.</p>
+      <p>Five literary operations — Gaddis's authentication, Burroughs's cut-up, Vonnegut's defamiliarization, Duchamp's readymade, Burgess's immersion — each generated one candidate language. What survived into this site: <b>the remainder</b> (everything new arrives before its department exists), <b>refusal at frequency</b>, and the two-channel split between pages for humans and the CV for the machines.</p>
+    </div>
+    <p class="q">→ <a href="design-system-concepts/the-recognitions.html">The full words-first document</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="sn">03 · The system</p>
+    <h2>Opalescence: <span class="shimmer">color is time</span></h2>
+    <div class="sub">
+      <p>Named for critical opalescence — the shimmer a fluid shows just before a phase transition. One rule builds the whole system: everything realized is monochrome ink; the only color permitted anywhere is the opal, and it may mark exactly one thing — what has arrived but not yet manifested. A reader learns the rule without being told, and then the page can point at the future silently.</p>
+    </div>
+    <ul class="rules">
+      <li><b>R1</b> — color is time. If it's colored, the page claims it hasn't happened yet.</li>
+      <li><b>R2</b> — means are thin, envelopes are loud. The mean is the last to know.</li>
+      <li><b>R3</b> — every time axis carries the lag mark: dashboards end here.</li>
+      <li><b>R4</b> — type is instrumentation: Instrument Sans, IBM Plex Mono, and one display face.</li>
+      <li><b>R5</b> — hover approaches manifestation. Motion respects reduced-motion.</li>
+      <li><b>R6</b> — type manifests: motion along the font's axis is a claim changing status.</li>
+    </ul>
+    <p class="q">Three registers of the same system:
+      <a href="design-system-concepts/opalescence-instrument.html">the instrument</a> (light, charts, the canon) ·
+      <a href="design-system-concepts/opalescence-survival.html">survival</a> (dark signs — this site's register) ·
+      <a href="design-system-concepts/opalescence-tribunal.html">the tribunal</a> (painterly, an inner dialog in moral grey)</p>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="sn">04 · The face</p>
+    <h2>Manifest — one axis, and it isn't weight</h2>
+    <div class="sub">
+      <p>A variable font cut in code for this system: 47 glyphs, two masters, 4.5&nbsp;KB. Its single axis is <b>MNFS — manifestation</b>. At 100 the strokes are solid ink: the record. Toward 0 they scatter into dashes, then dots: the not-yet. Across this site, a project's title is set at its honest manifestation — shipped names are solid, work in progress dissolves, plans are ghosts. Publishing something literally materializes it.</p>
+    </div>
+    <div class="axis">
+      <div class="in"><p class="line">The future arrives unlabeled</p></div>
+      <div class="bar">
+        <label for="mnfs">MNFS</label>
+        <input type="range" id="mnfs" min="0" max="100" value="100" step="1">
+        <output id="mnfsval">100 · solid</output>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="col">
+    <p class="sn">05 · The result</p>
+    <h2>What survived</h2>
+    <div class="sub">
+      <p>The current site is the merge: the Refusals' voice and dark ground, the Recognitions' language, Opalescence's one-color rule, and Manifest carrying honesty in its letterforms. From the losing concepts, the parts that earned their keep: the catalogue's restraint in the work section, the working copy's contempt for polish, the manual's refusal to decorate.</p>
+      <p>Nothing on the page is a style. Everything is a claim.</p>
+    </div>
+    <p class="q">→ <a href="index.html">The entry point, as it stands</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="col">
+    <span>© 2026 A. Domozhakov</span>
+    <span><a href="index.html">home</a></span>
+  </div>
+</footer>
+
+<script>
+  const r = document.getElementById('mnfs'), o = document.getElementById('mnfsval');
+  const label = v => v >= 96 ? 'solid' : v <= 6 ? 'ghost' : 'becoming';
+  r.addEventListener('input', () => {
+    document.documentElement.style.setProperty('--mnfs', r.value);
+    o.textContent = r.value + ' · ' + label(+r.value);
+  });
+</script>
+</body>
+</html>
